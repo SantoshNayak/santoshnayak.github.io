@@ -1,0 +1,20 @@
+* {
+    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+}
+.box {
+    border-radius: 26px;
+    background: #f0f0f0;
+    box-shadow:  6px 6px 13px #cccccc, 
+                 -6px -6px 13px #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+h1{
+    color: #71a1db;
+}
+.santosh-img{
+    border-radius: 24px;
+    width: 14%;
+}

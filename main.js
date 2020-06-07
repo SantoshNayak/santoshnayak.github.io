@@ -34,10 +34,12 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _dashboard_home_home_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard/home/home.component */ "./src/app/dashboard/home/home.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _dashboard_home_product_details_product_details_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dashboard/home/product-details/product-details.component */ "./src/app/dashboard/home/product-details/product-details.component.ts");
+/* harmony import */ var _dashboard_home_header_cart_cart_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dashboard/home/header/cart/cart.component */ "./src/app/dashboard/home/header/cart/cart.component.ts");
+/* harmony import */ var _dashboard_home_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dashboard/home/home.component */ "./src/app/dashboard/home/home.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _dashboard_home_product_details_product_details_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dashboard/home/product-details/product-details.component */ "./src/app/dashboard/home/product-details/product-details.component.ts");
+
 
 
 
@@ -46,20 +48,24 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     {
         path: '',
-        component: _dashboard_home_home_component__WEBPACK_IMPORTED_MODULE_1__["HomeComponent"]
+        component: _dashboard_home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"]
     },
     {
         path: 'product-details',
-        component: _dashboard_home_product_details_product_details_component__WEBPACK_IMPORTED_MODULE_4__["ProductDetailsComponent"]
+        component: _dashboard_home_product_details_product_details_component__WEBPACK_IMPORTED_MODULE_5__["ProductDetailsComponent"]
+    },
+    {
+        path: 'viewcart',
+        component: _dashboard_home_header_cart_cart_component__WEBPACK_IMPORTED_MODULE_1__["CartComponent"]
     }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"]]
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forRoot(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"]]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -76,7 +82,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>"
+module.exports = "<app-header></app-header>\r\n\r\n<router-outlet></router-outlet>\r\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -154,6 +160,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var _dashboard_home_footer_footer_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./dashboard/home/footer/footer.component */ "./src/app/dashboard/home/footer/footer.component.ts");
 /* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/esm5/input.es5.js");
+/* harmony import */ var _angular_material_badge__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/badge */ "./node_modules/@angular/material/esm5/badge.es5.js");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
+/* harmony import */ var _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/menu */ "./node_modules/@angular/material/esm5/menu.es5.js");
+/* harmony import */ var _dashboard_home_header_cart_cart_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./dashboard/home/header/cart/cart.component */ "./src/app/dashboard/home/header/cart/cart.component.ts");
+
+
+
+
 
 
 
@@ -188,7 +202,8 @@ var AppModule = /** @class */ (function () {
                 _dashboard_home_header_header_component__WEBPACK_IMPORTED_MODULE_11__["HeaderComponent"],
                 _dashboard_home_all_products_all_products_component__WEBPACK_IMPORTED_MODULE_12__["AllProductsComponent"],
                 _auth_comp_auth_comp_component__WEBPACK_IMPORTED_MODULE_15__["AuthCompComponent"],
-                _dashboard_home_footer_footer_component__WEBPACK_IMPORTED_MODULE_18__["FooterComponent"]
+                _dashboard_home_footer_footer_component__WEBPACK_IMPORTED_MODULE_18__["FooterComponent"],
+                _dashboard_home_header_cart_cart_component__WEBPACK_IMPORTED_MODULE_23__["CartComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -196,6 +211,9 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
                 _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_3__["MatToolbarModule"],
                 _angular_material_input__WEBPACK_IMPORTED_MODULE_19__["MatInputModule"],
+                _angular_material_badge__WEBPACK_IMPORTED_MODULE_20__["MatBadgeModule"],
+                _angular_material_icon__WEBPACK_IMPORTED_MODULE_21__["MatIconModule"],
+                _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"],
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_13__["MatButtonModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_14__["MatDialogModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_16__["NgbModule"], ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_17__["OwlModule"]
             ],
             providers: [],
@@ -540,6 +558,62 @@ var FooterComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/dashboard/home/header/cart/cart.component.html":
+/*!****************************************************************!*\
+  !*** ./src/app/dashboard/home/header/cart/cart.component.html ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"col-12 card-container\">\n  <div class=\"row\">\n\n\n  <div class=\"col-8\">\n    <div class=\"card\">\n      <div class=\"cart-head-div\">\n        My cart\n      </div>\n\n\n      <hr class=\"m-0\">\n\n\n      <div class=\"each-row\">\n        <div class=\"row\">\n          <div class=\"col-2\">\n            <img src=\"../../../../../assets/products/3.jpeg\" alt=\"\" class=\"w-100\">\n          </div>\n          <div class=\"col-6 p-20-0\">\n            <a href=\"#\" class=\"product-name-link\">\n              Tulip premium pan masala\n            </a>\n            <div class=\"product-dec-ic\">\n              Brown, Pack of 1\n            </div>\n            <div class=\"product-dec-ic\">\n              Seller: OmniTechRetail </div>\n            <span class=\"price-ic\">$544</span>\n            <span class=\"price-st-ic\">$554</span>\n          </div>\n          <div class=\"col-4 p-20-0\">\n            <div class=\"d-by\">\n              Delivery by Fri Jun 12\n            </div>\n            <div class=\"product-dec-ic\">\n              10 Days Replacement Policy\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"each-row\">\n        <div class=\"row\">\n          <div class=\"col-3\">\n            <div class=\"qty-container\">\n              <button class=\"qty-btn\">\n                –\n              </button>\n              <div class=\"qty-input-container\">\n                <input type=\"text\" value=\"2\" class=\"qty-input\">\n              </div>\n              <button class=\"qty-btn\">\n                +\n              </button>\n            </div>\n          </div>\n          <div class=\"col-3 action-texts\">\n            Save for later\n          </div>\n          <div class=\"col-3 action-texts\">\n            Remove\n          </div>\n          <div class=\"col-3\"></div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-4\">\n    <div class=\"card\">\n      <span class=\"p-detail\">\n        Price details\n      </span>\n      <hr class=\"m-0\">\n      <div class=\"price-detals\">\n        <div class=\"row p-10-0\">\n          <div class=\"col-8\">\n            Price (1 item)\n          </div>\n          <div class=\"col-4\">\n            ₹3,747\n          </div>\n        </div>\n        <div class=\"row p-10-0\">\n          <div class=\"col-8\">\n            Delivery Fee </div>\n          <div class=\"col-4\">\n            <span class=\"free\">Free</span>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/dashboard/home/header/cart/cart.component.scss":
+/*!****************************************************************!*\
+  !*** ./src/app/dashboard/home/header/cart/cart.component.scss ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".card {\n  /* Add shadows to create the \"card\" effect */\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);\n  transition: 0.3s; }\n\n/* On mouse-over, add a deeper shadow */\n\n.card:hover {\n  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }\n\n.card-container {\n  padding: 35px 33px; }\n\n.each-row {\n  padding: 20px; }\n\n.product-name-link {\n  font-size: 16px;\n  color: #212121;\n  line-height: 1;\n  display: inline; }\n\n.p-20-0 {\n  padding: 20px 0px; }\n\n.product-dec-ic {\n  display: block;\n  color: #878787;\n  font-size: 14px;\n  height: 20px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap; }\n\n.price-ic {\n  font-size: 18px;\n  font-weight: 500;\n  color: #212121;\n  display: inline-block;\n  margin-right: 8px;\n  margin-top: 10px; }\n\n.price-st-ic {\n  color: #878787;\n  text-decoration: line-through;\n  font-size: 14px;\n  margin-right: 10px; }\n\n.d-y {\n  font-size: 14px;\n  color: #212121;\n  line-height: 1.4; }\n\n.cart-head-div {\n  font-size: 18px;\n  line-height: 56px;\n  padding: 0 24px;\n  font-weight: 500; }\n\n.action-texts {\n  display: inline-block;\n  text-transform: uppercase;\n  box-shadow: none;\n  outline: 0;\n  font-size: 16px;\n  font-weight: 500;\n  cursor: pointer;\n  margin-right: 25px; }\n\n.qty-container {\n  display: flex;\n  color: #212121;\n  align-items: center; }\n\n.qty-btn {\n  width: 28px;\n  height: 28px;\n  background: linear-gradient(#fff, #f9f9f9);\n  display: inline-block;\n  border: 1px solid #c2c2c2;\n  cursor: pointer;\n  font-size: 16px;\n  border-radius: 50%;\n  padding-top: 1px;\n  line-height: 1; }\n\n.qty-input-container {\n  display: inline-block;\n  padding: 1px 6px;\n  width: calc(100% - 60px);\n  height: 100%;\n  width: 46px;\n  height: 28px;\n  border-radius: 2px;\n  background-color: #fff;\n  border: 1px solid #c2c2c2;\n  margin: 0 5px; }\n\n.qty-input {\n  border: none;\n  width: 100%;\n  font-size: 14px;\n  font-weight: 500;\n  vertical-align: middle;\n  text-align: center; }\n\n.qty-input:focus {\n  outline: none; }\n\n.p-detail {\n  display: block;\n  text-transform: uppercase;\n  padding: 13px 24px;\n  font-weight: 500;\n  color: #878787;\n  min-height: 47px;\n  border-radius: 2px 2px 0 0; }\n\n.price-detals {\n  padding: 15px; }\n\n.free {\n  color: #388e3c;\n  text-transform: uppercase; }\n\n.p-10-0 {\n  padding: 10px 0px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL2hvbWUvaGVhZGVyL2NhcnQvRDpcXFNhbnRvc2hcXGdpdGh1YiB3ZWJcXFR1bGlwXFx0dWxpcC1wcmVtaXVtL3NyY1xcYXBwXFxkYXNoYm9hcmRcXGhvbWVcXGhlYWRlclxcY2FydFxcY2FydC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDRDQUFBO0VBQ0EsMENBQTBDO0VBQzFDLGdCQUFnQixFQUFBOztBQUdwQix1Q0FBQTs7QUFDQTtFQUNJLDJDQUEyQyxFQUFBOztBQUUvQztFQUNJLGtCQUFrQixFQUFBOztBQUV0QjtFQUNJLGFBQWEsRUFBQTs7QUFFakI7RUFDSSxlQUFlO0VBQ2YsY0FBYztFQUNkLGNBQWM7RUFDZCxlQUFlLEVBQUE7O0FBRW5CO0VBQ0ksaUJBQWlCLEVBQUE7O0FBRXJCO0VBQ0ksY0FBYztFQUNkLGNBQWM7RUFDZCxlQUFlO0VBQ2YsWUFBWTtFQUNaLGdCQUFnQjtFQUNoQix1QkFBdUI7RUFDdkIsbUJBQW1CLEVBQUE7O0FBRXZCO0VBQ0ksZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixjQUFjO0VBQ2QscUJBQXFCO0VBQ3JCLGlCQUFpQjtFQUNqQixnQkFBZ0IsRUFBQTs7QUFFcEI7RUFDSSxjQUFjO0VBQ2QsNkJBQTZCO0VBQzdCLGVBQWU7RUFDZixrQkFBa0IsRUFBQTs7QUFFdEI7RUFDSSxlQUFlO0VBQ2YsY0FBYztFQUNkLGdCQUFnQixFQUFBOztBQUVwQjtFQUNJLGVBQWU7RUFDZixpQkFBaUI7RUFDakIsZUFBZTtFQUNmLGdCQUFnQixFQUFBOztBQUVwQjtFQUNJLHFCQUFxQjtFQUNyQix5QkFBeUI7RUFDekIsZ0JBQWdCO0VBQ2hCLFVBQVU7RUFDVixlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixrQkFBa0IsRUFBQTs7QUFFdEI7RUFHSSxhQUFhO0VBQ2IsY0FBYztFQUdkLG1CQUFtQixFQUFBOztBQUV2QjtFQUNJLFdBQVc7RUFDWCxZQUFZO0VBQ1osMENBQTBDO0VBQzFDLHFCQUFxQjtFQUNyQix5QkFBeUI7RUFDekIsZUFBZTtFQUNmLGVBQWU7RUFDZixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGNBQWMsRUFBQTs7QUFFbEI7RUFDSSxxQkFBcUI7RUFDckIsZ0JBQWdCO0VBQ2hCLHdCQUF3QjtFQUN4QixZQUFZO0VBQ1osV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsc0JBQXNCO0VBQ3RCLHlCQUF5QjtFQUN6QixhQUFhLEVBQUE7O0FBRWpCO0VBQ0ksWUFBWTtFQUNaLFdBQVc7RUFDWCxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLHNCQUFzQjtFQUN0QixrQkFBa0IsRUFBQTs7QUFFdEI7RUFDSSxhQUFhLEVBQUE7O0FBRWpCO0VBQ0ksY0FBYztFQUNkLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGNBQWM7RUFDZCxnQkFBZ0I7RUFDaEIsMEJBQTBCLEVBQUE7O0FBRTlCO0VBQ0ksYUFBYSxFQUFBOztBQUdqQjtFQUNJLGNBQWM7RUFDZCx5QkFBeUIsRUFBQTs7QUFFN0I7RUFDSSxpQkFBaUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9ob21lL2hlYWRlci9jYXJ0L2NhcnQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2FyZCB7XHJcbiAgICAvKiBBZGQgc2hhZG93cyB0byBjcmVhdGUgdGhlIFwiY2FyZFwiIGVmZmVjdCAqL1xyXG4gICAgYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLCAwLCAwLCAwLjIpO1xyXG4gICAgdHJhbnNpdGlvbjogMC4zcztcclxufVxyXG5cclxuLyogT24gbW91c2Utb3ZlciwgYWRkIGEgZGVlcGVyIHNoYWRvdyAqL1xyXG4uY2FyZDpob3ZlciB7XHJcbiAgICBib3gtc2hhZG93OiAwIDhweCAxNnB4IDAgcmdiYSgwLCAwLCAwLCAwLjIpO1xyXG59XHJcbi5jYXJkLWNvbnRhaW5lciB7XHJcbiAgICBwYWRkaW5nOiAzNXB4IDMzcHg7XHJcbn1cclxuLmVhY2gtcm93IHtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn1cclxuLnByb2R1Y3QtbmFtZS1saW5rIHtcclxuICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgIGNvbG9yOiAjMjEyMTIxO1xyXG4gICAgbGluZS1oZWlnaHQ6IDE7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmU7XHJcbn1cclxuLnAtMjAtMCB7XHJcbiAgICBwYWRkaW5nOiAyMHB4IDBweDtcclxufVxyXG4ucHJvZHVjdC1kZWMtaWMge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBjb2xvcjogIzg3ODc4NztcclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIGhlaWdodDogMjBweDtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcclxuICAgIHdoaXRlLXNwYWNlOiBub3dyYXA7XHJcbn1cclxuLnByaWNlLWljIHtcclxuICAgIGZvbnQtc2l6ZTogMThweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICBjb2xvcjogIzIxMjEyMTtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIG1hcmdpbi1yaWdodDogOHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxufVxyXG4ucHJpY2Utc3QtaWMge1xyXG4gICAgY29sb3I6ICM4Nzg3ODc7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IGxpbmUtdGhyb3VnaDtcclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIG1hcmdpbi1yaWdodDogMTBweDtcclxufVxyXG4uZC15IHtcclxuICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgIGNvbG9yOiAjMjEyMTIxO1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuNDtcclxufVxyXG4uY2FydC1oZWFkLWRpdiB7XHJcbiAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICBsaW5lLWhlaWdodDogNTZweDtcclxuICAgIHBhZGRpbmc6IDAgMjRweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbn1cclxuLmFjdGlvbi10ZXh0cyB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gICAgYm94LXNoYWRvdzogbm9uZTtcclxuICAgIG91dGxpbmU6IDA7XHJcbiAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAyNXB4O1xyXG59XHJcbi5xdHktY29udGFpbmVyIHtcclxuICAgIGRpc3BsYXk6IC13ZWJraXQtZmxleDtcclxuICAgIGRpc3BsYXk6IC1tcy1mbGV4Ym94O1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGNvbG9yOiAjMjEyMTIxO1xyXG4gICAgLXdlYmtpdC1hbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgLW1zLWZsZXgtYWxpZ246IGNlbnRlcjtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbn1cclxuLnF0eS1idG4ge1xyXG4gICAgd2lkdGg6IDI4cHg7XHJcbiAgICBoZWlnaHQ6IDI4cHg7XHJcbiAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoI2ZmZiwgI2Y5ZjlmOSk7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjYzJjMmMyO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgcGFkZGluZy10b3A6IDFweDtcclxuICAgIGxpbmUtaGVpZ2h0OiAxO1xyXG59XHJcbi5xdHktaW5wdXQtY29udGFpbmVyIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHBhZGRpbmc6IDFweCA2cHg7XHJcbiAgICB3aWR0aDogY2FsYygxMDAlIC0gNjBweCk7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICB3aWR0aDogNDZweDtcclxuICAgIGhlaWdodDogMjhweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDJweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjYzJjMmMyO1xyXG4gICAgbWFyZ2luOiAwIDVweDtcclxufVxyXG4ucXR5LWlucHV0IHtcclxuICAgIGJvcmRlcjogbm9uZTtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuLnF0eS1pbnB1dDpmb2N1cyB7XHJcbiAgICBvdXRsaW5lOiBub25lO1xyXG59XHJcbi5wLWRldGFpbCB7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcbiAgICBwYWRkaW5nOiAxM3B4IDI0cHg7XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgY29sb3I6ICM4Nzg3ODc7XHJcbiAgICBtaW4taGVpZ2h0OiA0N3B4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogMnB4IDJweCAwIDA7XHJcbn1cclxuLnByaWNlLWRldGFscyB7XHJcbiAgICBwYWRkaW5nOiAxNXB4O1xyXG59XHJcblxyXG4uZnJlZSB7XHJcbiAgICBjb2xvcjogIzM4OGUzYztcclxuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XHJcbn1cclxuLnAtMTAtMHtcclxuICAgIHBhZGRpbmc6IDEwcHggMHB4O1xyXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/dashboard/home/header/cart/cart.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/dashboard/home/header/cart/cart.component.ts ***!
+  \**************************************************************/
+/*! exports provided: CartComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartComponent", function() { return CartComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var CartComponent = /** @class */ (function () {
+    function CartComponent() {
+    }
+    CartComponent.prototype.ngOnInit = function () {
+    };
+    CartComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-cart',
+            template: __webpack_require__(/*! ./cart.component.html */ "./src/app/dashboard/home/header/cart/cart.component.html"),
+            styles: [__webpack_require__(/*! ./cart.component.scss */ "./src/app/dashboard/home/header/cart/cart.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], CartComponent);
+    return CartComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/dashboard/home/header/header.component.html":
 /*!*************************************************************!*\
   !*** ./src/app/dashboard/home/header/header.component.html ***!
@@ -547,7 +621,7 @@ var FooterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo03\" aria-controls=\"navbarTogglerDemo03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <!-- <a class=\"navbar-brand\" href=\"#\">Navbar</a> -->\n  <img src=\"../../../../assets/tulip-logo.svg\" class=\"logo-img\" alt=\"\"\n   onclick=\"window.location.href = '/';\" >\n  <!-- <img src=\"../../../../assets/tulip-logo.svg\" class=\"logo-img\" alt=\"\" onclick=\"window.location.href = '/';\" > -->\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo03\">\n    <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n      <!-- <li class=\"nav-item active\">\n        <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" href=\"#\">Link</a>\n      </li> -->\n      <!-- <li class=\"nav-item\">\n        <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\n      </li> -->\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <!-- <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n      <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button> -->\n    </form>\n    <button class=\"btn btn-warning my-2 my-sm-0\" (click)=\"logmeIn()\">Login</button>\n\n  </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarTogglerDemo03\"\n    aria-controls=\"navbarTogglerDemo03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <!-- <a class=\"navbar-brand\" href=\"#\">Navbar</a> -->\n  <img src=\"../../../../assets/tulip-logo.svg\" class=\"logo-img\" alt=\"\" onclick=\"window.location.href = '/';\">\n  <!-- <img src=\"../../../../assets/tulip-logo.svg\" class=\"logo-img\" alt=\"\" onclick=\"window.location.href = '/';\" > -->\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarTogglerDemo03\">\n    <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n      <!-- <li class=\"nav-item active\">\n        <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" href=\"#\">Link</a>\n      </li> -->\n      <!-- <li class=\"nav-item\">\n        <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\n      </li> -->\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n\n      <!-- <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n      <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button> -->\n    </form>\n    <!-- <p class=\"m-0 \">\n      <span class=\"material-icons\">\n        shopping_cart\n        </span>\n        Cart\n      </p> -->\n    <button class=\"btn btn-warning my-2 my-sm-0\" (click)=\"logmeIn()\">Login</button>\n\n    <a routerLink=\"/viewcart\">\n    \n      <p class=\"top-menu-item\">\n        <mat-icon matBadge=\"15\" matBadgeColor=\"warn\">shopping_cart</mat-icon>\n        Cart\n        <!-- Include text description of the icon's meaning for screen-readers -->\n        <span class=\"cdk-visually-hidden\">\n          Cart </span>\n      </p>\n  \n    \n    </a>\n    \n\n    <button mat-button [matMenuTriggerFor]=\"menu\"  class=\"top-menu-item\">More \n      <span class=\"material-icons\">\n        arrow_drop_down\n        </span>\n    </button>\n    <mat-menu #menu=\"matMenu\">\n      <button mat-menu-item>Item 1</button>\n      <button mat-menu-item>Item 2</button>\n    </mat-menu>\n\n\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -558,7 +632,7 @@ module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".main-logo {\n  width: 5%; }\n\n.logo-img {\n  width: 5%;\n  cursor: pointer; }\n\n.mat-dialog-container {\n  padding: 0px !important;\n  overflow-x: hidden !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL2hvbWUvaGVhZGVyL0Q6XFxTYW50b3NoXFxnaXRodWIgd2ViXFxUdWxpcFxcdHVsaXAtcHJlbWl1bS9zcmNcXGFwcFxcZGFzaGJvYXJkXFxob21lXFxoZWFkZXJcXGhlYWRlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFNBQVMsRUFBQTs7QUFFYjtFQUNJLFNBQVM7RUFDVCxlQUFlLEVBQUE7O0FBRW5CO0VBQ0ksdUJBQXVCO0VBQ3ZCLDZCQUE2QixFQUFBIiwiZmlsZSI6InNyYy9hcHAvZGFzaGJvYXJkL2hvbWUvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYWluLWxvZ297XHJcbiAgICB3aWR0aDogNSU7XHJcbn1cclxuLmxvZ28taW1ne1xyXG4gICAgd2lkdGg6IDUlO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcbi5tYXQtZGlhbG9nLWNvbnRhaW5lciB7XHJcbiAgICBwYWRkaW5nOiAwcHggIWltcG9ydGFudDtcclxuICAgIG92ZXJmbG93LXg6IGhpZGRlbiAhaW1wb3J0YW50O30iXX0= */"
+module.exports = ".main-logo {\n  width: 5%; }\n\n.logo-img {\n  width: 5%;\n  cursor: pointer; }\n\n.mat-dialog-container {\n  padding: 0px !important;\n  overflow-x: hidden !important; }\n\n.top-menu-item {\n  color: #ffc107;\n  padding: 0px 20px;\n  margin: 0; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL2hvbWUvaGVhZGVyL0Q6XFxTYW50b3NoXFxnaXRodWIgd2ViXFxUdWxpcFxcdHVsaXAtcHJlbWl1bS9zcmNcXGFwcFxcZGFzaGJvYXJkXFxob21lXFxoZWFkZXJcXGhlYWRlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFNBQVMsRUFBQTs7QUFFYjtFQUNJLFNBQVM7RUFDVCxlQUFlLEVBQUE7O0FBRW5CO0VBQ0ksdUJBQXVCO0VBQ3ZCLDZCQUE2QixFQUFBOztBQUVqQztFQUNJLGNBQWM7RUFDZCxpQkFBaUI7RUFDakIsU0FBUyxFQUFBIiwiZmlsZSI6InNyYy9hcHAvZGFzaGJvYXJkL2hvbWUvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYWluLWxvZ28ge1xyXG4gICAgd2lkdGg6IDUlO1xyXG59XHJcbi5sb2dvLWltZyB7XHJcbiAgICB3aWR0aDogNSU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn1cclxuLm1hdC1kaWFsb2ctY29udGFpbmVyIHtcclxuICAgIHBhZGRpbmc6IDBweCAhaW1wb3J0YW50O1xyXG4gICAgb3ZlcmZsb3cteDogaGlkZGVuICFpbXBvcnRhbnQ7XHJcbn1cclxuLnRvcC1tZW51LWl0ZW17XHJcbiAgICBjb2xvcjogI2ZmYzEwNztcclxuICAgIHBhZGRpbmc6IDBweCAyMHB4O1xyXG4gICAgbWFyZ2luOiAwO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -626,7 +700,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n<app-all-products></app-all-products>\n<app-footer></app-footer>"
+module.exports = "<app-all-products></app-all-products>\n"
 
 /***/ }),
 

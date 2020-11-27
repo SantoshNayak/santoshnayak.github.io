@@ -1,37 +1,380 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>BotbAdmin</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-  
-  />
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
-  
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+      Santosh Kumar Nayak
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Personal portfolio website of Santosh Kumar Nayak"
+    />
+    <meta
+      name="keywords"
+      content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive"
+    />
+    <meta name="author" content="Santosh Kumar Nayak" />
 
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-  <script>
-    var global = global || window;
-    var Buffer = Buffer || [];
-    var process = process || {
-      env: { DEBUG: undefined },
-      version: []
-    };
-  </script>
-  
-</head>
-<body class="mat-typography">
-  <app-root></app-root>
-<script src="runtime.js" defer></script><script src="polyfills.js" defer></script><script src="styles.js" defer></script><script src="vendor.js" defer></script><script src="main.js" defer></script></body>
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <!-- <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'> -->
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css" />
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="background-image: url(images/bg_img.jpg);">
+    <div id="fh5co-main">
+      <div class="fh5co-tab-wrap">
+        <ul class="fh5co-tab-menu">
+          <li class="active">
+            <a href="#" data-tab="1"
+              ><span class="icon icon-user"></span
+              ><span class="menu-text">Profile</span></a
+            >
+		  </li>
+		  <li>
+            <a href="#" data-tab="3"
+              ><span class="icon icon-suitcase"></span
+              ><span class="menu-text">Experience</span></a
+            >
+		  </li>
+		  <li>
+            <a href="#" data-tab="4" data-pie="yes"
+              ><span class="icon icon-cogs"></span
+              ><span class="menu-text">Skills</span></a
+            >
+		  </li>
+		  <li>
+            <a href="#" data-tab="4" data-pie="yes"
+              ><span class="icon icon-tasks"></span
+              ><span class="menu-text">Projects</span></a
+            >
+          </li>
+          <li>
+            <a href="#" data-tab="2"
+              ><span class="icon icon-graduation-cap"></span
+              ><span class="menu-text">Education</span></a
+            >
+          </li>
+          <li>
+            <a href="#" data-tab="6" data-pie="yes"
+              ><span class="icon icon-certificate"></span
+              ><span class="menu-text">Certification</span></a
+            >
+          </li>
+          <li>
+            <a href="#" data-tab="5" data-pie="yes"
+              ><span class="icon icon-medium"></span
+              ><span class="menu-text">Stories</span></a
+            >
+          </li>
+        </ul>
+        <div class="fh5co-tab-content active" data-content="1">
+          <div class="fh5co-content-inner text-center">
+            <div class="row row-bottom-padded-sm">
+              <div class="col-md-12">
+                <figure>
+                  <img
+					src="images/ProfilePic.jpeg"
+                    alt="Free HTML5 Wesbite Template by FreeHTML5.co"
+                  />
+                </figure>
+				<h1>Santosh Kumar Nayak</h1>
+				
+                <p> A Physics Hons student who found passion in Computer Science</p>
+				<p class="text-left">
+          Dev with 2 years experience participating in complete web developement with HTML,CSS,JS,BOOTSTRAP and frameworks like Angular, CMS Like Wordpress,Umbraco
+          Have Hands on experience on mobile app dev with Ionic,flutter and also on Native android.
+
+        </p>
+				<div class="row">
+					<div class="contact-header col-md-4">Phone</div>
+					<div class="contact-header col-md-4">Email</div>
+					<div class="contact-header col-md-4">Website</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">+91 7894794762</div>
+					<div class="col-md-4">santoshnayak1996@gmail.com</div>
+					<div class="col-md-4">santoshnayak.github.io</div>
+				</div>
+				
+              </div>
+            </div>
+            <ul class="fh5co-social">
+              <li>
+                <a href="#"><i class="icon-envelope"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-google"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-linkedin"></i></a>
+              </li>
+			</ul>
+			<div>
+				<div>
+          <a href="#"><img
+            src="images/Download.png"
+                      alt="Free HTML5 Wesbite Template by FreeHTML5.co"
+                    /></a>
+				</div>
+			</div>
+          </div>
+        </div>
+        <div class="fh5co-tab-content" data-content="2">
+          <div class="fh5co-content-inner">
+            <div class="row">
+              <div class="col-md-12">
+
+                <div class="fh5co-feature">
+                  <div class="fh5co-icon">
+                    <i class="icon-graduation-cap"></i>
+                  </div>
+                  <div class="fh5co-text">
+					<h2>Utkal University, Vani vihar, Bhubaneswar</h2>
+                    <h2>2016-2019</h2>
+                    <p>
+                     Master of computer applications
+                    </p>
+                  </div>
+                </div>
+
+                <div class="fh5co-feature">
+                  <div class="fh5co-icon">
+                    <i class="icon-graduation-cap"></i>
+                  </div>
+                  <div class="fh5co-text">
+					<h2>Marshaghai College, Marshaghai</h2>
+                    <h2>2013-2016</h2>
+                    <p>
+                      Physic(Hons)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fh5co-tab-content" data-content="3">
+          <div class="fh5co-content-inner">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="fh5co-feature">
+                  <div class="fh5co-icon">
+                    <i class="icon-black-tie"></i>
+                  </div>
+                  <div class="fh5co-text">
+					<h3>Software Engineer</h3>
+					<h3>Kare4U Healthcare Solutions Pvt. Ltd.</h3>
+                    <h4>DEC 2019 - Present</h4>
+                    <p>
+                      Core activities include designing and developing the
+                      server side structure by working closely with the lead
+                      engineer and architect to create performant and scalable
+					  applications.
+					  <ul>
+						  <li>Spearheaded backend development and maintenance of 4+ projects by introducing best practices that enhanced product definition, release processes and customisation of applications to user needs.</li>
+						  <li>Proposed to use NestJS, an enterprise level node.js framework based on TypeScript which resulted in fast and efficient development as well as scalable architecture.</li>
+						  <li>Proposed to use NestJS, an enterprise level node.js framework based on TypeScript which resulted in fast and efficient development as well as scalable architecture.</li>
+						  <li>Excelled in rapid application development and management of technological issues for assigned projects, earning the higher management’s recognition multiple times.</li>
+						  <li>Acknowledged for excellent troubleshooting skills-able to analyse code and engineer well researched, cost effective, responsive solutions.</li>
+						  <li>Experienced in developing applications against SQL based databases such as MySQL and PostgreSQL as well as NoSQL databases like MongoDB.</li>
+						  <li>Developed and deployed an e-commerce based application in Google App Engine within a limited time period to meet the required timeline.</li>
+					  </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fh5co-tab-content" data-content="4">
+          <div class="fh5co-content-inner">
+            <div class="row">
+              <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="chart" data-percent="95">
+                  <span><strong>Node.js</strong>95%</span>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="chart" data-percent="93">
+                  <span><strong>NestJS</strong>90%</span>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="chart" data-percent="90">
+                  <span><strong>AWS</strong>90%</span>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="chart" data-percent="89">
+                  <span><strong>Express</strong>89%</span>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="chart" data-percent="85">
+                  <span><strong>MySQL</strong>85%</span>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="chart" data-percent="85">
+                  <span><strong>PostgreSQL</strong>85%</span>
+                </div>
+			  </div>
+			  <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="chart" data-percent="55">
+                  <span><strong>Redis</strong>55%</span>
+                </div>
+              </div>
+			  <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="chart" data-percent="85">
+                  <span><strong>RabbitMQ</strong>85%</span>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="chart" data-percent="85">
+                  <span><strong>GO</strong>85%</span>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+                <div class="chart" data-percent="90">
+                  <span><strong>Serverless</strong>90%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+		</div>
+		<div class="fh5co-tab-content" data-content="5">
+			<div class="fh5co-content-inner">
+			  <div class="row">
+				<div class="col-md-12">
+				  <div class="fh5co-feature">
+					<div class="col-md-3 story-card">
+						<div class="story-card-container">
+						  <h4><b>Node.js is neither a framework nor a programming language</b></h4> 
+						  <p>The enigma behind node.js internal with V8</p> 
+						</div>
+					</div>
+					<div class="col-md-3 story-card">
+						<div class="story-card-container">
+						  <h4><b>Node.js: You know the king, let’s recognise the kingmakers</b></h4> 
+						  <p>The enigma behind node.js internal with V8 and libuv</p> 
+						</div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
+		  <div class="fh5co-tab-content" data-content="6">
+			<div class="fh5co-content-inner">
+				<div class="row">
+				  <div class="col-md-12">
+	
+					<div class="fh5co-feature">
+					  <div class="fh5co-icon">
+						<i class="icon-graduation-cap"></i>
+					  </div>
+					  <!-- <div class="fh5co-text">
+						<h2>AWS Certified Cloud Practitioner</h2>
+						<h2>2014-2018</h2>
+						<p>
+						  Far far away, behind the word mountains, far from the
+						  countries.
+						</p>
+					  </div> -->
+					</div>
+	
+					<div class="fh5co-feature">
+					  <div class="fh5co-icon">
+						<i class="icon-graduation-cap"></i>
+					  </div>
+					  <!-- <div class="fh5co-text">
+						<h2>AWS Certified Associate Developer</h2>
+						<h2>2012-2014</h2>
+						<p>
+						  Far far away, behind the word mountains, far from the
+						  countries.
+						</p>
+					  </div> -->
+					</div>
+				  </div>
+				</div>
+			  </div>
+		  </div>
+      </div>
+      <footer id="fh5co-footer">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center">
+            <small>
+              &copy; 2020 All Rights Reserved.
+              <span class="fh5co-author">
+                Designed by
+                <a href="https://santoshnayak.github.io/" target="_blank">Santosh Nayak</a>
+                Demo Images:
+                <a href="http://unsplash.com/" target="_blank"
+                  >Unsplash</a
+                ></span
+              >
+            </small>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <!-- Easy PieChart -->
+    <script src="js/jquery.easypiechart.min.js"></script>
+    <!-- MAIN JS -->
+    <script src="js/main.js"></script>
+  </body>
 </html>

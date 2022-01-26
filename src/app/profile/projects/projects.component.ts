@@ -16,7 +16,9 @@ export class ProjectsComponent implements OnInit {
       livedemo: "https://santoshnayak.github.io/AI-Pushup-count/",
       githurl: "https://github.com/santoshnayak/AI-Pushup-count",
       mediumlink: "",
-      imgUrl: "assets/images/pushup.jpg",
+      videUrl: "assets/videos/PushUps.mp4",
+      imageUrl: "assets/images/pushup.jpg",
+      type: "video",
       tech: "HTML,CSS,JS, Tensorflow JS",
     },
 
@@ -29,8 +31,10 @@ export class ProjectsComponent implements OnInit {
       livedemo: "https://santoshnayak.github.io/TF-Bicep-curl-count/",
       githurl: "https://github.com/santoshnayak/TF-Bicep-curl-count",
       mediumlink: "",
-      imgUrl: "assets/images/bicep.jpg",
+      imageUrl: "assets/images/bicep.jpg",
+      videUrl: "assets/videos/curl.mp4",
       tech: "HTML,CSS,JS, Tensorflow JS",
+      type: "video",
     },
 
     {
@@ -40,8 +44,10 @@ export class ProjectsComponent implements OnInit {
       livedemo: "https://santoshnayak.github.io/Tensorflowjs-facedetection/",
       githurl: "https://github.com/santoshnayak/Tensorflowjs-facedetection",
       mediumlink: "",
-      imgUrl: "assets/images/face-detection.jpg",
+      imageUrl: "assets/images/face-detection.jpg",
       tech: "HTML,CSS,JS, Tensorflow JS,blazeface",
+      type: "image",
+      videUrl: "",
     },
 
     {
@@ -52,30 +58,38 @@ export class ProjectsComponent implements OnInit {
       livedemo: "https://www.npmjs.com/package/odia-month",
       githurl: "https://github.com/santoshnayak/Odia-Month",
       mediumlink: "",
-      imgUrl: "assets/images/odia-month.png",
+      imageUrl: "assets/images/odia-month.png",
       tech: "JavaScript",
+      type: "image",
+      videUrl: "",
     },
 
     {
       id: 5,
       title: "Cowin Slot Alert",
-      desc: "A system that will check for available vaccine slot on your city and will alert to book once it finds one",
+      desc:
+        "A system that will check for available vaccine slot on your city and will alert to book once it finds one",
       livedemo: "https://santoshnayak.github.io/Cowin-Slot-Alert/",
       githurl: "https://github.com/santoshnayak/Cowin-Slot-Alert",
       mediumlink: "",
-      imgUrl: "assets/images/cowin.png",
+      imageUrl: "assets/images/cowin.png",
       tech: "Angular 11",
+      type: "image",
+      videUrl: "",
     },
 
     {
       id: 6,
       title: "Text Toxicity Checker",
-      desc: "Give this script a text and it will analyse the text and will let you know the sense behind it",
+      desc:
+        "Give this script a text and it will analyse the text and will let you know the sense behind it",
       livedemo: "https://santoshnayak.github.io/Text-Toxicity-Checker/",
       githurl: "https://github.com/santoshnayak/Text-Toxicity-Checker",
       mediumlink: "",
-      imgUrl: "assets/images/text-toxicity.png",
+      imageUrl: "assets/images/text-toxicity.png",
       tech: "HTML,CSS,JS, Tensorflow JS,blazeface",
+      type: "image",
+      videUrl: "",
     },
 
     {
@@ -84,13 +98,12 @@ export class ProjectsComponent implements OnInit {
       desc: "A beautiful Analog clock based on Neomorphic design",
       livedemo: "https://santoshnayak.github.io/NeomorphicAnalogClock/",
       githurl: "https://github.com/santoshnayak/NeomorphicAnalogClock",
-      mediumlink:
-        "",
-      imgUrl: "assets/images/Neomorphic-clock.png",
+      mediumlink: "",
+      imageUrl: "assets/images/Neomorphic-clock.png",
       tech: "HTML, CSS, JavaScript",
+      type: "image",
+      videUrl: "",
     },
-
-
   ];
   constructor() {}
 

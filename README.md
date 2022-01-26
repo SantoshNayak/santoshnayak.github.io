@@ -1,4 +1,4 @@
-# PersonalPortfoliAngular
+# Santosh Nayak Portfolio
 
 ### Checkout the video explanation at [here](https://www.youtube.com/watch?v=MHzWXfjdE0w&feature=youtu.be)
 

@@ -14,10 +14,10 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.spinner.show();
-    setTimeout(() => {
-        this.spinner.hide();
-    }, 2000);
+    // this.spinner.show();
+    // setTimeout(() => {
+    //     this.spinner.hide();
+    // }, 2000);
   }
 
 }

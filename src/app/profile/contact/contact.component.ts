@@ -1,30 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../profile.service';
+import { Component, OnInit } from "@angular/core";
+import { ProfileService } from "../profile.service";
 // import { SnotifyService } from 'ng-snotify';
-import { environment } from '../../../environments/environment';
+import { environment } from "../../../environments/environment";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  selector: "app-contact",
+  templateUrl: "./contact.component.html",
+  styleUrls: ["./contact.component.scss"],
 })
 export class ContactComponent implements OnInit {
- 
   model: any = {};
+  constructor(private toastr: ToastrService) {}
 
-  constructor(){}
+  ngOnInit() {}
+  submit() { 
 
-  ngOnInit() {
-     }
+    this.toastr.error('Sorry about that! Please write me at santoshnayak.dev@gmail.com', 'Something went wrong');
 
+  }
 
   // snotifyConfig = environment.snotifyConfig;
   // model: any = {};
 
-  // constructor(
-  //   private profile: ProfileService,
-  //   private snotify: SnotifyService
-  // ) { }
+  
 
   // ngOnInit() {
   // }
@@ -40,5 +39,4 @@ export class ContactComponent implements OnInit {
   //     this.snotify.error('Something went wrong. Try again later.', 'Error', this.snotifyConfig);
   //   });
   // }
-
 }

@@ -17,13 +17,16 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { MyAppsComponent } from './my-apps/my-apps.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     NgxSpinnerModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    CarouselModule
   ],
   declarations: [
     ProfileComponent,
@@ -37,7 +40,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     EducationComponent,
     ReferenceComponent,
     ContactComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    MyAppsComponent
   ],
   providers: [
     // { provide: 'SnotifyToastConfig', useValue: ToastDefaults},

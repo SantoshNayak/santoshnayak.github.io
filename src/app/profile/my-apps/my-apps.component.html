@@ -1,0 +1,23 @@
+<h2 class="text-center app-title mb-1">
+    🚀 My Passion Project Apps Loved by 500K+ Users Worldwide
+</h2>
+<p class="text-center font-italic mt-2 mb-4">Crafted with passion, downloaded by thousands, making an impact every day.</p>
+<owl-carousel-o [options]="customOptions" autoplay="true">
+  <ng-template carouselSlide *ngFor="let eachApp of appslist; let i = index">
+    <a [href]="eachApp.appLink" target="_blank">
+      <div class="card app-card">
+        <img [src]="eachApp.imgUrl" class="app-img" [alt]="eachApp.name" />
+        <h4 class="app-name mt-3 mb-2">{{ eachApp.name }}</h4>
+        <p>{{ eachApp.usersCount }} Downloads</p>
+      </div>
+    </a>
+  </ng-template>
+</owl-carousel-o>
+<div class="text-center">
+  <a
+    target="_blank"
+    href="https://play.google.com/store/apps/dev?id=5854645641287632918&hl=en"
+  >
+    <button class="btn btn-primary">Explore all apps</button>
+  </a>
+</div>

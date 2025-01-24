@@ -16,6 +16,9 @@ MIT
 @angular/router
 MIT
 
+ngx-owl-carousel-o
+MIT
+
 ngx-pagination
 MIT
 The MIT License (MIT)

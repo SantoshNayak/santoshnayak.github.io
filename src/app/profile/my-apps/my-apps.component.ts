@@ -40,42 +40,43 @@ export class MyAppsComponent {
       name: "Odia to Odia Dictionary",
       usersCount: "80k+",
       appLink:'https://play.google.com/store/apps/details?id=com.odiadictionary.odiatoodiadictionary',
+
     },
     {
       imgUrl: "/assets/images/apps/kolbus.webp",
       name: "Kolkata Bus Route",
       usersCount: "5k+",
-      appLink:'https://play.google.com/store/apps/details?id=com.kolkata.bus.route',
+      appLink:'https://play.google.com/store/apps/details?id=com.kolkatabusroute&hl=en',
     },
     {
       imgUrl: "/assets/images/apps/odiawordbook.webp",
       name: "Odia WordBook",
       usersCount: "10k+",
-      appLink:'https://play.google.com/store/apps/details?id=com.odia.wordbook',
+      appLink:'https://play.google.com/store/apps/details?id=com.odiawordbook.spokenenglishinodia',
     },
     {
       imgUrl: "/assets/images/apps/odiaessay.webp",
       name: "Odia Essay",
       usersCount: "5k+",
-      appLink:'https://play.google.com/store/apps/details?id=com.odia.essay',
+      appLink:'https://play.google.com/store/apps/details?id=com.odialanguage.odiaessay',
     },
     {
       imgUrl: "/assets/images/apps/kanndict.webp",
       name: "Kannada to Kannada dictionary",
       usersCount: "10k+",
-      appLink:'https://play.google.com/store/apps/details?id=com.kannada.kannada_dictionary',
+      appLink:'https://play.google.com/store/apps/details?id=com.Kannadadictionary.KannadatoKannadaDictionary',
     },
     {
       imgUrl: "/assets/images/apps/motonews.webp",
       name: "Moto News",
       usersCount: "2k+",
-      appLink:'https://play.google.com/store/apps/details?id=com.moto.news',
+      appLink:'https://play.google.com/store/apps/details?id=com.carnews.moto.news',
     },
     {
       imgUrl: "/assets/images/apps/epos.webp",
       name: "Epos",
       usersCount: "500+",
-      appLink:'https://play.google.com/store/apps/details?id=com.epos',
+      appLink:'https://play.google.com/store/apps/details?id=com.freeinvoice.storeease',
     },
   ];
 }

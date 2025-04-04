@@ -9,6 +9,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
 import { CarouselModule } from 'ngx-owl-carousel-o';
+// import { SeminarTalksComponent } from './seminar-talks/seminar-talks.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,10 @@ const config: ExtraOptions = {
 };
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -19,6 +19,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MyAppsComponent } from './my-apps/my-apps.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SeminarTalksComponent } from './seminar-talks/seminar-talks.component';
+// import { SeminarTalksComponent } from './seminar-talks/seminar-talks.component';
 
 @NgModule({
   imports: [
@@ -41,7 +43,10 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     ReferenceComponent,
     ContactComponent,
     ProjectsComponent,
-    MyAppsComponent
+    MyAppsComponent,
+    SeminarTalksComponent,
+
+    
   ],
   providers: [
     // { provide: 'SnotifyToastConfig', useValue: ToastDefaults},

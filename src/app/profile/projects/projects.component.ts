@@ -92,18 +92,6 @@ export class ProjectsComponent implements OnInit {
       videUrl: "",
     },
 
-    {
-      id: 7,
-      title: "Neomorphic Analog Clock",
-      desc: "A beautiful Analog clock based on Neomorphic design",
-      livedemo: "https://santoshnayak.github.io/NeomorphicAnalogClock/",
-      githurl: "https://github.com/santoshnayak/NeomorphicAnalogClock",
-      mediumlink: "",
-      imageUrl: "assets/images/Neomorphic-clock.png",
-      tech: "HTML, CSS, JavaScript",
-      type: "image",
-      videUrl: "",
-    },
   ];
   constructor() {}
 

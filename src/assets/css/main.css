@@ -3424,7 +3424,8 @@ img {
   }
   .sidebar-collapse .navbar .navbar-nav {
     margin-top: 53px;
-  }
+        background: linear-gradient(#378C3F 0%, #000 80%);
+    }
   .sidebar-collapse .navbar .navbar-nav .nav-link {
     padding-top: 0.75rem;
     padding-bottom: .75rem;
@@ -5006,7 +5007,7 @@ img {
 }
 
 .cc-contact-information .cc-contact {
-  padding: 8% 0 8% 20%;
+  /* padding: 8% 0 8% 20%; */
 }
 
 @media (max-width: 767px) {

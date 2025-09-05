@@ -5006,7 +5006,7 @@ img {
 }
 
 .cc-contact-information .cc-contact {
-  padding: 8% 0 8% 20%;
+  /* padding: 8% 0 8% 20%; */
 }
 
 @media (max-width: 767px) {

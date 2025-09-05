@@ -45,7 +45,7 @@ export class MyAppsComponent {
     {
       imgUrl: "/assets/images/apps/kolbus.webp",
       name: "Kolkata Bus Route",
-      usersCount: "5k+",
+      usersCount: "10k+",
       appLink:'https://play.google.com/store/apps/details?id=com.kolkatabusroute&hl=en',
     },
     {
@@ -57,7 +57,7 @@ export class MyAppsComponent {
     {
       imgUrl: "/assets/images/apps/odiaessay.webp",
       name: "Odia Essay",
-      usersCount: "5k+",
+      usersCount: "10k+",
       appLink:'https://play.google.com/store/apps/details?id=com.odialanguage.odiaessay',
     },
     {
@@ -78,5 +78,6 @@ export class MyAppsComponent {
       usersCount: "500+",
       appLink:'https://play.google.com/store/apps/details?id=com.freeinvoice.storeease',
     },
+
   ];
 }

@@ -2,6 +2,219 @@
 @import 'ngx-toastr/toastr';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+// Dark Neon Theme Variables
+:root {
+  --primary-neon: #00ff88;
+  --secondary-neon: #00ffff;
+  --accent-neon: #ff0040;
+  --dark-bg: #0f0f23;
+  --darker-bg: #1a1a2e;
+  --darkest-bg: #16213e;
+  --card-bg: rgba(0, 0, 0, 0.7);
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #888888;
+  --neon-glow: 0 0 20px rgba(0, 255, 136, 0.3);
+  --neon-gradient: linear-gradient(45deg, var(--primary-neon), var(--secondary-neon));
+}
+
+// Global Dark Theme Override
+body {
+  background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg), var(--darkest-bg)) !important;
+  color: var(--text-primary) !important;
+  min-height: 100vh;
+  /* Removed background animation for better scrolling performance */
+}
+
+// Override main background
+.main {
+  background: transparent !important;
+}
+
+// Global subtle animations
+* {
+  transition: all 0.3s ease;
+}
+
+// Enhanced buttons with neon theme
+.btn-primary {
+  background: var(--neon-gradient) !important;
+  border: none !important;
+  color: #000 !important;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--neon-glow) !important;
+  color: #000 !important;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+// Cards with dark theme
+.card {
+  background: var(--card-bg) !important;
+  border: 1px solid rgba(0, 255, 136, 0.2) !important;
+  color: var(--text-primary) !important;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--primary-neon) !important;
+  box-shadow: var(--neon-glow);
+  transform: translateY(-2px);
+}
+
+// Text color overrides
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary) !important;
+}
+
+p, span, div {
+  color: var(--text-secondary) !important;
+}
+
+// Navigation enhancements
+.navbar {
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.navbar-nav .nav-link {
+  color: var(--text-primary) !important;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-neon) !important;
+  text-shadow: 0 0 10px var(--primary-neon);
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--neon-gradient);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+// Section backgrounds
+.section {
+  background: transparent !important;
+  position: relative;
+}
+
+// Add subtle floating animations - DISABLED FOR BETTER SCROLLING
+/*
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.card, .btn, .nav-link {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.card { animation-delay: 0s; }
+.btn { animation-delay: 1s; }
+.nav-link { animation-delay: 2s; }
+*/
+
+// Only apply hover animations instead
+.card:hover, .btn:hover {
+  transform: translateY(-2px);
+}
+
+// Glitch effect utility class - Fixed and subtle
+.glitch-text {
+  position: relative;
+  color: var(--primary-neon);
+  font-weight: bold;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.glitch-text::before {
+  color: var(--accent-neon);
+  animation: glitch-1 2s infinite;
+}
+
+.glitch-text::after {
+  color: var(--secondary-neon);
+  animation: glitch-2 2s infinite;
+}
+
+@keyframes glitch-1 {
+  0%, 90%, 100% { transform: translate(0); }
+  5% { transform: translate(-1px, 0); }
+  10% { transform: translate(1px, 0); }
+  15% { transform: translate(0, -1px); }
+  20% { transform: translate(-1px, 1px); }
+}
+
+@keyframes glitch-2 {
+  0%, 90%, 100% { transform: translate(0); }
+  5% { transform: translate(1px, 0); }
+  10% { transform: translate(-1px, 0); }
+  15% { transform: translate(0, 1px); }
+  20% { transform: translate(1px, -1px); }
+}
+
+// Neon border utility
+.neon-border {
+  border: 1px solid var(--primary-neon) !important;
+  box-shadow: var(--neon-glow);
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .glitch-text {
+    font-size: 1.5rem;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
 .ngx-pagination {
     margin: 0 auto;
     text-align: center;
@@ -11,4 +224,20 @@
     display: inline-block;
     font-size: 19px;
     font-weight: bold;
+}
+
+// Pagination with neon theme
+.ngx-pagination a {
+  color: var(--text-primary) !important;
+  background: var(--card-bg) !important;
+  border: 1px solid rgba(0, 255, 136, 0.2) !important;
+  transition: all 0.3s ease;
+}
+
+.ngx-pagination a:hover,
+.ngx-pagination .current {
+  background: var(--neon-gradient) !important;
+  color: #000 !important;
+  border-color: var(--primary-neon) !important;
+  box-shadow: var(--neon-glow);
 }

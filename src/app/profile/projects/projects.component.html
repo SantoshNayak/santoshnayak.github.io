@@ -1,6 +1,6 @@
 <div class="section" id="projects">
   <div class="container cc-education">
-    <div class="h4 text-center mb-4 title">Projects</div>
+    <div class="h4 text-center mb-4 title glitch-text" data-text="PROJECTS">PROJECTS</div>
 
     <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
     <div class="row">
@@ -11,11 +11,16 @@
             <div class="card">
               <!-- <video [src]="project.url" *ngIf="project.type == 'video'"></video> -->
 
+              <!-- Video playing part commented out temporarily, showing only thumbnails
               <video height="auto" controls="controls" preload="none" [poster]="project.imageUrl"
                 *ngIf="project.type == 'video'" style="width:100%">
                 <source type="video/mp4" [src]="project.videUrl">
               </video>
+              -->
 
+              <!-- Show thumbnail image for video projects without video playback -->
+              <img class="card-img-top" *ngIf="project.type == 'video'" src={{project.imageUrl}}
+                onerror="this.src = 'assets/images/gif.gif'" alt="Video thumbnail" style="width:100%">
 
               <img class="card-img-top" *ngIf="project.type == 'image'" src={{project.imageUrl}}
                 onerror="this.src = 'assets/images/gif.gif'" alt="Card image" style="width:100%">

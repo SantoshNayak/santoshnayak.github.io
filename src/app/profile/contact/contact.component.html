@@ -1,90 +1,202 @@
 <div class="section" id="contact">
-        <div class="cc-contact-information" style="background-image: url('assets/images/contact.jpg');">
-          <div class="container">
-            <div class="cc-contact">
+  <div class="cc-contact-information" style="background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); padding: 60px 0;">
+    <div class="container">
+      <div class="cc-contact">
+        <div class="row justify-content-center">
+          <div class="">
+            <div class="contact-card" data-aos="zoom-in">
+              <!-- Fixed Header -->
+              <div class="text-center mb-4">
+                <h2 class="contact-title">CONTACT PROTOCOL</h2>
+                <div class="neon-divider"></div>
+                <p class="contact-subtitle">Let's build something extraordinary together</p>
+              </div>
+
+              <!-- Contact Methods Grid -->
               <div class="row">
-                <div class="col-md-9">
-                  <div class="card mb-0" data-aos="zoom-in">
-                    <div class="h4 text-center title">Contact Me</div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="card-body">
-                          <form name="form" (ngSubmit)="f.form.valid ; f.resetForm(); submit()" #f="ngForm" novalidate>
-                            <div class="p pb-3">
-                              <strong>Feel free to contact me </strong>
-                            </div>
-                            <div class="row mb-3">
-                              <div class="col">
-                                <div class="input-group">
-                                  <span class="input-group-addon">
-                                    <i class="fa fa-user-circle"></i>
-                                  </span>
-                                  <input class="form-control" type="text" name="name" placeholder="Name"
-                                    [(ngModel)]="model.name" #name="ngModel"
-                                    [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row mb-3">
-                              <div class="col">
-                                <div class="input-group">
-                                  <span class="input-group-addon">
-                                    <i class="fa fa-file-text"></i>
-                                  </span>
-                                  <input class="form-control" type="text" name="subject" placeholder="Subject"
-                                    [(ngModel)]="model.subject" #subject="ngModel"
-                                    [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }" required />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row mb-3">
-                              <div class="col">
-                                <div class="input-group">
-                                  <span class="input-group-addon">
-                                    <i class="fa fa-envelope"></i>
-                                  </span>
-                                  <input class="form-control" type="text" name="email" placeholder="E-mail"
-                                    [(ngModel)]="model.email" #email="ngModel"
-                                    [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
-                                    pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row mb-3">
-                              <div class="col">
-                                <div class="form-group">
-                                  <textarea class="form-control" name="message" placeholder="Your Message"
-                                    [(ngModel)]="model.message" #message="ngModel"
-                                    [ngClass]="{ 'is-invalid': f.submitted && message.invalid }" required></textarea>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col">
-                                <button class="btn btn-primary" type="submit">Send</button>
-                              </div>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                      <!-- <div class="col-md-6">
-                        <div class="card-body">
-                          <p class="mb-0">
-                            <strong>Phone</strong>
-                          </p>
-                          <p class="pb-2">+91 7894794672</p>
-                          <p class="mb-0">
-                            <strong>Email</strong>
-                          </p>
-                          <p>santoshnayak1996@gmail.com</p>
-                        </div>
-                      </div> -->
+                <!-- Email -->
+                <div class="col-md-6 mb-3">
+                  <a href="mailto:santoshnayak1996@gmail.com" class="contact-method">
+                    <div class="contact-icon">
+                      <i class="fa fa-envelope"></i>
                     </div>
-                  </div>
+                    <div class="contact-text">
+                      <h6>Email</h6>
+                      <small>Direct Communication</small>
+                    </div>
+                  </a>
                 </div>
+
+                <!-- LinkedIn -->
+                <div class="col-md-6 mb-3">
+                  <a href="https://www.linkedin.com/in/iamsantoshnayak/" target="_blank" class="contact-method">
+                    <div class="contact-icon">
+                      <i class="fa fa-linkedin"></i>
+                    </div>
+                    <div class="contact-text">
+                      <h6>LinkedIn</h6>
+                      <small>Professional Network</small>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- GitHub -->
+                <div class="col-md-6 mb-3">
+                  <a href="https://github.com/santoshnayak" target="_blank" class="contact-method">
+                    <div class="contact-icon">
+                      <i class="fa fa-github"></i>
+                    </div>
+                    <div class="contact-text">
+                      <h6>GitHub</h6>
+                      <small>Code Repository</small>
+                    </div>
+                  </a>
+                </div>
+
+                <!-- Schedule -->
+                <div class="col-md-6 mb-3">
+                  <a href="#" class="contact-method" onclick="alert('Calendar booking coming soon!')">
+                    <div class="contact-icon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                    <div class="contact-text">
+                      <h6>Schedule</h6>
+                      <small>Book Meeting</small>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Status -->
+              <div class="status-bar">
+                <div class="status-dot"></div>
+                <span>AVAILABLE FOR OPPORTUNITIES</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.contact-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ff88;
+  border-radius: 15px;
+  padding: 40px 30px;
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.2);
+  backdrop-filter: blur(10px);
+  max-width: 100%;
+}
+
+.contact-title {
+  color: #00ff88;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.contact-subtitle {
+  color: #ffffff;
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.neon-divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(45deg, #00ff88, #00ffff);
+  margin: 15px auto;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  height: 100%;
+  width: 100%;
+}
+
+.contact-method:hover {
+  border-color: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  color: #00ff88;
+  min-width: 40px;
+  text-align: center;
+}
+
+.contact-text h6 {
+  color: #ffffff !important;
+  margin-bottom: 2px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.contact-text small {
+  color: #cccccc !important;
+  font-size: 0.85rem;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 255, 136, 0.2);
+  color: #00ff88;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 30px 20px;
+  }
+  
+  .contact-title {
+    font-size: 1.4rem;
+  }
+  
+  .contact-method {
+    padding: 15px;
+  }
+}
+</style>
       <!-- <ng-snotify class="material"></ng-snotify> -->

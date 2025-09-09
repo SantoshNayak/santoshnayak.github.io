@@ -1,0 +1,120 @@
+.cc-certifications {
+  .card {
+    border: 1px solid #e9ecef;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    height: 100%; // Ensure equal height cards
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border-color: #007bff;
+    }
+  }
+
+  .certification-header {
+    border-bottom: 1px solid #f8f9fa;
+    padding-bottom: 1rem;
+  }
+
+  .cert-logo {
+    flex-shrink: 0;
+    img{
+            width: 50px;
+    margin-right: 1rem;
+    }
+    i {
+      background: linear-gradient(45deg, #007bff, #0056b3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  .cert-info {
+    .card-title {
+      color: #2c3e50;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+  }
+
+  .cert-details {
+    .cert-meta, .cert-credential {
+      font-size: 0.875rem;
+      
+      i {
+        color: #6c757d;
+      }
+    }
+  }
+
+  .badge-outline-primary {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: #007bff;
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: normal;
+  }
+
+  .btn-outline-primary {
+    border: 1px solid #007bff;
+    color: #007bff;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: #007bff;
+      color: white;
+      transform: translateY(-1px);
+    }
+  }
+
+  .title {
+    position: relative;
+    color: #2c3e50;
+    font-weight: 600;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(45deg, #007bff, #0056b3);
+      border-radius: 2px;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .cc-certifications {
+    .col-lg-4 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .certification-header {
+      flex-direction: column;
+      text-align: center;
+      
+      .cert-logo {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .cc-certifications {
+    // Ensure 3 cards per row on large screens
+    .col-lg-4 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+  }
+}

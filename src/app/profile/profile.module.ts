@@ -20,6 +20,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { MyAppsComponent } from './my-apps/my-apps.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SeminarTalksComponent } from './seminar-talks/seminar-talks.component';
+import { CertificationsComponent } from './certifications/certifications.component';
 // import { SeminarTalksComponent } from './seminar-talks/seminar-talks.component';
 
 @NgModule({
@@ -45,6 +46,7 @@ import { SeminarTalksComponent } from './seminar-talks/seminar-talks.component';
     ProjectsComponent,
     MyAppsComponent,
     SeminarTalksComponent,
+    CertificationsComponent,
 
     
   ],

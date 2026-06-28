@@ -1,103 +1,331 @@
-// .seminar-talks-section {
-//   padding: 4rem 0;
-//   background-color: #f8f9fa;
+// Modern Seminar Talks Section Styling
 
-//   .container {
-//     max-width: 1200px;
-//     margin: 0 auto;
-//     padding: 0 1rem;
-//   }
+.section {
+  padding: 4rem 2rem;
+  
+  #about {
+    h3 {
+      color: #00ff88;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+    }
 
-//   .section-title {
-//     text-align: center;
-//     margin-bottom: 3rem;
-//     color: #333;
-//     font-size: 2.5rem;
-//     font-weight: 600;
-//   }
+    .who-we-are {
+      color: #00ff88;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
 
-//   .talks-container {
-//     .talks-grid {
-//       display: grid;
-//       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-//       gap: 2rem;
-//     }
+    .fst-italic {
+      color: #cccccc;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
 
-//     .talk-card {
-//       background: white;
-//       border-radius: 12px;
-//       overflow: hidden;
-//       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-//       transition: transform 0.3s ease, box-shadow 0.3s ease;
+    ul {
+      list-style: none;
+      padding: 0;
 
-//       &:hover {
-//         transform: translateY(-5px);
-//         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-//       }
+      li {
+        margin-bottom: 1rem;
+        color: #cccccc;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        line-height: 1.6;
+        transition: all 0.3s ease;
 
-//       .talk-image {
-//         width: 100%;
-//         height: 200px;
-//         overflow: hidden;
+        i {
+          color: #00ff88;
+          flex-shrink: 0;
+          margin-top: 3px;
+          font-size: 1.2rem;
+        }
 
-//         img {
-//           width: 100%;
-//           height: 100%;
-//           object-fit: cover;
-//           transition: transform 0.3s ease;
+        &:hover {
+          color: #00ff88;
+          padding-left: 0.5rem;
+        }
+      }
+    }
+  }
+}
 
-//           &:hover {
-//             transform: scale(1.05);
-//           }
-//         }
-//       }
+// Odia GenAI Section Styling
+.odia-genai {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 255, 255, 0.02));
+  border-radius: 12px;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-//       .talk-content {
-//         padding: 1.5rem;
+  .genai-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 255, 255, 0.1));
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #00ff88;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
-//         .talk-title {
-//           font-size: 1.5rem;
-//           color: #2c3e50;
-//           margin-bottom: 0.5rem;
-//         }
+  .section-highlight {
+    background: linear-gradient(135deg, #00ff88, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+  }
 
-//         .talk-meta {
-//           display: flex;
-//           gap: 1rem;
-//           margin-bottom: 1rem;
-//           font-size: 0.9rem;
-//           color: #666;
+  .mission-statement {
+    color: #cccccc;
+    line-height: 1.9;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid #00ff88;
+    border-radius: 8px;
+  }
 
-//           .talk-date, .talk-venue {
-//             display: flex;
-//             align-items: center;
-//             gap: 0.5rem;
-//           }
-//         }
+  .highlights-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
 
-//         .talk-description {
-//           color: #555;
-//           line-height: 1.6;
-//           margin: 0;
-//         }
-//       }
-//     }
-//   }
-// }
+    li {
+      margin-bottom: 1rem;
+      color: #cccccc;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      line-height: 1.7;
+      transition: all 0.3s ease;
 
-// @media (max-width: 768px) {
-//   .seminar-talks-section {
-//     padding: 3rem 0;
+      i {
+        color: #00ff88;
+        flex-shrink: 0;
+        margin-top: 4px;
+        font-size: 1.2rem;
+      }
 
-//     .section-title {
-//       font-size: 2rem;
-//       margin-bottom: 2rem;
-//     }
+      span {
+        flex: 1;
+      }
 
-//     .talks-container {
-//       .talks-grid {
-//         grid-template-columns: 1fr;
-//       }
+      &:hover {
+        color: #00ff88;
+        padding-left: 0.5rem;
+      }
+    }
+  }
+
+  .vision-text {
+    color: #cccccc;
+    line-height: 1.8;
+    font-style: italic;
+    padding: 1.5rem;
+    background: rgba(0, 255, 136, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #00ffff;
+  }
+}
+
+// Media Gallery Styling
+.media-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+
+  .gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .main-video {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #000;
+      border: 2px solid rgba(0, 255, 136, 0.3);
+
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+
+      .play-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        i {
+          font-size: 4rem;
+          color: #00ff88;
+          filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.5));
+        }
+      }
+
+      &:hover .play-overlay {
+        opacity: 1;
+      }
+    }
+
+    .media-caption {
+      color: #888888;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .images-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      aspect-ratio: 16 / 10;
+      border: 2px solid rgba(0, 255, 136, 0.3);
+      background: #000;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .overlay-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
+        padding: 1.5rem;
+        display: flex;
+        align-items: flex-end;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        span {
+          color: #00ff88;
+          font-weight: 600;
+          font-size: 1rem;
+          text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+      }
+
+      &:hover {
+        transform: translateY(-8px);
+        border-color: #00ff88;
+        box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+
+        img {
+          transform: scale(1.05);
+        }
+
+        .overlay-text {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 992px) {
+  .odia-genai {
+    .row {
+      flex-direction: column-reverse;
+    }
+
+    .section-highlight {
+      font-size: 2rem;
+    }
+  }
+
+  .media-gallery {
+    .images-row {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+      aspect-ratio: 16 / 9;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .odia-genai {
+    .section-highlight {
+      font-size: 1.8rem;
+    }
+
+    .mission-statement,
+    .vision-text {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+
+    .highlights-list li {
+      font-size: 0.95rem;
+    }
+  }
+
+  .media-gallery {
+    .main-video .media-caption {
+      font-size: 0.85rem;
+    }
+  }
+}
 //     }
 //   }
 // } 

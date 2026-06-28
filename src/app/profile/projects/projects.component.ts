@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
+declare var AOS: any;
+
 @Component({
   selector: "app-projects",
   templateUrl: "./projects.component.html",
@@ -10,88 +12,112 @@ export class ProjectsComponent implements OnInit {
   projects = [
     {
       id: 1,
+      title: "WAX -- WhatsApp Marketing SaaS",
+      desc: "Built a complete end-to-end WhatsApp marketing platform integrating Meta Business API. Features campaign scheduling, WhatsApp template creation, automated workflows, and message delivery status tracking.",
+      livedemo: "https://wax.frontierx.in/",
+      githurl: "https://github.com/santoshnayak",
+      mediumlink: "",
+      imageUrl: "assets/images/wax.png",
+      tech: "Angular, Node.js, Meta Business API, PostgreSQL, Hangfire Background Jobs",
+      type: "image",
+      videUrl: "",
+    },
+    {
+      id: 2,
+      title: "Odia to Odia Dictionary App",
+      desc: "Developed a native dictionary application with 100k+ downloads. Features full offline support, dynamic autocomplete suggestions, Google Sign-In, and a real-time community definition contribution board.",
+      livedemo: "https://play.google.com/store/apps/details?id=com.odiadictionary.odiatoodiadictionary&hl=en",
+      githurl: "https://github.com/santoshnayak",
+      mediumlink: "",
+      imageUrl: "assets/images/odia_dict.png",
+      tech: "Flutter, Firebase Analytics, Firestore Database, Google Auth API",
+      type: "image",
+      videUrl: "",
+    },
+    {
+      id: 3,
+      title: "Kolkata Bus Route App",
+      desc: "Created a public transit routing application designed to help commuters navigate Kolkata's bus transit network. Provides interactive route mappings, bus numbers, station list search, and offline route queries.",
+      livedemo: "https://play.google.com/store/apps/details?id=com.kolkatabusroute&hl=en&gl=US",
+      githurl: "https://github.com/santoshnayak",
+      mediumlink: "",
+      imageUrl: "assets/images/kolkata_bus.png",
+      tech: "Android SDK, Java, SQLite Database, Google Maps API",
+      type: "image",
+      videUrl: "",
+    },
+    {
+      id: 4,
       title: "AI Pushup Count",
-      desc:
-        "Go to live url and acees permission to camera and start doing pushups.. The AI system will count your pushups",
+      desc: "A browser-based vision AI system that accesses the user's camera feed to detect body poses and automatically count pushups in real-time.",
       livedemo: "https://santoshnayak.github.io/AI-Pushup-count/",
       githurl: "https://github.com/santoshnayak/AI-Pushup-count",
       mediumlink: "",
       videUrl: "assets/videos/PushUps.mp4",
       imageUrl: "assets/images/pushup.jpg",
       type: "video",
-      tech: "HTML,CSS,JS, Tensorflow JS",
+      tech: "HTML, CSS, JavaScript, Tensorflow JS, PoseNet Model",
     },
-
     {
-      id: 2,
+      id: 5,
       title: "Bicep Curl Count",
-      desc:
-        "Go to live url and acees permission to camera and start doing Curls.. The AI system will count your Curls",
-
+      desc: "A web-based computer vision application that detects arm joint angles and counts curls using camera inputs for fitness coaching.",
       livedemo: "https://santoshnayak.github.io/TF-Bicep-curl-count/",
       githurl: "https://github.com/santoshnayak/TF-Bicep-curl-count",
       mediumlink: "",
       imageUrl: "assets/images/bicep.jpg",
       videUrl: "assets/videos/curl.mp4",
-      tech: "HTML,CSS,JS, Tensorflow JS",
+      tech: "HTML, CSS, JavaScript, Tensorflow JS, PoseNet",
       type: "video",
     },
-
     {
-      id: 3,
-      title: "Face detection using Tensorflow JS",
-      desc: "A simple Face detection system using blazeface",
+      id: 6,
+      title: "Face Detection with Blazeface",
+      desc: "A high-performance face detection implementation running fully client-side on Tensorflow JS BlazeFace model.",
       livedemo: "https://santoshnayak.github.io/Tensorflowjs-facedetection/",
       githurl: "https://github.com/santoshnayak/Tensorflowjs-facedetection",
       mediumlink: "",
       imageUrl: "assets/images/face-detection.jpg",
-      tech: "HTML,CSS,JS, Tensorflow JS,blazeface",
+      tech: "HTML, CSS, JS, Tensorflow JS, BlazeFace",
       type: "image",
       videUrl: "",
     },
-
     {
-      id: 4,
-      title: "Odia Month NPM Package",
-      desc:
-        "A simple package that returns odia month name by taking english name as input parameter",
-      livedemo: "https://www.npmjs.com/package/odia-month",
-      githurl: "https://github.com/santoshnayak/Odia-Month",
-      mediumlink: "",
-      imageUrl: "assets/images/odia-month.png",
-      tech: "JavaScript",
-      type: "image",
-      videUrl: "",
-    },
-
-    {
-      id: 5,
+      id: 7,
       title: "Cowin Slot Alert",
-      desc:
-        "A system that will check for available vaccine slot on your city and will alert to book once it finds one",
+      desc: "An automated slot booking assistant that queries Cowin vaccination APIs and alerts users once vaccine slots become available.",
       livedemo: "https://santoshnayak.github.io/Cowin-Slot-Alert/",
       githurl: "https://github.com/santoshnayak/Cowin-Slot-Alert",
       mediumlink: "",
       imageUrl: "assets/images/cowin.png",
-      tech: "Angular 11",
+      tech: "Angular 11, RxJS, REST API integration",
       type: "image",
       videUrl: "",
     },
-
     {
-      id: 6,
+      id: 8,
       title: "Text Toxicity Checker",
-      desc:
-        "Give this script a text and it will analyse the text and will let you know the sense behind it",
+      desc: "Analyzes user input text client-side to detect toxic language, threats, insults, and harassment classifiers.",
       livedemo: "https://santoshnayak.github.io/Text-Toxicity-Checker/",
       githurl: "https://github.com/santoshnayak/Text-Toxicity-Checker",
       mediumlink: "",
       imageUrl: "assets/images/text-toxicity.png",
-      tech: "HTML,CSS,JS, Tensorflow JS,blazeface",
+      tech: "HTML, CSS, JS, Tensorflow JS Toxicity Model",
       type: "image",
       videUrl: "",
     },
-
+    {
+      id: 9,
+      title: "Odia Month Localization Package",
+      desc: "An open-source NPM package that maps English calendar dates and month names to Odia equivalents.",
+      livedemo: "https://www.npmjs.com/package/odia-month",
+      githurl: "https://github.com/santoshnayak/Odia-Month",
+      mediumlink: "",
+      imageUrl: "assets/images/odia-month.png",
+      tech: "NPM, JavaScript",
+      type: "image",
+      videUrl: "",
+    }
   ];
   constructor() {}
 
@@ -105,5 +131,10 @@ export class ProjectsComponent implements OnInit {
 
   pageChanged(event) {
     this.config.currentPage = event;
+    setTimeout(() => {
+      if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+      }
+    }, 150);
   }
 }

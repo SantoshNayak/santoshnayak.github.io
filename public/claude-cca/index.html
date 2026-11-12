@@ -1,0 +1,2222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Certified Architect (CCA-300) Study Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-cream: #fbfaf7;
+      --bg-card: #ffffff;
+      --border-color: #e7e5e0;
+      
+      /* Anthropic Brand Colors */
+      --anthropic-body: #191919;
+      --anthropic-subtle: #6b6a67;
+      --anthropic-clay: #e0b8a2;
+      --anthropic-coral: #e05a47;
+      --anthropic-accent-hover: #d24e3c;
+      
+      /* Domain Accent Colors */
+      --color-d1: #2563eb; /* Blue - Agentic Loops */
+      --color-d1-bg: #eff6ff;
+      --color-d2: #059669; /* Green - Tool Design */
+      --color-d2-bg: #ecfdf5;
+      --color-d3: #d97706; /* Amber - Claude Code */
+      --color-d3-bg: #fffbeb;
+      --color-d4: #7c3aed; /* Purple - Prompt Eng */
+      --color-d4-bg: #f5f3ff;
+      --color-d5: #dc2626; /* Coral/Red - Context  */
+      --color-d5-bg: #fef2f2;
+      
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --font-sans: 'Figtree', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--anthropic-body);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-cream);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c3c1bc;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a8a6a1;
+    }
+
+    a {
+      color: var(--color-d1);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    a:hover {
+      color: var(--anthropic-coral);
+      text-decoration: underline;
+    }
+
+    header {
+      background-color: #191919;
+      color: #fbfaf7;
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--anthropic-clay);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 10% 20%, rgba(224, 184, 162, 0.05) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      font-weight: 700;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      color: #dfded9;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      font-weight: 300;
+    }
+
+    /* Meta stats in Hero */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 15px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-stat {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-stat .val {
+      font-family: var(--font-mono);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--anthropic-clay);
+      line-height: 1.2;
+    }
+
+    .hero-stat .lbl {
+      font-size: 0.75rem;
+      color: #a8a6a1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 5px;
+    }
+
+    /* Main Dashboard Layout */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    @media (min-width: 1024px) {
+      .dashboard-grid {
+        grid-template-columns: 8fr 4fr;
+      }
+    }
+
+    /* Universal Stats and Search Section */
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 25px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+      margin-bottom: 25px;
+    }
+
+    .section-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--bg-cream);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-card h2 span {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Universal Rules */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .rule-card {
+      background: #faf9f5;
+      border-left: 4px solid var(--anthropic-coral);
+      border-radius: var(--radius-sm);
+      padding: 15px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .rule-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+
+    .rule-num {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: var(--anthropic-coral);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .rule-text {
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .rule-detail {
+      font-size: 0.85rem;
+      color: var(--anthropic-subtle);
+    }
+
+    /* Overall Progress Meter */
+    .progress-widget {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #191919;
+      color: #fff;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      margin-bottom: 30px;
+    }
+
+    .progress-circle-wrap {
+      position: relative;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .progress-circle-svg {
+      width: 70px;
+      height: 70px;
+      transform: rotate(-90deg);
+    }
+
+    .progress-circle-bg {
+      fill: none;
+      stroke: #333230;
+      stroke-width: 6;
+    }
+
+    .progress-circle-fill {
+      fill: none;
+      stroke: var(--anthropic-clay);
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-dasharray: 219.9;
+      stroke-dashoffset: 219.9;
+      transition: stroke-dashoffset 0.5s ease;
+    }
+
+    .progress-percentage {
+      position: absolute;
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .progress-details {
+      flex: 1;
+    }
+
+    .progress-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .progress-subtitle {
+      font-size: 0.8rem;
+      color: #dfded9;
+    }
+
+    /* Quick Links Box */
+    .file-link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 15px;
+      background: #fafaf8;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .file-link-item:hover {
+      background: #f1f0ec;
+      border-color: #c7c5c0;
+    }
+
+    .file-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .file-icon {
+      font-size: 1.25rem;
+    }
+    
+    .file-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .file-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--anthropic-body);
+    }
+
+    .file-desc {
+      font-size: 0.75rem;
+      color: var(--anthropic-subtle);
+      margin-top: 2px;
+    }
+
+    .raw-link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      background: #fff;
+      border: 1px solid var(--border-color);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      color: var(--anthropic-body) !important;
+    }
+    .raw-link:hover {
+      background: var(--anthropic-body);
+      color: #fff !important;
+      text-decoration: none;
+    }
+
+    /* Tab navigation for layout */
+    .search-filter-wrap {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .search-input-container {
+      position: relative;
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px 15px 12px 40px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background-color: #faf9f6;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-width 0.15s, border-color 0.15s;
+    }
+
+    .search-input:focus {
+      border-color: var(--anthropic-coral);
+      background-color: #fff;
+    }
+
+    .search-icon-svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      fill: var(--anthropic-subtle);
+      pointer-events: none;
+    }
+
+    .filter-btn {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 10px 15px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover {
+      background: #fafaf8;
+      border-color: #a8a6a1;
+    }
+
+    .filter-btn.active {
+      background: var(--anthropic-body);
+      color: white;
+      border-color: var(--anthropic-body);
+    }
+
+    /* Domain Blocks & Learning Pathway */
+    .domain-section {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 25px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.01);
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .domain-section.d1 { border-left: 6px solid var(--color-d1); }
+    .domain-section.d2 { border-left: 6px solid var(--color-d2); }
+    .domain-section.d3 { border-left: 6px solid var(--color-d3); }
+    .domain-section.d4 { border-left: 6px solid var(--color-d4); }
+    .domain-section.d5 { border-left: 6px solid var(--color-d5); }
+
+    .domain-section:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.02), 0 4px 6px -2px rgba(0, 0, 0, 0.01);
+    }
+
+    .domain-header-block {
+      padding: 20px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s ease;
+    }
+
+    .domain-header-block.d1 { background: var(--color-d1-bg); }
+    .domain-header-block.d2 { background: var(--color-d2-bg); }
+    .domain-header-block.d3 { background: var(--color-d3-bg); }
+    .domain-header-block.d4 { background: var(--color-d4-bg); }
+    .domain-header-block.d5 { background: var(--color-d5-bg); }
+
+    .domain-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .domain-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .domain-badge.d1 { background: var(--color-d1); }
+    .domain-badge.d2 { background: var(--color-d2); }
+    .domain-badge.d3 { background: var(--color-d3); }
+    .domain-badge.d4 { background: var(--color-d4); }
+    .domain-badge.d5 { background: var(--color-d5); }
+
+    .domain-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--anthropic-body);
+    }
+
+    .domain-weight {
+      font-size: 0.85rem;
+      color: var(--anthropic-subtle);
+      font-weight: 500;
+    }
+
+    .domain-toggle-icon {
+      font-size: 0.95rem;
+      transition: transform 0.2s ease;
+    }
+
+    .collapsed .domain-toggle-icon {
+      transform: rotate(-90deg);
+    }
+
+    .domain-content-block {
+      padding: 25px;
+      border-top: 1px solid var(--border-color);
+      transition: max-height 0.3s ease;
+    }
+
+    .collapsed .domain-content-block {
+      display: none;
+    }
+
+    /* Tasks list style */
+    .task-item {
+      padding: 18px 20px;
+      border: 1px solid #f1f0ec;
+      background: #fafaf8;
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      transition: all 0.15s ease-in-out;
+    }
+
+    .task-item:hover {
+      background: #fff;
+      border-color: #d1cfc9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.015);
+    }
+
+    .task-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .task-checkbox-container {
+      padding-top: 2px;
+    }
+
+    .task-checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #a8a6a1;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+      background: #fff;
+    }
+
+    .task-checkbox:checked {
+      background: var(--anthropic-coral);
+      border-color: var(--anthropic-coral);
+    }
+
+    .task-checkbox:checked::after {
+      content: '✓';
+      color: white;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .task-title-wrap {
+      flex: 1;
+    }
+
+    .task-id {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--anthropic-subtle);
+      margin-right: 8px;
+    }
+
+    .task-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--anthropic-body);
+    }
+
+    /* Subsections inside tasks like Quick study & Practice links */
+    .task-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .quick-link-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--anthropic-body) !important;
+      transition: all 0.15s ease;
+    }
+
+    .quick-link-btn:hover {
+      border-color: #a8a6a1;
+      background: #fafaf8;
+      text-decoration: none;
+    }
+
+    .quick-link-btn span.badge-sec {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .quick-link-btn.study span.badge-sec { background: #e0f2fe; color: #0284c7; }
+    .quick-link-btn.ref span.badge-sec { background: #fef3c7; color: #d97706; }
+
+    /* Topic card / summary items */
+    .quick-summary-box {
+      background: #fff;
+      border: 1px solid #f1f0ec;
+      border-radius: var(--radius-sm);
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    .quick-summary-box h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      color: var(--anthropic-subtle);
+      font-family: var(--font-sans);
+    }
+
+    .quick-summary-box p {
+      font-size: 0.85rem;
+      color: var(--anthropic-body);
+    }
+
+    /* Domain-specific Resource Boxes */
+    .domain-quiz-box {
+      margin-top: 20px;
+      background: #191919;
+      color: white;
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .domain-quiz-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .domain-quiz-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .domain-quiz-sub {
+      font-size: 0.75rem;
+      color: #dfded9;
+      margin-top: 2px;
+    }
+
+    .domain-quiz-count {
+      background: var(--anthropic-coral);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 12px;
+    }
+
+    .domain-quiz-btn {
+      background: var(--anthropic-clay);
+      color: #191919 !important;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: background 0.15s, transform 0.15s;
+    }
+
+    .domain-quiz-btn:hover {
+      background: #f1ebd8;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    /* Score Tracker inside Sidebar */
+    .score-input-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    .score-input-table th, .score-input-table td {
+      padding: 10px;
+      text-align: left;
+      font-size: 0.85rem;
+      border-bottom: 1px solid #f1f0ec;
+    }
+
+    .score-input-table th {
+      font-weight: 600;
+      color: var(--anthropic-subtle);
+    }
+
+    .score-input {
+      width: 50px;
+      padding: 4px 6px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      text-align: center;
+      font-family: var(--font-mono);
+    }
+
+    .score-status {
+      font-weight: 600;
+      font-size: 0.75rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .score-status.pass { background: #d1fae5; color: #065f46; }
+    .score-status.fail { background: #fee2e2; color: #991b1b; }
+    .score-status.none { background: #f3f4f6; color: #374151; }
+
+    /* Scenarios Card Layout */
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 600px) {
+      .scenario-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .scenario-card {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 15px;
+      background: #fafaf8;
+      transition: border-color 0.15s ease;
+    }
+    .scenario-card:hover {
+      border-color: #c7c5c0;
+    }
+
+    .scenario-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      background: #e7e5e0;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .scenario-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+    }
+
+    .scenario-desc {
+      font-size: 0.8rem;
+      color: var(--anthropic-subtle);
+    }
+
+    .scenario-domains {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .sd-badge {
+      font-size: 0.65rem;
+      font-weight: 500;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-family: var(--font-mono);
+    }
+    .sd-badge.s-d1 { background: var(--color-d1-bg); color: var(--color-d1); }
+    .sd-badge.s-d2 { background: var(--color-d2-bg); color: var(--color-d2); }
+    .sd-badge.s-d3 { background: var(--color-d3-bg); color: var(--color-d3); }
+    .sd-badge.s-d4 { background: var(--color-d4-bg); color: var(--color-d4); }
+    .sd-badge.s-d5 { background: var(--color-d5-bg); color: var(--color-d5); }
+
+    /* Footer Styling */
+    footer {
+      background: #191919;
+      color: #a8a6a1;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      border-top: 1px solid #333230;
+      margin-top: 60px;
+    }
+
+    footer p a {
+      color: var(--anthropic-clay);
+    }
+
+    /* Highlight Search Match */
+    .match-highlight {
+      background: #fef08a; /* Soft Yellow */
+      padding: 2px 0;
+      font-weight: 600;
+    }
+
+    /* Tooltip styling if needed */
+    .hidden {
+      display: none !important;
+    }
+
+    .button-group-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn-action {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: var(--font-sans);
+    }
+
+    .btn-action:hover {
+      background: #fafaf8;
+      border-color: #a8a6a1;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Claude Certified Architect</h1>
+      <p>Exam Code: CCA-300 | Certification Foundations Study Hub & Practice Platform</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="val">5</div>
+          <div class="lbl">Syllabus Domains</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">300</div>
+          <div class="lbl">Practice Questions</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">31</div>
+          <div class="lbl">Course Quizzes</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">120</div>
+          <div class="lbl">Minutes Duration</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">720</div>
+          <div class="lbl">Passing Score</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky score stats below header -->
+  <div class="container" style="margin-top: 25px;">
+    <div class="progress-widget">
+      <div class="progress-circle-wrap">
+        <svg class="progress-circle-svg">
+          <circle class="progress-circle-bg" cx="35" cy="35" r="31"></circle>
+          <circle class="progress-circle-fill" id="overallProgCircle" cx="35" cy="35" r="31"></circle>
+        </svg>
+        <div class="progress-percentage" id="overallProgPct">0%</div>
+      </div>
+      <div class="progress-details">
+        <div class="progress-title">Your Certification Progress Tracker</div>
+        <div class="progress-subtitle"><span id="overallTasksCompleted">0</span> of <span id="overallTasksTotal">29</span> Task Statements Mastered</div>
+      </div>
+      <button class="btn-action" style="align-self: center;" onclick="resetAllProgress()">Reset Tracker</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="dashboard-grid">
+      
+      <!-- LEFT HAND CONTENT: Syllabus and Study Pathway (interactive) -->
+      <div>
+        
+        <!-- Universal Rules Section -->
+        <div class="section-card">
+          <h2>The 3 Universal Rules of the CCA-300 Exam <span>Fundamental Principles</span></h2>
+          <div class="rules-grid">
+            <div class="rule-card">
+              <div class="rule-num">Rule 1</div>
+              <div class="rule-text">Deterministic Over Probabilistic</div>
+              <div class="rule-detail">When high-stakes logic (compliance, finances, security) is involved, enforce determinism using <strong>hooks</strong>, <strong>JSON schemas</strong>, and strictly forced <strong>tool_choice</strong>—never rely only on system prompt wording.</div>
+            </div>
+            <div class="rule-card">
+              <div class="rule-num">Rule 2</div>
+              <div class="rule-text">Root Cause Over Symptom Patch</div>
+              <div class="rule-detail">Always address the true mechanical bottleneck. Fix tool definitions instead of adding routing rules, fix coordinator decomposition instead of subagent retries, and write custom parsers before wrapping with expensive LLM feedback layers.</div>
+            </div>
+            <div class="rule-card">
+              <div class="rule-num">Rule 3</div>
+              <div class="rule-text">Simplest Correct Intervention</div>
+              <div class="rule-detail">Never layer complex agentic logic (e.g. multi-step subagents) on a broken underlying concept. Start with the minimal intervention that fully meets requirements without inflating round-trips.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Study Path Navigation/Tabs/Filters/Search -->
+        <div class="search-filter-wrap">
+          <div class="search-input-container">
+            <svg class="search-icon-svg" viewBox="0 0 24 24">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+            <input type="text" class="search-input" id="searchBox" placeholder="Search syllabus, concepts (e.g. CLAUDE.md, hook, plan)..." oninput="runSearch()">
+          </div>
+          <button class="filter-btn active" onclick="filterDomains('all', this)">All Domains</button>
+          <button class="filter-btn" onclick="filterDomains('d1', this)">D1 (27%)</button>
+          <button class="filter-btn" onclick="filterDomains('d2', this)">D2 (18%)</button>
+          <button class="filter-btn" onclick="filterDomains('d3', this)">D3 (20%)</button>
+          <button class="filter-btn" onclick="filterDomains('d4', this)">D4 (20%)</button>
+          <button class="filter-btn" onclick="filterDomains('d5', this)">D5 (15%)</button>
+        </div>
+
+        <!-- Syllabus Domains Accordion List -->
+        <div id="syllabusList">
+          
+          <!-- DOMAIN 1 -->
+          <div class="domain-section d1" data-domain="d1">
+            <div class="domain-header-block d1" onclick="toggleDomain(this)">
+              <div class="domain-title-wrap">
+                <span class="domain-badge d1">Domain 1</span>
+                <div>
+                  <div class="domain-name">Agentic Architecture & Orchestration</div>
+                  <div class="domain-weight">Exam Weight: 27% &bull; Focused on the Claude Agent SDK, loops, multi-agent frameworks, and hooks</div>
+                </div>
+              </div>
+              <span class="domain-toggle-icon">▼</span>
+            </div>
+            <div class="domain-content-block">
+              <div class="quick-summary-box">
+                <h4>Core Focus Areas</h4>
+                <p>Designing custom agentic loops, understanding assistant-driven versus code-driven execution states, deploying hub-and-spoke multi-agent routing (coordinators and subagents), isolations of conversation history, hook execution sequences (PreToolUse and PostToolUse), task decomposition and session tracking.</p>
+              </div>
+
+              <div class="domain-quiz-box">
+                <div class="domain-quiz-info">
+                  <div class="domain-quiz-count">60 MCQ</div>
+                  <div>
+                    <div class="domain-quiz-title">Domain 1 Practice Exam Simulator</div>
+                    <div class="domain-quiz-sub">Exhaustive scenario-based preparation for Task Statements 1.1–1.7</div>
+                  </div>
+                </div>
+                <a href="CCA-F-Domain-1-Agentic-Architecture-And-Orchestration-Quiz-Updated%208%201.html" class="domain-quiz-btn" target="_blank">Launch Quiz ↗</a>
+              </div>
+
+              <h4 style="margin: 25px 0 12px 0; font-family: var(--font-sans); font-size: 0.9rem; text-transform: uppercase; color: var(--anthropic-subtle);">Task Statements (Check when mastered)</h4>
+              <div class="tasks-list">
+                <!-- TS 1.1 -->
+                <div class="task-item" data-search="1.1 agentic loops autonomous task execution stop_reason tool_use end_turn state conversation history">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_1_1" onclick="trackTaskProgress('1_1', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">1.1</span>
+                      <span class="task-title">Design and implement agentic loops for autonomous task execution</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t1" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 1.1</span> Study Guide Section
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d1-loop" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Ultimate Loop Notes
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 1.2 -->
+                <div class="task-item" data-search="1.2 multi-agent systems coordinator subagent patterns isolation conversation history hub and spoke routing">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_1_2" onclick="trackTaskProgress('1_2', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">1.2</span>
+                      <span class="task-title">Orchestrate multi-agent systems with coordinator-subagent patterns</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t2" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 1.2</span> Study Guide Section
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d1-multi" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Subagent Isolation Details
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 1.3 -->
+                <div class="task-item" data-search="1.3 configure subagent invocation context passing spawning Task tool allowedTools">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_1_3" onclick="trackTaskProgress('1_3', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">1.3</span>
+                      <span class="task-title">Configure subagent invocation, context passing, and spawning</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t1" class="quick-link-btn study" target="_blank"> <!-- Point to SDK fundamentals -->
+                      <span class="badge-sec">Study 1.3</span> Study Guide Section
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d1-tutor" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Spawn & AllowedTools Prompt
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 1.4 -->
+                <div class="task-item" data-search="1.4 multi-step workflows enforcement handoff patterns checkpoints failover state recovery">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_1_4" onclick="trackTaskProgress('1_4', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">1.4</span>
+                      <span class="task-title">Implement multi-step workflows with enforcement and handoff patterns</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t4b" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 1.4</span> Checkpoints & Crash Recovery
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#intel" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Transition Policies
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 1.5 -->
+                <div class="task-item" data-search="1.5 Agent SDK hooks tool call interception data normalization PreToolUse PostToolUse">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_1_5" onclick="trackTaskProgress('1_5', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">1.5</span>
+                      <span class="task-title">Apply Agent SDK hooks for tool call interception and data normalization</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t3" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 1.5</span> SDK Pre/Post Hooks
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d1-hooks" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Hooks Technical Blueprint
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 1.6 -->
+                <div class="task-item" data-search="1.6 design task decomposition strategies complex workflows dynamic routing query analysis">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_1_6" onclick="trackTaskProgress('1_6', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">1.6</span>
+                      <span class="task-title">Design task decomposition strategies for complex workflows</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t2" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 1.6</span> Routing Decomposition
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 1.7 -->
+                <div class="task-item" data-search="1.7 manage session state resumption forking --resume memory save tracking">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_1_7" onclick="trackTaskProgress('1_7', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">1.7</span>
+                      <span class="task-title">Manage session state, resumption, and forking</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t4" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 1.7</span> Session Management Guide
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d1-session" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Session State Schema
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DOMAIN 2 -->
+          <div class="domain-section d2 collapsed" data-domain="d2">
+            <div class="domain-header-block d2" onclick="toggleDomain(this)">
+              <div class="domain-title-wrap">
+                <span class="domain-badge d2">Domain 2</span>
+                <div>
+                  <div class="domain-name">Tool Design & MCP Integration</div>
+                  <div class="domain-weight">Exam Weight: 18% &bull; Focused on tools, error handling, tool_choice, and MCP servers</div>
+                </div>
+              </div>
+              <span class="domain-toggle-icon">▼</span>
+            </div>
+            <div class="domain-content-block">
+              <div class="quick-summary-box">
+                <h4>Core Focus Areas</h4>
+                <p>Designing self-describing tool JSON schemas, utilizing descriptive boundaries for automatic model routing, returning structured errors (JSON format with error fields, code details, and retry instructions), distributing tool catalogs logically across orchestrators, forcing tool selections (auto, forced, none), built-in execution tools constraints, and MCP integration protocols (sshes, command parameters, config files).</p>
+              </div>
+
+              <div class="domain-quiz-box">
+                <div class="domain-quiz-info">
+                  <div class="domain-quiz-count">60 MCQ</div>
+                  <div>
+                    <div class="domain-quiz-title">Domain 2 Practice Exam Simulator</div>
+                    <div class="domain-quiz-sub">Exhaustive scenario-based preparation for Task Statements 2.1–2.5</div>
+                  </div>
+                </div>
+                <a href="CCA-F-Domain-2-Tool-Design-And-MCP-Integration-Quiz-Updated%207%201.html" class="domain-quiz-btn" target="_blank">Launch Quiz ↗</a>
+              </div>
+
+              <h4 style="margin: 25px 0 12px 0; font-family: var(--font-sans); font-size: 0.9rem; text-transform: uppercase; color: var(--anthropic-subtle);">Task Statements (Check when mastered)</h4>
+              <div class="tasks-list">
+                <!-- TS 2.1 -->
+                <div class="task-item" data-search="2.1 design effective tool interfaces clear descriptions boundaries schema parameter definitions">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_2_1" onclick="trackTaskProgress('2_1', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">2.1</span>
+                      <span class="task-title">Design effective tool interfaces with clear descriptions and boundaries</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t5" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 2.1</span> Tool Routing Descriptions
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d2-tools" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Tool Schemas
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 2.2 -->
+                <div class="task-item" data-search="2.2 structured error responses mcp tools JSON formatting system recover message">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_2_2" onclick="trackTaskProgress('2_2', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">2.2</span>
+                      <span class="task-title">Implement structured error responses for MCP tools</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t6" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 2.2</span> Structured Tool Errors
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d2-errors" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Error Recovery Prompting
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 2.3 -->
+                <div class="task-item" data-search="2.3 distribute tools appropriately agents tool choice forced auto auto vs forced">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_2_3" onclick="trackTaskProgress('2_3', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">2.3</span>
+                      <span class="task-title">Distribute tools appropriately across agents and configure tool choice</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t8" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 2.3</span> Tool Distribution Schemes
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d2-tutor" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Tool Choice Mechanics
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 2.4 -->
+                <div class="task-item" data-search="2.4 integrate MCP servers Claude Code configuration JSON transport sse stdio">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_2_4" onclick="trackTaskProgress('2_4', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">2.4</span>
+                      <span class="task-title">Integrate MCP servers into Claude Code and agent workflows</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t7" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 2.4</span> MCP Setup Guide
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d2-mcp" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> MCP Config Schemas
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 2.5 -->
+                <div class="task-item" data-search="2.5 select built-in tools Read Write Edit Bash Grep Glob files constraints matches">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_2_5" onclick="trackTaskProgress('2_5', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">2.5</span>
+                      <span class="task-title">Select and apply built-in tools (Read, Write, Edit, Bash, Grep, Glob) effectively</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t8b" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 2.5</span> Built-in Tool Rules
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d2-tutor" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Built-in Tool Usage Constraints
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DOMAIN 3 -->
+          <div class="domain-section d3 collapsed" data-domain="d3">
+            <div class="domain-header-block d3" onclick="toggleDomain(this)">
+              <div class="domain-title-wrap">
+                <span class="domain-badge d3">Domain 3</span>
+                <div>
+                  <div class="domain-name">Claude Code Configuration & Workflows</div>
+                  <div class="domain-weight">Exam Weight: 20% &bull; Focused on CLAUDE.md, custom commands, rules, and CLI behaviors</div>
+                </div>
+              </div>
+              <span class="domain-toggle-icon">▼</span>
+            </div>
+            <div class="domain-content-block">
+              <div class="quick-summary-box">
+                <h4>Core Focus Areas</h4>
+                <p>Configuring CLAUDE.md files hierarchically with explicit coding rules, defining custom slash commands and Agent Skills via YAML frontmatter, scope routing through folder structures, choosing between direct command executions or plan-mode iterations, deploying auto-pilot loop refinements (lint, build, test), and executing pipeline operations in continuous integration (CI) environments with passive non-interactive arguments.</p>
+              </div>
+
+              <div class="domain-quiz-box">
+                <div class="domain-quiz-info">
+                  <div class="domain-quiz-count">60 MCQ</div>
+                  <div>
+                    <div class="domain-quiz-title">Domain 3 Practice Exam Simulator</div>
+                    <div class="domain-quiz-sub">Exhaustive scenario-based preparation for Task Statements 3.1–3.6</div>
+                  </div>
+                </div>
+                <a href="CCA-F-Domain3-Claude-Code-Configuration-And-Workflows-Quiz-Updated%206%201.html" class="domain-quiz-btn" target="_blank">Launch Quiz ↗</a>
+              </div>
+
+              <h4 style="margin: 25px 0 12px 0; font-family: var(--font-sans); font-size: 0.9rem; text-transform: uppercase; color: var(--anthropic-subtle);">Task Statements (Check when mastered)</h4>
+              <div class="tasks-list">
+                <!-- TS 3.1 -->
+                <div class="task-item" data-search="3.1 configure CLAUDE.md hierarchy scoping rules conventions directory local system">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_3_1" onclick="trackTaskProgress('3_1', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">3.1</span>
+                      <span class="task-title">Configure CLAUDE.md files with appropriate hierarchy, scoping, and modular organization</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t9" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 3.1</span> CLAUDE.md Layouts
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d3-md" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Hierarchy Conventions
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 3.2 -->
+                <div class="task-item" data-search="3.2 slash commands custom skills Agent Skills CLI frontmatter parameters config">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_3_2" onclick="trackTaskProgress('3_2', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">3.2</span>
+                      <span class="task-title">Create and configure custom slash commands and skills</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t10" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 3.2</span> Frontmatter Specs
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d3-skills" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Skill Configuration
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 3.3 -->
+                <div class="task-item" data-search="3.3 path-specific rules loading conventions directory local environment configurations">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_3_3" onclick="trackTaskProgress('3_3', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">3.3</span>
+                      <span class="task-title">Apply path-specific rules for conditional convention loading</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t11" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 3.3</span> Path Conventions
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d3-md" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Nested Rules Loading
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 3.4 -->
+                <div class="task-item" data-search="3.4 plan mode vs direct execution choices command options behavior workflow comparison">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_3_4" onclick="trackTaskProgress('3_4', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">3.4</span>
+                      <span class="task-title">Determine when to use plan mode vs direct execution</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t12" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 3.4</span> Plan Mode Guide
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d3-plan" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Mode Evaluation
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 3.5 -->
+                <div class="task-item" data-search="3.5 iterative refinement code generation automated fixing loops cycle tests">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_3_5" onclick="trackTaskProgress('3_5', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">3.5</span>
+                      <span class="task-title">Apply iterative refinement techniques for progressive improvement</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t13" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 3.5</span> Refinement Loops
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 3.6 -->
+                <div class="task-item" data-search="3.6 integrate CI CD pipelines workflow automatic non-interactive reviews command arguments">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_3_6" onclick="trackTaskProgress('3_6', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">3.6</span>
+                      <span class="task-title">Integrate Claude Code into CI/CD pipelines</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t13b" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 3.6</span> CI/CD Setup
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d3-ci" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> CLI arguments & CI flow
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DOMAIN 4 -->
+          <div class="domain-section d4 collapsed" data-domain="d4">
+            <div class="domain-header-block d4" onclick="toggleDomain(this)">
+              <div class="domain-title-wrap">
+                <span class="domain-badge d4">Domain 4</span>
+                <div>
+                  <div class="domain-name">Prompt Engineering & Structured Output</div>
+                  <div class="domain-weight">Exam Weight: 20% &bull; Focused on precise instructions, templates, formatting, and validations</div>
+                </div>
+              </div>
+              <span class="domain-toggle-icon">▼</span>
+            </div>
+            <div class="domain-content-block">
+              <div class="quick-summary-box">
+                <h4>Core Focus Areas</h4>
+                <p>Establishing explicit categorical rules instead of fuzzy goals, constructing high-quality few-shot inputs, utilizing tool schema definitions and XML structures for deterministic outputs, validating structure with schema checkers (like Pydantic and custom verification loops), configuring batch processing (handling rate-limits and token quotas), and designing multi-pass review mechanisms (parallel votes and independent feedback runs).</p>
+              </div>
+
+              <div class="domain-quiz-box">
+                <div class="domain-quiz-info">
+                  <div class="domain-quiz-count">60 MCQ</div>
+                  <div>
+                    <div class="domain-quiz-title">Domain 4 Practice Exam Simulator</div>
+                    <div class="domain-quiz-sub">Exhaustive scenario-based preparation for Task Statements 4.1–4.6</div>
+                  </div>
+                </div>
+                <a href="CCA-F-Domain-4-Prompt-Engineering-And-Structured-Output-Quiz-Updated%206%201.html" class="domain-quiz-btn" target="_blank">Launch Quiz ↗</a>
+              </div>
+
+              <h4 style="margin: 25px 0 12px 0; font-family: var(--font-sans); font-size: 0.9rem; text-transform: uppercase; color: var(--anthropic-subtle);">Task Statements (Check when mastered)</h4>
+              <div class="tasks-list">
+                <!-- TS 4.1 -->
+                <div class="task-item" data-search="4.1 explicit criteria vague instructions rules false positives prompt design precision formatting">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_4_1" onclick="trackTaskProgress('4_1', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">4.1</span>
+                      <span class="task-title">Design prompts with explicit criteria to improve precision and reduce false positives</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t14" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 4.1</span> Explicit Instructions
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d4-criteria" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Precision Guides
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 4.2 -->
+                <div class="task-item" data-search="4.2 few shot prompting examples formatting curves quality domain instructions">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_4_2" onclick="trackTaskProgress('4_2', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">4.2</span>
+                      <span class="task-title">Apply few-shot prompting to improve output consistency and quality</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t15" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 4.2</span> Few-Shot Prompting
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d4-fewshot" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Multi-shot Curves
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 4.3 -->
+                <div class="task-item" data-search="4.3 structured output tool use JSON schemas validation formats extraction parsing">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_4_3" onclick="trackTaskProgress('4_3', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">4.3</span>
+                      <span class="task-title">Enforce structured output using tool use and JSON schemas</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t16" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 4.3</span> Structured Outputs
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d4-schema" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> JSON Schema Enforcement
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 4.4 -->
+                <div class="task-item" data-search="4.4 validation retry feedback loops extraction quality error correction checks">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_4_4" onclick="trackTaskProgress('4_4', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">4.4</span>
+                      <span class="task-title">Implement validation, retry, and feedback loops for extraction quality</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t17" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 4.4</span> Validation Schemes
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d4-chain" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Multi-turn Refinement Loop
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 4.5 -->
+                <div class="task-item" data-search="4.5 batch processing strategies parallel rates api limit cost optimization">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_4_5" onclick="trackTaskProgress('4_5', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">4.5</span>
+                      <span class="task-title">Design efficient batch processing strategies</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t18" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 4.5</span> Batching Architectures
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d4-batch" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Batch Processing Schemes
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 4.6 -->
+                <div class="task-item" data-search="4.6 multi-pass review multi-instance architectures consensus independent feedback validation">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_4_6" onclick="trackTaskProgress('4_6', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">4.6</span>
+                      <span class="task-title">Design multi-instance and multi-pass review architectures</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t18b" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 4.6</span> Review Chains
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DOMAIN 5 -->
+          <div class="domain-section d5 collapsed" data-domain="d5">
+            <div class="domain-header-block d5" onclick="toggleDomain(this)">
+              <div class="domain-title-wrap">
+                <span class="domain-badge d5">Domain 5</span>
+                <div>
+                  <div class="domain-name">Context Management & Reliability</div>
+                  <div class="domain-weight">Exam Weight: 15% &bull; Focused on contexts, escalations, error propagations, and provenance</div>
+                </div>
+              </div>
+              <span class="domain-toggle-icon">▼</span>
+            </div>
+            <div class="domain-content-block">
+              <div class="quick-summary-box">
+                <h4>Core Focus Areas</h4>
+                <p>Preventing prompt truncation during conversational summaries (injecting cases freshly, keeping system guidelines isolated), mapping escalation trigger protocols (e.g. sentiment score indicators, domain policy thresholds, loop iteration caps), tracking and packaging exception details during agentic transfers, implementing repository-wide chunk indexing (Grep vs Glob constraints), calibrating decision triggers, and resolving source discrepancies (annotating conflict data honest to downstream readers).</p>
+              </div>
+
+              <div class="domain-quiz-box">
+                <div class="domain-quiz-info">
+                  <div class="domain-quiz-count">60 MCQ</div>
+                  <div>
+                    <div class="domain-quiz-title">Domain 5 Practice Exam Simulator</div>
+                    <div class="domain-quiz-sub">Exhaustive scenario-based preparation for Task Statements 5.1–5.6</div>
+                  </div>
+                </div>
+                <a href="CCA-F-Domain-5-Context-Management-And-Reliability-Quiz-Updated%205%201.html" class="domain-quiz-btn" target="_blank">Launch Quiz ↗</a>
+              </div>
+
+              <h4 style="margin: 25px 0 12px 0; font-family: var(--font-sans); font-size: 0.9rem; text-transform: uppercase; color: var(--anthropic-subtle);">Task Statements (Check when mastered)</h4>
+              <div class="tasks-list">
+                <!-- TS 5.1 -->
+                <div class="task-item" data-search="5.1 context window management conversation compression truncation support cases fresh injection">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_5_1" onclick="trackTaskProgress('5_1', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">5.1</span>
+                      <span class="task-title">Manage conversation context to preserve critical information across long interactions</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t19" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 5.1</span> Context Management
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d5-context" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Summary & fresh inject
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 5.2 -->
+                <div class="task-item" data-search="5.2 escalation ambiguity resolution support threshold iterations sentiment triggers">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_5_2" onclick="trackTaskProgress('5_2', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">5.2</span>
+                      <span class="task-title">Design effective escalation and ambiguity resolution patterns</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t20" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 5.2</span> Escalation Workflows
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d5-escalation" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Ambiguity Redirection
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 5.3 -->
+                <div class="task-item" data-search="5.3 error propagation strategies subagents context transfers agent crash handling">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_5_3" onclick="trackTaskProgress('5_3', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">5.3</span>
+                      <span class="task-title">Implement error propagation strategies across multi-agent systems</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t21" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 5.3</span> Error Handshakes
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d5-errors" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Subagent Crashes Setup
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 5.4 -->
+                <div class="task-item" data-search="5.4 large codebase exploration strategies grep glob limits source mapping constraints">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_5_4" onclick="trackTaskProgress('5_4', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">5.4</span>
+                      <span class="task-title">Manage context effectively in large codebase exploration</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t21b" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 5.4</span> Codebase Mapping
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d5-context" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Grep vs Glob performance
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 5.5 -->
+                <div class="task-item" data-search="5.5 human review workflows confidence calibrations models voting policies checks">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_5_5" onclick="trackTaskProgress('5_5', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">5.5</span>
+                      <span class="task-title">Design human review workflows and confidence calibration</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t21c" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 5.5</span> Calibration Gates
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d5-escalation" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> Confidence Thresholds
+                    </a>
+                  </div>
+                </div>
+
+                <!-- TS 5.6 -->
+                <div class="task-item" data-search="5.6 provenance citations conflicts synthesis integrity verification facts">
+                  <div class="task-top">
+                    <label class="task-checkbox-container">
+                      <input type="checkbox" class="task-checkbox" id="chk_5_6" onclick="trackTaskProgress('5_6', this.checked)">
+                    </label>
+                    <div class="task-title-wrap">
+                      <span class="task-id">5.6</span>
+                      <span class="task-title">Preserve information provenance and handle uncertainty in multi-source synthesis</span>
+                    </div>
+                  </div>
+                  <div class="task-links-grid">
+                    <a href="CCA-F_Complete_Study_Guide%201%20(1).html#t21d" class="quick-link-btn study" target="_blank">
+                      <span class="badge-sec">Study 5.6</span> Data Provenance Rules
+                    </a>
+                    <a href="ccaf-ultimate_Guide_rajesh.html#d5-provenance" class="quick-link-btn ref" target="_blank">
+                      <span class="badge-sec">Ref</span> honest annotation schema
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- /syllabusList -->
+
+        <!-- Scenarios Box -->
+        <div class="section-card">
+          <h2>The 6 Official Exam Scenarios <span>Practical Implementations</span></h2>
+          <p style="font-size: 0.9rem; color: var(--anthropic-subtle); margin-bottom: 20px;">
+            The real exam presents 4 scenario blocks selected at random from the 6 target production workloads below:
+          </p>
+          <div class="scenario-grid">
+            <div class="scenario-card">
+              <span class="scenario-tag">Scenario 1</span>
+              <div class="scenario-title">Customer Support Incident Agent</div>
+              <div class="scenario-desc">Resolving refunds and disputes using sequential tool catalogs under high-ambiguity boundaries.</div>
+              <div class="scenario-domains">
+                <span class="sd-badge s-d1">D1 Loops</span>
+                <span class="sd-badge s-d2">D2 Tool schemas</span>
+                <span class="sd-badge s-d5">D5 Ambiguity</span>
+              </div>
+            </div>
+            
+            <div class="scenario-card">
+              <span class="scenario-tag">Scenario 2</span>
+              <div class="scenario-title">Claude Code Workspace Assistant</div>
+              <div class="scenario-desc">Optimizing workspace-specific conventions, plan-modes, and slash pipelines.</div>
+              <div class="scenario-domains">
+                <span class="sd-badge s-d3">D3 CLI Workflows</span>
+                <span class="sd-badge s-d5">D5 Large Codebase</span>
+              </div>
+            </div>
+
+            <div class="scenario-card">
+              <span class="scenario-tag">Scenario 3</span>
+              <div class="scenario-title">Multi-Agent Academic Research</div>
+              <div class="scenario-desc">Hub-and-spoke synthesis using isolated workers for multi-dimensional deep searches.</div>
+              <div class="scenario-domains">
+                <span class="sd-badge s-d1">D1 Hub-and-Spoke</span>
+                <span class="sd-badge s-d2">D2 Tools</span>
+                <span class="sd-badge s-d5">D5 Provenance</span>
+              </div>
+            </div>
+
+            <div class="scenario-card">
+              <span class="scenario-tag">Scenario 4</span>
+              <div class="scenario-title">Developer Boilerplate Automations</div>
+              <div class="scenario-desc">Rapid code generation pipelines leveraging built-in edit tool restrictions safely.</div>
+              <div class="scenario-domains">
+                <span class="sd-badge s-d1">D1 Tasks</span>
+                <span class="sd-badge s-d2">D2 Built-ins</span>
+                <span class="sd-badge s-d3">D3 Custom Skills</span>
+              </div>
+            </div>
+
+            <div class="scenario-card">
+              <span class="scenario-tag">Scenario 5</span>
+              <div class="scenario-title">Claude CI Review Pipeline</div>
+              <div class="scenario-desc">Automated PR review actions running non-interactively to generate valid tests.</div>
+              <div class="scenario-domains">
+                <span class="sd-badge s-d3">D3 Pipelines</span>
+                <span class="sd-badge s-d4">D4 Structured Prompts</span>
+              </div>
+            </div>
+
+            <div class="scenario-card">
+              <span class="scenario-tag">Scenario 6</span>
+              <div class="scenario-title">Structured Data Extraction Engine</div>
+              <div class="scenario-desc">Extracting high-accuracy objects from noisy formats with validation curves.</div>
+              <div class="scenario-domains">
+                <span class="sd-badge s-d4">D4 JSON Spec</span>
+                <span class="sd-badge s-d5">D5 Escalations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT HAND CONTENT: Quick Links, Score Trackers, Action Guides -->
+      <div>
+        
+        <!-- Score Logger (sidebar widget) -->
+        <div class="section-card">
+          <h2>Quiz Performance Log <span>Attempt History</span></h2>
+          <p style="font-size: 0.8rem; color: var(--anthropic-subtle);">
+            Track details of your score attempts on each practice quiz. A <strong>720 / 1000 scaled score (80% correct / 48 of 60 questions)</strong> represents passing.
+          </p>
+          <table class="score-input-table">
+            <thead>
+              <tr>
+                <th>Domain Quiz</th>
+                <th>Score</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Domain 1</strong></td>
+                <td><input type="number" id="score_val_d1" class="score-input" min="0" max="60" oninput="saveAndCalcScores()"> /60</td>
+                <td><span id="score_lbl_d1" class="score-status none">Not Taken</span></td>
+              </tr>
+              <tr>
+                <td><strong>Domain 2</strong></td>
+                <td><input type="number" id="score_val_d2" class="score-input" min="0" max="60" oninput="saveAndCalcScores()"> /60</td>
+                <td><span id="score_lbl_d2" class="score-status none">Not Taken</span></td>
+              </tr>
+              <tr>
+                <td><strong>Domain 3</strong></td>
+                <td><input type="number" id="score_val_d3" class="score-input" min="0" max="60" oninput="saveAndCalcScores()"> /60</td>
+                <td><span id="score_lbl_d3" class="score-status none">Not Taken</span></td>
+              </tr>
+              <tr>
+                <td><strong>Domain 4</strong></td>
+                <td><input type="number" id="score_val_d4" class="score-input" min="0" max="60" oninput="saveAndCalcScores()"> /60</td>
+                <td><span id="score_lbl_d4" class="score-status none">Not Taken</span></td>
+              </tr>
+              <tr>
+                <td><strong>Domain 5</strong></td>
+                <td><input type="number" id="score_val_d5" class="score-input" min="0" max="60" oninput="saveAndCalcScores()"> /60</td>
+                <td><span id="score_lbl_d5" class="score-status none">Not Taken</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="margin-top: 15px; font-size: 0.8rem; display: flex; justify-content: space-between; align-items: center;">
+            <div id="averageQuizGrade">Average Score: --</div>
+            <button class="btn-action" onclick="resetAllScores()">Clear Scores</button>
+          </div>
+        </div>
+
+        <!-- Master References -->
+        <div class="section-card">
+          <h2>Original References <span>Essential Resources</span></h2>
+          <div class="file-links-container">
+            <!-- Complete Study Guide -->
+            <div class="file-link-item">
+              <div class="file-info">
+                <span class="file-icon">📚</span>
+                <div class="file-meta">
+                  <span class="file-name">Complete Study Guide</span>
+                  <span class="file-desc">31 interactive topics & quiz cards</span>
+                </div>
+              </div>
+              <a href="CCA-F_Complete_Study_Guide%201%20(1).html" class="raw-link" target="_blank">Open ↗</a>
+            </div>
+
+            <!-- Ultimate Reference Rajesh -->
+            <div class="file-link-item">
+              <div class="file-info">
+                <span class="file-icon">🌟</span>
+                <div class="file-meta">
+                  <span class="file-name">Ultimate Reference (Rajesh)</span>
+                  <span class="file-desc">Tutor prompt blueprints & raw logs</span>
+                </div>
+              </div>
+              <a href="ccaf-ultimate_Guide_rajesh.html" class="raw-link" target="_blank">Open ↗</a>
+            </div>
+
+            <!-- PDF Exam Guide -->
+            <div class="file-link-item">
+              <div class="file-info">
+                <span class="file-icon">📄</span>
+                <div class="file-meta">
+                  <span class="file-name">Official Syllabus (PDF)</span>
+                  <span class="file-desc">Official Anthropic candidate outline</span>
+                </div>
+              </div>
+              <a href="CCA-300-Exam%20Guide.pdf" class="raw-link" target="_blank">Open ↗</a>
+            </div>
+
+            <!-- Text version of PDF -->
+            <div class="file-link-item">
+              <div class="file-info">
+                <span class="file-icon">📝</span>
+                <div class="file-meta">
+                  <span class="file-name">Official Syllabus (Text)</span>
+                  <span class="file-desc">Extracted searchable text file</span>
+                </div>
+              </div>
+              <a href="CCA-300-Exam_Guide.txt" class="raw-link" target="_blank">Open ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Study Strategy Cheat Sheet -->
+        <div class="section-card">
+          <h2>6-Week Study Strategy <span>Suggested Path</span></h2>
+          <div style="font-size: 0.85rem; color: var(--anthropic-body);">
+            <div style="margin-bottom: 12px; border-left: 2px solid var(--anthropic-clay); padding-left: 8px;">
+              <strong style="color:var(--anthropic-coral);">Week 1: Agentic Orchestration</strong><br>
+              Master SDK patterns. Toggle Domain 1 on this hub, tick topics 1.1-1.7, run the 60-question test. Focus on <code>stop_reason</code>, task delegation, and hooks.
+            </div>
+            <div style="margin-bottom: 12px; border-left: 2px solid var(--anthropic-clay); padding-left: 8px;">
+              <strong style="color:var(--anthropic-coral);">Week 2: Designing Interfaces & MCP</strong><br>
+              Study Domain 2. Master JSON schema formatting and built-in CLI constraints. Take Domain 2 Practice Quiz.
+            </div>
+            <div style="margin-bottom: 12px; border-left: 2px solid var(--anthropic-clay); padding-left: 8px;">
+              <strong style="color:var(--anthropic-coral);">Week 3: Developing with Claude Code</strong><br>
+              Master CLAUDE.md setups, slash commands, and plan-mode tradeoffs (Domain 3). Launch Domain 3 Quiz.
+            </div>
+            <div style="margin-bottom: 12px; border-left: 2px solid var(--anthropic-clay); padding-left: 8px;">
+              <strong style="color:var(--anthropic-coral);">Week 4: Output Engineering</strong><br>
+              Understand few-shots curves, schema validation chains, and batches in Domain 4. Take Domain 4 Quiz.
+            </div>
+            <div style="margin-bottom: 12px; border-left: 2px solid var(--anthropic-clay); padding-left: 8px;">
+              <strong style="color:var(--anthropic-coral);">Week 5: System Safety & Truncations</strong><br>
+              Deep dive into context boundaries, error handshake policies, and calibration patterns in Domain 5. Take Domain 5 Quiz.
+            </div>
+            <div style="margin-bottom: 5px; border-left: 2px solid var(--anthropic-coral); padding-left: 8px;">
+              <strong style="color:var(--anthropic-coral);">Week 6: General Scenarios Iteration</strong><br>
+              Read all 31 intermediate quizzes and tutor prompt checklists in the Study Guide. Master the 6 core scenarios. Aim for &ge;90% overall scoring reliability.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Prepared specifically for the Claude Certified Architect Associate Exams. Designed with ❤️ for Claude aspirants.</p>
+      <p style="margin-top: 10px; font-size: 0.75rem; color:#777;">
+        All contents copyright of their respective study guides. Portions processed and linked together dynamically locally in this study workspace.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const STORAGE_KEY_CHKS = "cca_study_chk_progress";
+    const STORAGE_KEY_SCORES = "cca_study_quiz_scores";
+
+    // Track state of checked tasks
+    let checkedState = {};
+    // Track state of log inputs
+    let scoresState = {};
+
+    window.onload = function() {
+      loadProgress();
+      loadScores();
+      calculateProgress();
+    };
+
+    function toggleDomain(headerElement) {
+      const section = headerElement.parentElement;
+      const toggleIcon = headerElement.querySelector('.domain-toggle-icon');
+      
+      if (section.classList.contains('collapsed')) {
+        section.classList.remove('collapsed');
+        toggleIcon.textContent = '▼';
+      } else {
+        section.classList.add('collapsed');
+        toggleIcon.textContent = '▶';
+      }
+    }
+
+    function filterDomains(domain, clickedBtn) {
+      // Toggle button states
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      clickedBtn.classList.add('active');
+
+      const sections = document.querySelectorAll('.domain-section');
+      sections.forEach(sec => {
+        const domId = sec.getAttribute('data-domain');
+        if (domain === 'all' || domId === domain) {
+          sec.classList.remove('hidden');
+          // Auto-expand single filtered domain
+          if (domain !== 'all') {
+            sec.classList.remove('collapsed');
+            sec.querySelector('.domain-toggle-icon').textContent = '▼';
+          }
+        } else {
+          sec.classList.add('hidden');
+        }
+      });
+    }
+
+    function trackTaskProgress(taskId, isChecked) {
+      checkedState[taskId] = isChecked;
+      localStorage.setItem(STORAGE_KEY_CHKS, JSON.stringify(checkedState));
+      calculateProgress();
+    }
+
+    function calculateProgress() {
+      const checkboxes = document.querySelectorAll('.task-checkbox');
+      const totalNum = checkboxes.length;
+      
+      let completedNum = 0;
+      checkboxes.forEach(chk => {
+        const taskId = chk.id.replace('chk_', '');
+        if (checkedState[taskId]) {
+          completedNum++;
+        }
+      });
+
+      document.getElementById('overallTasksCompleted').textContent = completedNum;
+      document.getElementById('overallTasksTotal').textContent = totalNum;
+
+      const percentage = totalNum > 0 ? Math.round((completedNum / totalNum) * 100) : 0;
+      document.getElementById('overallProgPct').textContent = percentage + '%';
+
+      // SVG Circle Progress Math
+      // Diameter = 70, radius = 31, circumference = 2 * PI * r = 2 * 3.14159 * 31 = 194.77
+      // In the CSS standard stroke-dasharray is set. Let's map dashoffset based on 194.77 circumference.
+      const circumference = 2 * Math.PI * 31; // ~194.77
+      const fillStrokeValue = circumference - (completedNum / totalNum) * circumference;
+      
+      const fillCircle = document.getElementById('overallProgCircle');
+      fillCircle.style.strokeDasharray = circumference;
+      fillCircle.style.strokeDashoffset = fillStrokeValue;
+    }
+
+    function loadProgress() {
+      const saved = localStorage.getItem(STORAGE_KEY_CHKS);
+      if (saved) {
+        checkedState = JSON.parse(saved);
+        const checkboxes = document.querySelectorAll('.task-checkbox');
+        checkboxes.forEach(chk => {
+          const taskId = chk.id.replace('chk_', '');
+          if (checkedState[taskId]) {
+            chk.checked = true;
+          }
+        });
+      }
+    }
+
+    function saveAndCalcScores() {
+      const domains = ['d1', 'd2', 'd3', 'd4', 'd5'];
+      let totalPassed = 0;
+      let sumCorrect = 0;
+      let attemptedCounts = 0;
+
+      domains.forEach(dom => {
+        const input = document.getElementById(`score_val_${dom}`);
+        const label = document.getElementById(`score_lbl_${dom}`);
+        const rawVal = input.value;
+
+        if (rawVal !== "") {
+          const valNum = parseInt(rawVal, 10);
+          scoresState[dom] = valNum;
+          sumCorrect += valNum;
+          attemptedCounts += 60; // Max per domain quiz is 60
+
+          // A pass score on real examination is 72% scaled (normally around ~80% answers correct in mock quizzes)
+          // 48 out of 60 correct is exactly 80%. Let's set the pass score at 48 of 60 questions correct.
+          if (valNum >= 48) {
+            label.textContent = "PASSED";
+            label.className = "score-status pass";
+          } else {
+            label.textContent = "FAILED";
+            label.className = "score-status fail";
+          }
+        } else {
+          scoresState[dom] = "";
+          label.textContent = "Not Taken";
+          label.className = "score-status none";
+        }
+      });
+
+      localStorage.setItem(STORAGE_KEY_SCORES, JSON.stringify(scoresState));
+
+      // Calculate averages
+      const avgLabel = document.getElementById('averageQuizGrade');
+      if (attemptedCounts > 0) {
+        const percent = Math.round((sumCorrect / attemptedCounts) * 100);
+        avgLabel.textContent = `Average Score: ${percent}% (${sumCorrect}/${attemptedCounts})`;
+      } else {
+        avgLabel.textContent = "Average Score: --";
+      }
+    }
+
+    function loadScores() {
+      const saved = localStorage.getItem(STORAGE_KEY_SCORES);
+      if (saved) {
+        scoresState = JSON.parse(saved);
+        const domains = ['d1', 'd2', 'd3', 'd4', 'd5'];
+        domains.forEach(dom => {
+          if (scoresState[dom] !== undefined && scoresState[dom] !== "") {
+            document.getElementById(`score_val_${dom}`).value = scoresState[dom];
+          }
+        });
+        saveAndCalcScores();
+      }
+    }
+
+    function resetAllProgress() {
+      if (confirm("Are you sure you want to reset all checkout progress flags?")) {
+        checkedState = {};
+        localStorage.removeItem(STORAGE_KEY_CHKS);
+        const checkboxes = document.querySelectorAll('.task-checkbox');
+        checkboxes.forEach(chk => chk.checked = false);
+        calculateProgress();
+      }
+    }
+
+    function resetAllScores() {
+      if (confirm("Are you sure you want to clear your logged exam quiz scores?")) {
+        scoresState = {};
+        localStorage.removeItem(STORAGE_KEY_SCORES);
+        const domains = ['d1', 'd2', 'd3', 'd4', 'd5'];
+        domains.forEach(dom => {
+          document.getElementById(`score_val_${dom}`).value = "";
+        });
+        saveAndCalcScores();
+      }
+    }
+
+    // Interactive search matching mechanism
+    function runSearch() {
+      const query = document.getElementById('searchBox').value.trim().toLowerCase();
+      const taskListItems = document.querySelectorAll('.task-item');
+      const domains = document.querySelectorAll('.domain-section');
+
+      if (query === "") {
+        // Clear highlights and return all sections to default
+        taskListItems.forEach(item => {
+          item.classList.remove('hidden');
+          // Strip innerHTML span highlights
+          const titleSpan = item.querySelector('.task-title');
+          titleSpan.innerHTML = titleSpan.textContent; 
+        });
+
+        // Hide collapsed block if collapsed originally, but here let's just make sure all sections are visible
+        domains.forEach(sec => {
+          sec.classList.remove('hidden');
+        });
+        return;
+      }
+
+      // Hide/Show items based on search matches
+      taskListItems.forEach(item => {
+        const searchMetadata = item.getAttribute('data-search').toLowerCase();
+        const matches = searchMetadata.includes(query);
+        
+        if (matches) {
+          item.classList.remove('hidden');
+          // Highlight match in title
+          const titleSpan = item.querySelector('.task-title');
+          const txt = titleSpan.textContent;
+          const reg = new RegExp(`(${query})`, 'gi');
+          titleSpan.innerHTML = txt.replace(reg, '<span class="match-highlight">$1</span>');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      // Keep domains visible ONLY if they contain at least one visible task card
+      domains.forEach(sec => {
+        const visibleTasks = sec.querySelectorAll('.task-item:not(.hidden)');
+        if (visibleTasks.length > 0) {
+          sec.classList.remove('hidden');
+          sec.classList.remove('collapsed'); // expand it so users see match!
+          sec.querySelector('.domain-toggle-icon').textContent = '▼';
+        } else {
+          sec.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

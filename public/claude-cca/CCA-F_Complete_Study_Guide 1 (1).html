@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCA-F Complete Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-2: #f4f5f7;
+  --border: #e2e4e8;
+  --text: #1a1a2e;
+  --text-2: #5a5a72;
+  --text-3: #8a8a9a;
+  --accent: #2563eb;
+  --accent-light: #eff6ff;
+  --green: #059669;
+  --green-light: #ecfdf5;
+  --green-bg: #d1fae5;
+  --red: #dc2626;
+  --red-light: #fef2f2;
+  --red-bg: #fee2e2;
+  --orange: #d97706;
+  --orange-light: #fffbeb;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+  --d1: #3b82f6; --d1-bg: #eff6ff; --d1-border: #bfdbfe;
+  --d2: #059669; --d2-bg: #ecfdf5; --d2-border: #a7f3d0;
+  --d3: #d97706; --d3-bg: #fffbeb; --d3-border: #fde68a;
+  --d4: #7c3aed; --d4-bg: #f5f3ff; --d4-border: #c4b5fd;
+  --d5: #dc2626; --d5-bg: #fef2f2; --d5-border: #fca5a5;
+  --exam: #4b5563; --exam-bg: #f9fafb; --exam-border: #d1d5db;
+  --code-bg: #1e1e2e;
+  --code-text: #cdd6f4;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-lg: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 15px;
+}
+
+/* ── Layout ─────────────────────────────────── */
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+.hero {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: white;
+  padding: 60px 24px 50px;
+  text-align: center;
+}
+.hero h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
+.hero p { font-size: 16px; color: #94a3b8; margin-bottom: 24px; }
+.hero-stats {
+  display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 20px;
+}
+.hero-stat {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  padding: 14px 22px;
+  text-align: center;
+}
+.hero-stat .val { font-size: 22px; font-weight: 700; color: #60a5fa; }
+.hero-stat .lbl { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+
+/* ── Progress Bar ─────────────────────────── */
+.progress-wrap {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+.progress-inner { max-width: 900px; margin: 0 auto; }
+.progress-bar-bg { background: var(--surface-2); border-radius: 20px; height: 6px; }
+.progress-bar-fill {
+  background: var(--green);
+  border-radius: 20px;
+  height: 6px;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+.progress-label {
+  display: flex; justify-content: space-between;
+  font-size: 12px; color: var(--text-3); margin-top: 6px;
+}
+
+/* ── Nav ──────────────────────────────────── */
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin: 32px auto;
+  padding: 28px;
+  max-width: 900px;
+  box-shadow: var(--shadow);
+}
+.toc h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+.toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+.toc-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text);
+  font-size: 13px;
+  transition: background 0.15s;
+  border: 1px solid transparent;
+}
+.toc-item:hover { background: var(--surface-2); border-color: var(--border); }
+.toc-badge {
+  font-size: 10px; font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  color: white;
+}
+
+/* ── Universal Rules ─────────────────────── */
+.rules-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin: 32px auto;
+  padding: 28px;
+  max-width: 900px;
+  box-shadow: var(--shadow);
+}
+.rules-section h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+.rule-card {
+  background: var(--green-light);
+  border: 1px solid var(--green-bg);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin-bottom: 10px;
+}
+.rule-card:last-child { margin-bottom: 0; }
+.rule-num { font-size: 12px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.5px; }
+.rule-text { font-size: 14px; margin-top: 4px; font-weight: 500; }
+.rule-detail { font-size: 13px; color: var(--text-2); margin-top: 4px; }
+
+/* ── Domain Sections ─────────────────────── */
+.domain-section {
+  margin: 40px auto;
+  max-width: 900px;
+}
+.domain-header {
+  padding: 20px 24px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  color: white;
+}
+.domain-header h2 { font-size: 20px; font-weight: 700; }
+.domain-header p { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+
+.domain-d1 .domain-header { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+.domain-d2 .domain-header { background: linear-gradient(135deg, #059669, #047857); }
+.domain-d3 .domain-header { background: linear-gradient(135deg, #d97706, #b45309); }
+.domain-d4 .domain-header { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+.domain-d5 .domain-header { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+.domain-exam .domain-header { background: linear-gradient(135deg, #4b5563, #374151); }
+
+/* ── Topic Cards ─────────────────────────── */
+.topic-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: none;
+  padding: 0;
+}
+.topic-card:last-child { border-radius: 0 0 var(--radius) var(--radius); }
+
+.topic-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  transition: background 0.15s;
+}
+.topic-toggle:hover { background: var(--surface-2); }
+.topic-toggle .chevron {
+  font-size: 12px;
+  color: var(--text-3);
+  transition: transform 0.2s;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.topic-toggle.open .chevron { transform: rotate(90deg); }
+.topic-tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+.tag-core { background: var(--accent-light); color: var(--accent); }
+.tag-gap { background: var(--orange-light); color: var(--orange); }
+
+.topic-body {
+  display: none;
+  padding: 0 24px 24px;
+  border-top: 1px solid var(--border);
+}
+.topic-body.open { display: block; }
+
+.topic-body h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  color: var(--text);
+}
+.topic-body h3:first-child { margin-top: 16px; }
+
+.topic-body p { font-size: 14px; color: var(--text-2); margin-bottom: 12px; }
+
+/* ── Code Blocks ─────────────────────────── */
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  line-height: 1.6;
+  margin: 12px 0;
+}
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  background: var(--surface-2);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+pre code { background: none; padding: 0; }
+
+.comment { color: #6c7086; }
+.keyword { color: #cba6f7; }
+.string { color: #a6e3a1; }
+.wrong { color: #f38ba8; }
+.correct { color: #a6e3a1; }
+
+/* ── Tables ───────────────────────────────── */
+.topic-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 13px;
+}
+.topic-table th {
+  background: var(--surface-2);
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  font-size: 12px;
+}
+.topic-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+
+/* ── Key Insight ─────────────────────────── */
+.insight {
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+  padding: 14px 18px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 14px 0;
+  font-size: 14px;
+}
+.insight strong { color: var(--accent); }
+
+.warning {
+  background: var(--red-light);
+  border-left: 3px solid var(--red);
+  padding: 14px 18px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 14px 0;
+  font-size: 14px;
+}
+.warning strong { color: var(--red); }
+
+.tip {
+  background: var(--green-light);
+  border-left: 3px solid var(--green);
+  padding: 14px 18px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 14px 0;
+  font-size: 14px;
+}
+.tip strong { color: var(--green); }
+
+/* ── MCQ Quiz ─────────────────────────────── */
+.quiz {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 20px 0;
+}
+.quiz-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.quiz-q { font-size: 14px; font-weight: 500; margin-bottom: 14px; line-height: 1.6; }
+.quiz-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  transition: all 0.15s;
+  color: var(--text);
+}
+.quiz-option:hover:not(.selected):not(.disabled) {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+.quiz-option.selected.correct-opt {
+  border-color: var(--green);
+  background: var(--green-light);
+}
+.quiz-option.selected.wrong-opt {
+  border-color: var(--red);
+  background: var(--red-light);
+}
+.quiz-option.disabled.correct-opt {
+  border-color: var(--green);
+  background: var(--green-light);
+}
+.quiz-option.disabled { cursor: default; }
+.quiz-option .opt-letter {
+  font-weight: 600;
+  margin-right: 8px;
+}
+.quiz-explanation {
+  display: none;
+  margin-top: 14px;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.quiz-explanation.show { display: block; }
+.quiz-explanation.correct-exp {
+  background: var(--green-light);
+  border: 1px solid var(--green-bg);
+}
+.quiz-explanation.wrong-exp {
+  background: var(--red-light);
+  border: 1px solid var(--red-bg);
+}
+.quiz-explanation h4 { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.exp-item { margin-bottom: 6px; }
+.exp-correct { color: var(--green); font-weight: 500; }
+.exp-wrong { color: var(--red); font-weight: 500; }
+
+/* ── Score tracker ───────────────────────── */
+.score-tracker {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 32px auto;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-shadow: var(--shadow);
+}
+.score-tracker h3 { font-size: 16px; font-weight: 600; }
+.score-nums { display: flex; gap: 20px; }
+.score-num { text-align: center; }
+.score-num .val { font-size: 24px; font-weight: 700; }
+.score-num .lbl { font-size: 11px; color: var(--text-3); }
+.score-num.s-correct .val { color: var(--green); }
+.score-num.s-wrong .val { color: var(--red); }
+.score-num.s-total .val { color: var(--accent); }
+.score-reset {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.score-reset:hover { background: var(--surface-2); }
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 640px) {
+  .hero h1 { font-size: 24px; }
+  .hero-stats { gap: 12px; }
+  .hero-stat { padding: 10px 16px; }
+  .toc-grid { grid-template-columns: 1fr; }
+  .topic-toggle { padding: 14px 16px; font-size: 14px; }
+  .topic-body { padding: 0 16px 20px; }
+  .score-tracker { flex-direction: column; align-items: flex-start; }
+}
+
+@media print {
+  .progress-wrap, .score-tracker, .score-reset, .quiz-option, .quiz-explanation { break-inside: avoid; }
+  .topic-body { display: block !important; }
+  .progress-wrap { position: static; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="container">
+    <h1>CCA-F Complete Study Guide</h1>
+    <p>Claude Certified Architect — Foundations · Everything you need to pass</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="val">60</div><div class="lbl">MCQ Questions</div></div>
+      <div class="hero-stat"><div class="val">120</div><div class="lbl">Minutes</div></div>
+      <div class="hero-stat"><div class="val">720</div><div class="lbl">Pass Score</div></div>
+      <div class="hero-stat"><div class="val">5</div><div class="lbl">Domains</div></div>
+      <div class="hero-stat"><div class="val">6</div><div class="lbl">Scenarios</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-wrap">
+  <div class="progress-inner">
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressBar"></div></div>
+    <div class="progress-label"><span id="progressText">0 of 0 questions answered</span><span id="progressPct">0%</span></div>
+  </div>
+</div>
+
+<div class="score-tracker container">
+  <h3>Quiz Progress</h3>
+  <div class="score-nums">
+    <div class="score-num s-correct"><div class="val" id="scoreCorrect">0</div><div class="lbl">Correct</div></div>
+    <div class="score-num s-wrong"><div class="val" id="scoreWrong">0</div><div class="lbl">Wrong</div></div>
+    <div class="score-num s-total"><div class="val" id="scoreTotal">0</div><div class="lbl">Answered</div></div>
+  </div>
+  <button class="score-reset" onclick="resetAllQuizzes()">Reset All</button>
+</div>
+
+<div class="rules-section container">
+  <h2>3 Universal Rules — Answer ~80% of Exam Questions</h2>
+  <div class="rule-card">
+    <div class="rule-num">Rule 1</div>
+    <div class="rule-text">Deterministic over probabilistic when stakes are high</div>
+    <div class="rule-detail">Use hooks, schemas, and forced tool_choice — not prompt instructions — for financial, compliance, and security operations.</div>
+  </div>
+  <div class="rule-card">
+    <div class="rule-num">Rule 2</div>
+    <div class="rule-text">Root cause over symptom patch</div>
+    <div class="rule-detail">Fix tool descriptions not routing layers, fix coordinator decomposition not subagents, fix schemas not retry logic.</div>
+  </div>
+  <div class="rule-card">
+    <div class="rule-num">Rule 3</div>
+    <div class="rule-text">Simplest correct intervention</div>
+    <div class="rule-detail">Don't over-engineer. Don't add complexity on broken architecture. Prefer the minimal fix that addresses the actual root cause.</div>
+  </div>
+</div>
+<div class="toc container"><h2>Table of Contents</h2><div class="toc-grid"><a href="#t1" class="toc-item"><span class="toc-badge" style="background:#2563eb">D1</span>1.1 — The Agentic Loop</a><a href="#t2" class="toc-item"><span class="toc-badge" style="background:#2563eb">D1</span>1.2 — Multi-Agent Orchestration</a><a href="#t3" class="toc-item"><span class="toc-badge" style="background:#2563eb">D1</span>1.5 — Hooks: Deterministic vs Probabilistic</a><a href="#t3b" class="toc-item"><span class="toc-badge" style="background:#2563eb">D1</span>PostToolUse for Multi-Tool Data Normalisation</a><a href="#t4" class="toc-item"><span class="toc-badge" style="background:#2563eb">D1</span>1.7 — Session Management</a><a href="#t4b" class="toc-item"><span class="toc-badge" style="background:#2563eb">D1</span>Structured State Persistence — Crash Recovery</a><a href="#t5" class="toc-item"><span class="toc-badge" style="background:#059669">D2</span>2.1 — Tool Descriptions as Routing Mechanism</a><a href="#t6" class="toc-item"><span class="toc-badge" style="background:#059669">D2</span>2.2 — Structured Error Responses</a><a href="#t7" class="toc-item"><span class="toc-badge" style="background:#059669">D2</span>2.4 — MCP Configuration</a><a href="#t8" class="toc-item"><span class="toc-badge" style="background:#059669">D2</span>2.x — Tool Distribution & Separation of Concerns</a><a href="#t8b" class="toc-item"><span class="toc-badge" style="background:#059669">D2</span>Built-in Tool Selection: Read/Write/Edit/Bash/Grep/Glob</a><a href="#t8c" class="toc-item"><span class="toc-badge" style="background:#059669">D2</span>Tool Batching to Reduce Round Trips</a><a href="#t9" class="toc-item"><span class="toc-badge" style="background:#d97706">D3</span>3.1 — CLAUDE.md Hierarchy</a><a href="#t10" class="toc-item"><span class="toc-badge" style="background:#d97706">D3</span>3.2 — Commands, Skills & Frontmatter</a><a href="#t11" class="toc-item"><span class="toc-badge" style="background:#d97706">D3</span>3.4 — Plan Mode vs Direct Execution</a><a href="#t12" class="toc-item"><span class="toc-badge" style="background:#d97706">D3</span>3.6 — CI/CD Integration</a><a href="#t13" class="toc-item"><span class="toc-badge" style="background:#d97706">D3</span>CLI Cheatsheet — Exam-Relevant Flags & Commands</a><a href="#41__explicit_criteri" class="toc-item"><span class="toc-badge" style="background:#7c3aed">D4</span>4.1 — Explicit Criteria Over Vague Instructions</a><a href="#42__few-shot_prompti" class="toc-item"><span class="toc-badge" style="background:#7c3aed">D4</span>4.2 — Few-Shot Prompting</a><a href="#43__json_schemas__st" class="toc-item"><span class="toc-badge" style="background:#7c3aed">D4</span>4.3 — JSON Schemas & Structured Output</a><a href="#45__message_batches_" class="toc-item"><span class="toc-badge" style="background:#7c3aed">D4</span>4.5 — Message Batches API</a><a href="#46__prompt_chaining_" class="toc-item"><span class="toc-badge" style="background:#7c3aed">D4</span>4.6 — Prompt Chaining & Multi-Instance Review</a><a href="#multi-instance_verif" class="toc-item"><span class="toc-badge" style="background:#7c3aed">D4</span>Multi-Instance Verification Architecture</a><a href="#51__context_window_m" class="toc-item"><span class="toc-badge" style="background:#dc2626">D5</span>5.1 — Context Window Management</a><a href="#52__escalation_patte" class="toc-item"><span class="toc-badge" style="background:#dc2626">D5</span>5.2 — Escalation Patterns</a><a href="#53__error_propagatio" class="toc-item"><span class="toc-badge" style="background:#dc2626">D5</span>5.3 — Error Propagation</a><a href="#55__human_review__co" class="toc-item"><span class="toc-badge" style="background:#dc2626">D5</span>5.5 — Human Review & Confidence Calibration</a><a href="#56__provenance__conf" class="toc-item"><span class="toc-badge" style="background:#dc2626">D5</span>5.6 — Provenance & Conflicting Sources</a><a href="#22_anti-patterns" class="toc-item"><span class="toc-badge" style="background:#4b5563">★</span>22 Anti-Patterns</a><a href="#6_official_scenarios" class="toc-item"><span class="toc-badge" style="background:#4b5563">★</span>6 Official Scenarios</a><a href="#file_locations__crit" class="toc-item"><span class="toc-badge" style="background:#4b5563">★</span>File Locations & Critical Values</a></div></div><div class="domain-section domain-d1"><div class="domain-header"><h2>Domain 1 — Agentic Architecture & Orchestration</h2><p>Exam Weight: 27%</p></div>
+<div class="topic-card" id="t1">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    1.1 — The Agentic Loop
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The Core Concept</h3>
+<p>In Claude's agentic loop, <strong>you own the loop</strong>. Claude signals what it wants to do next via <code>stop_reason</code>, and your code acts on it. Claude is stateless — it has no memory between API calls. You must append the full conversation history on every call.</p>
+
+<h3>The Correct Loop Pattern</h3>
+<pre><code><span class="keyword">while</span> <span class="keyword">True</span>:
+    resp = client.messages.create(
+        model=<span class="string">"claude-sonnet-4-6"</span>,
+        tools=tools,
+        messages=messages
+    )
+    <span class="keyword">if</span> resp.stop_reason == <span class="string">"end_turn"</span>:
+        <span class="keyword">break</span>                          <span class="comment"># Claude is done — exit</span>
+    <span class="comment"># stop_reason == "tool_use" — execute tool</span>
+    messages.append({<span class="string">"role"</span>: <span class="string">"assistant"</span>, <span class="string">"content"</span>: resp.content})
+    results = execute_tools(resp.content)
+    messages.append({<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: results})</code></pre>
+
+<h3>The 4 stop_reason Values</h3>
+<table class="topic-table">
+<tr><th>stop_reason</th><th>Meaning</th><th>What to do</th></tr>
+<tr><td><code>"end_turn"</code></td><td>Claude finished</td><td>Break the loop</td></tr>
+<tr><td><code>"tool_use"</code></td><td>Claude wants a tool</td><td>Execute, append result, continue</td></tr>
+<tr><td><code>"max_tokens"</code></td><td>Response was cut off</td><td>Increase max_tokens, retry</td></tr>
+<tr><td><code>"stop_sequence"</code></td><td>Hit a custom stop string</td><td>Handle per your app logic</td></tr>
+</table>
+
+<h3>The 3 Anti-Patterns</h3>
+<div class="warning"><strong>Anti-pattern 1:</strong> Checking <code>content[0].type == "text"</code> to detect completion. Claude can return <strong>both</strong> text AND tool_use in the same response. Checking for text kills the loop before the tool executes.</div>
+<div class="warning"><strong>Anti-pattern 2:</strong> Using iteration cap as the primary stop signal. The cap should only be a <strong>safety net</strong>, never the primary signal. <code>stop_reason</code> is always primary.</div>
+<div class="warning"><strong>Anti-pattern 3:</strong> Parsing natural language like <code>"Task completed" in response.text</code>. You're parsing probabilistic text to make a deterministic control flow decision.</div>
+
+<div class="insight"><strong>Key Insight:</strong> A single response object can contain multiple content blocks of different types simultaneously. The only reliable signal is <code>stop_reason</code> on the response object itself — never check individual content block types to control the loop.</div>
+
+
+    <div class="quiz" id="quiz_0">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">Your agentic loop processes customer requests. During testing, you notice the agent occasionally acknowledges a request ("Sure, let me look that up") but never actually calls the tool. The loop exits after the text response. What is the most likely cause?</div>
+      <button class="quiz-option" data-quiz="quiz_0" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) The tool description is too vague for Claude to select the correct tool</button>
+      <button class="quiz-option" data-quiz="quiz_0" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) The loop checks content[0].type == "text" to detect completion — Claude returned text + tool_use in the same response, but the text check exits the loop before the tool executes</button>
+      <button class="quiz-option" data-quiz="quiz_0" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) The iteration cap is set too low, causing the loop to exit prematurely</button>
+      <button class="quiz-option" data-quiz="quiz_0" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) The system prompt needs few-shot examples showing when to call the tool</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_0_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Tool description quality affects which tool is selected, not whether the loop processes it. The tool was requested — the loop just didn't execute it.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_0_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Claude returns both a text block ("Sure, let me look that up") AND a tool_use block in the same response. Checking content[0].type == "text" triggers the break before the tool_use is processed. Fix: check stop_reason == "end_turn" instead.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_0_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. An iteration cap issue would cause the loop to exit after N turns regardless of Claude's state — not specifically after a text response.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_0_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Few-shot examples affect Claude's reasoning, not the loop control flow. The tool was already requested — the loop just didn't process it.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t2">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    1.2 — Multi-Agent Orchestration
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>Hub-and-Spoke Architecture</h3>
+<p>The coordinator is the <strong>only hub</strong>. It decomposes tasks, delegates to subagents, collects results, and aggregates the final output. Agents never talk to each other directly — all communication routes through the coordinator.</p>
+
+<h3>The 5 Unbreakable Rules</h3>
+<p><strong>Rule 1 — All communication through coordinator.</strong> If Agent A needs Agent B's output, the coordinator passes it. Direct agent-to-agent communication breaks observability and error handling.</p>
+<p><strong>Rule 2 — Subagents have ZERO context inheritance.</strong> Each subagent invocation is completely isolated. Pass ALL context explicitly — the document text, prior findings, expected output format.</p>
+<p><strong>Rule 3 — Parallel = multiple Task calls in ONE response.</strong> The coordinator emits multiple Task tool calls in a single response to trigger parallel execution. One Task per turn = sequential.</p>
+<p><strong>Rule 4 — allowedTools must include "Task" to spawn subagents.</strong></p>
+<p><strong>Rule 5 — Coordinator decomposes by goal + quality criteria, not step-by-step instructions.</strong></p>
+
+<h3>The Narrow Decomposition Bug</h3>
+<div class="warning"><strong>Exam Favourite:</strong> When a research system returns results only about a subset of the requested topic, ALL subagents may have executed correctly. The bug is in the <strong>coordinator's task decomposition</strong> — it decided to only cover certain subtopics. The fix is always to improve the coordinator's breakdown, never to fix individual subagents.</div>
+
+<div class="insight"><strong>Key Insight:</strong> When results are narrow or incomplete but all subagents ran correctly → root cause is always the coordinator's decomposition. Fix the coordinator, not the subagents. This is Universal Rule 2: Root cause over symptom patch.</div>
+
+
+    <div class="quiz" id="quiz_1">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A multi-agent research system is asked to research "AI applications across industries." The coordinator spawns subagents for healthcare, finance, and manufacturing. The final report is comprehensive for those three sectors but misses retail, education, and logistics. All subagents ran successfully. A developer suggests adding 3 more subagents for the missing sectors. What is the correct fix?</div>
+      <button class="quiz-option" data-quiz="quiz_1" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) The subagents need better tool descriptions to broaden their search scope</button>
+      <button class="quiz-option" data-quiz="quiz_1" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) The coordinator's task decomposition is too narrow — fix the coordinator's breakdown to include all relevant sectors</button>
+      <button class="quiz-option" data-quiz="quiz_1" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Add 3 more subagents for retail, education, and logistics</button>
+      <button class="quiz-option" data-quiz="quiz_1" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) The subagents are not passing results back to the coordinator correctly</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_1_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Tool descriptions affect routing, not the scope of what the coordinator asks for. The subagents worked perfectly within their assigned scope.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_1_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. The coordinator decided which sectors to cover and made a narrow decision. Adding subagents patches the symptom — the coordinator will still decompose narrowly next time. Fixing the coordinator's decomposition = root cause fix.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_1_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. This patches the symptom, not the root cause. The coordinator will still decompose narrowly for different queries. Universal Rule 2: root cause over symptom patch.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_1_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Results are returning fine — the report is comprehensive for the covered sectors. The problem is what was asked for, not how results flow back.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t3">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    1.5 — Hooks: Deterministic vs Probabilistic
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The Core Problem Hooks Solve</h3>
+<p>Claude follows prompt instructions ~99% of the time. For style preferences, 1% deviation is fine. For financial operations, compliance, security — 1% deviation is catastrophic. Hooks move critical rules <strong>out of Claude's prompt and into your code</strong>, making them 100% deterministic.</p>
+
+<h3>Two Hook Types</h3>
+<table class="topic-table">
+<tr><th>Hook</th><th>When it runs</th><th>Use for</th></tr>
+<tr><td><strong>PreToolUse</strong></td><td>BEFORE tool executes</td><td>Block, gate, enforce prerequisites</td></tr>
+<tr><td><strong>PostToolUse</strong></td><td>AFTER tool executes, BEFORE Claude sees result</td><td>Normalise, enrich, sanitize results</td></tr>
+</table>
+
+<h3>The Decision Rule</h3>
+<div class="insight"><strong>Mental Test:</strong> "If Claude deviates from this instruction once, does something bad happen in the real world?" → Yes = Hook (deterministic). No = Prompt is fine (probabilistic).</div>
+
+<table class="topic-table">
+<tr><th>Situation</th><th>Use</th></tr>
+<tr><td>Financial operations, identity verification, compliance, security</td><td><strong>Hooks</strong> — deterministic, cannot be bypassed</td></tr>
+<tr><td>Formatting preferences, tone, style guidelines</td><td><strong>Prompts</strong> — occasional deviation is acceptable</td></tr>
+</table>
+
+<div class="warning"><strong>Exam Trap:</strong> The exam will give scenarios where a prompt instruction sounds correct for financial operations. "Add an instruction: always verify identity before processing refund." This is WRONG for financial operations — it's probabilistic. The correct answer is always a PreToolUse hook.</div>
+
+
+    <div class="quiz" id="quiz_2">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A developer is building a trading system. Two requirements exist: (1) Trades over $50,000 must never execute without compliance sign-off. (2) The trade confirmation API returns amounts in cents — Claude keeps displaying $150 instead of $1.50. Which combination correctly addresses both?</div>
+      <button class="quiz-option" data-quiz="quiz_2" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) System prompt instruction for the $50k rule + PreToolUse hook to convert cents to dollars</button>
+      <button class="quiz-option" data-quiz="quiz_2" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) PreToolUse hook for the $50k rule + PostToolUse hook to convert cents to dollars</button>
+      <button class="quiz-option" data-quiz="quiz_2" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) PreToolUse hook for the $50k rule + system prompt instruction to interpret amounts as dollars</button>
+      <button class="quiz-option" data-quiz="quiz_2" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) PostToolUse hook for both requirements</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_2_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. System prompt for the $50k rule is probabilistic — one missed check on a $50k trade has real financial consequences. Must be a hook.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_2_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. PreToolUse blocks trades over $50k deterministically (cannot be bypassed). PostToolUse converts cents to dollars before Claude sees the result — deterministic normalisation, no misinterpretation possible.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_2_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. System prompt for currency conversion is probabilistic — Claude might still misinterpret. PostToolUse normalises it deterministically before Claude ever sees the raw value.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_2_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. PostToolUse runs AFTER tool execution. It cannot BLOCK a trade from executing — too late to prevent the $50k trade.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t3b">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-gap">Gap</span>
+    PostToolUse for Multi-Tool Data Normalisation
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The Pattern</h3>
+<p>When multiple tools return data in different formats (currencies, units, date formats), Claude has to compare them in its reasoning. Putting conversion logic inside Claude's reasoning is <strong>probabilistic</strong> — Claude might forget to convert, or convert incorrectly.</p>
+
+<h3>The Correct Architecture</h3>
+<pre><code><span class="comment"># PostToolUse intercepts BEFORE Claude sees the result</span>
+<span class="comment"># Conversion happens deterministically in YOUR code</span>
+<span class="keyword">async def</span> normalise_to_usd(input_data, tool_use_id, context):
+    result = input_data.get(<span class="string">"tool_result"</span>, {})
+    currency = result.get(<span class="string">"currency"</span>)
+    amount = result.get(<span class="string">"price"</span>)
+    <span class="keyword">if</span> currency == <span class="string">"EUR"</span>:
+        rate = get_live_rate(<span class="string">"EUR"</span>, <span class="string">"USD"</span>)
+        result[<span class="string">"price_usd"</span>] = amount * rate
+    <span class="keyword">return</span> {<span class="string">"modified_tool_result"</span>: result}
+
+<span class="comment"># Wire to ALL supplier tools</span>
+options = ClaudeAgentOptions(hooks={
+    <span class="string">"PostToolUse"</span>: [
+        HookMatcher(matcher=<span class="string">"us_supplier"</span>, hooks=[normalise_to_usd]),
+        HookMatcher(matcher=<span class="string">"eu_supplier"</span>, hooks=[normalise_to_usd]),
+        HookMatcher(matcher=<span class="string">"jp_supplier"</span>, hooks=[normalise_to_usd])
+    ]
+})</code></pre>
+
+<div class="insight"><strong>Key Rule:</strong> Multiple tools → different formats → PostToolUse normalises ALL → Claude only sees consistent, normalised data → reliable comparison every time.</div>
+
+<table class="topic-table">
+<tr><th>Multiple tools return</th><th>PostToolUse normalises to</th></tr>
+<tr><td>USD, EUR, JPY</td><td>Single base currency (USD)</td></tr>
+<tr><td>Unix timestamps, ISO dates, natural language dates</td><td>ISO 8601 standard</td></tr>
+<tr><td>Celsius, Fahrenheit</td><td>Single unit</td></tr>
+<tr><td>40 fields each</td><td>5 relevant fields each</td></tr>
+</table>
+
+
+    <div class="quiz" id="quiz_3">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A logistics agent compares delivery times from 3 carriers. FedEx returns hours, UPS returns days, DHL returns business days. Claude keeps picking the wrong carrier because it compares raw numbers without considering units. What is the correct fix?</div>
+      <button class="quiz-option" data-quiz="quiz_3" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Add a system prompt instruction: "Always convert all delivery times to hours before comparing"</button>
+      <button class="quiz-option" data-quiz="quiz_3" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Add PostToolUse hooks on all 3 carrier tools to normalise delivery times to hours before Claude sees results</button>
+      <button class="quiz-option" data-quiz="quiz_3" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Add a PreToolUse hook to inject unit conversion instructions into each carrier API call</button>
+      <button class="quiz-option" data-quiz="quiz_3" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Create a composite tool that calls all 3 carriers and normalises internally</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_3_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Puts conversion inside Claude's reasoning — probabilistic. Claude might forget to convert or miscalculate "business days" to hours.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_3_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. PostToolUse intercepts after each tool, before Claude sees results. Normalisation happens deterministically in your code. Claude only ever sees hours — never raw days or business days.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_3_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. PreToolUse runs BEFORE the tool executes — it can't modify results that haven't been returned yet.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_3_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Composite tools reduce flexibility (what if you only need one carrier?), increase maintenance burden, and don't fix the root cause architecturally.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t4">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    1.7 — Session Management
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The 4 Session Options</h3>
+<table class="topic-table">
+<tr><th>Option</th><th>When to use</th><th>Risk</th></tr>
+<tr><td><code>--resume &lt;name&gt;</code></td><td>Context still valid, nothing changed</td><td>Stale context if files changed</td></tr>
+<tr><td><code>fork_session(id)</code></td><td>Explore 2+ approaches independently</td><td>Divergent branches may conflict</td></tr>
+<tr><td>Fresh start + inject summary</td><td>Files changed, tool results stale</td><td>Lose prior analysis without summary</td></tr>
+<tr><td><code>/compact</code></td><td>Context filling with verbose output</td><td>Exact numeric values, dates can be lost</td></tr>
+</table>
+
+<h3>The Stale Context Trap</h3>
+<div class="warning"><strong>Exam Favourite:</strong> A developer analyses a codebase, takes a break overnight, a teammate merges a large PR. The developer runs <code>--resume</code>. Claude reasons from cached context — file locations, function positions — that are now WRONG. Claude makes changes to wrong files. <strong>Fix:</strong> Start fresh with structured summary of prior findings, explicitly noting which files changed.</div>
+
+<div class="insight"><strong>Decision Framework:</strong> Has anything changed since the last session? No → <code>--resume</code>. Yes → Fresh start + inject summary. Need to try multiple approaches? → <code>fork_session</code>.</div>
+
+
+    <div class="quiz" id="quiz_4">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A team needs to explore two migration strategies independently — online migration vs offline migration — without one affecting the other's analysis. Additionally, two new microservices were added to the codebase since the initial analysis. What is the correct session strategy?</div>
+      <button class="quiz-option" data-quiz="quiz_4" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Resume the original session and work on both strategies sequentially</button>
+      <button class="quiz-option" data-quiz="quiz_4" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Fork the session twice from the original baseline, one branch per strategy. Re-analyse new microservices in a fresh session with prior findings injected</button>
+      <button class="quiz-option" data-quiz="quiz_4" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Fork the session twice from the original baseline. Use --resume for the new microservices</button>
+      <button class="quiz-option" data-quiz="quiz_4" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Start completely fresh for everything — original analysis is too old to be useful</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_4_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Sequential means one strategy's analysis contaminates the other. Also ignores stale context for new microservices.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_4_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Fork twice = two independent branches from same valid baseline. Fresh + inject for new microservices = stale context avoided, prior findings preserved.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_4_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. --resume for new microservices is wrong — those files didn't exist in the original session. Context would be stale/missing.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_4_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Throwing away entire analysis is wasteful. Original findings are still valid for existing files — only new microservices need fresh analysis.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t4b">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-gap">Gap</span>
+    Structured State Persistence — Crash Recovery
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The Core Problem</h3>
+<p>When an agent crashes mid-task, all in-context work is lost. <code>--resume</code> doesn't work because the session context is gone. <code>/compact</code> can't run on a crashed session.</p>
+
+<h3>The Correct Pattern — JSON Manifest</h3>
+<pre><code><span class="comment"># Agent exports manifest every 5-10 files</span>
+manifest = {
+    <span class="string">"high_level_goal"</span>: <span class="string">"Find auth vulnerabilities"</span>,
+    <span class="string">"processed_files"</span>: [
+        {<span class="string">"path"</span>: <span class="string">"src/auth/login.py"</span>, <span class="string">"status"</span>: <span class="string">"complete"</span>,
+         <span class="string">"findings"</span>: [{<span class="string">"type"</span>: <span class="string">"sql_injection"</span>, <span class="string">"line"</span>: 47}]}
+    ],
+    <span class="string">"remaining_files"</span>: [<span class="string">"src/api/endpoints.py"</span>],
+    <span class="string">"key_entities"</span>: {<span class="string">"vulnerable_functions"</span>: [<span class="string">"get_user"</span>]}
+}</code></pre>
+
+<div class="insight"><strong>Recovery Pattern:</strong> Coordinator detects crash → loads last JSON manifest → spawns fresh agent with manifest injected at TOP of prompt → new agent continues from last checkpoint. Zero work lost beyond the checkpoint interval.</div>
+
+<div class="warning"><strong>Why /compact is wrong for recovery:</strong> Agent crashed — context is gone, you can't /compact a dead session. Even if you could, /compact loses exact file names, line numbers, specific findings. Recovery needs EXACT structured data, not prose summaries.</div>
+
+
+    <div class="quiz" id="quiz_5">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A code analysis agent processes 100 files over 4 hours. It crashes at file 78. The coordinator attempts /compact on the crashed session and sends the summary to a new agent. The new agent starts from scratch despite the summary. What are the root causes?</div>
+      <button class="quiz-option" data-quiz="quiz_5" data-idx="0" data-correct="0" data-class="correct-opt" onclick="selectOption(this)">A) /compact loses exact file names and findings — summary too vague for precise recovery. No JSON manifest was exported during execution — coordinator had no structured checkpoint to inject</button>
+      <button class="quiz-option" data-quiz="quiz_5" data-idx="1" data-correct="0" data-class="wrong-opt" onclick="selectOption(this)">B) The coordinator should have used --resume instead of /compact</button>
+      <button class="quiz-option" data-quiz="quiz_5" data-idx="2" data-correct="0" data-class="wrong-opt" onclick="selectOption(this)">C) The new agent needs more max_tokens to process the summary</button>
+      <button class="quiz-option" data-quiz="quiz_5" data-idx="3" data-correct="0" data-class="wrong-opt" onclick="selectOption(this)">D) /compact should have been run every 10 files to prevent context loss</button>
+      <div class="quiz-explanation correct-exp" id="quiz_5_exp_0"><div class="exp-item">✅ <strong>Option A:</strong> Correct. Two root causes: (1) /compact produces prose summaries that lose exact structured data needed for precise recovery. (2) Without periodic JSON manifest export, there's no structured checkpoint data to inject into a recovery agent.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_5_exp_1"><div class="exp-item">❌ <strong>Option B:</strong> Wrong. --resume on a crashed session = context is gone, nothing to resume from.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_5_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. max_tokens affects output length — irrelevant to recovery precision.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_5_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. /compact every 10 files still produces summaries that lose exact data. Wrong tool entirely — JSON manifest export is the correct mechanism.</div></div>
+    </div>
+  </div>
+</div>
+</div><div class="domain-section domain-d2"><div class="domain-header"><h2>Domain 2 — Tool Design & MCP Integration</h2><p>Exam Weight: 18%</p></div>
+<div class="topic-card" id="t5">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    2.1 — Tool Descriptions as Routing Mechanism
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The Core Rule</h3>
+<p>Tool descriptions are <strong>not documentation — they are the routing mechanism</strong>. When Claude has multiple tools, it decides which to call based almost entirely on the descriptions. A good description needs: input format with examples, explicit boundaries ("Do NOT use for..."), and ordering hints ("Call BEFORE lookup_order").</p>
+
+<h3>System Prompt Keyword Conflicts</h3>
+<div class="warning"><strong>Subtle Trap:</strong> A system prompt saying "Always verify the customer" creates unintended association — Claude starts calling <code>get_customer</code> even when unnecessary because of the word "verify." Review system prompts for keywords that override well-written tool descriptions.</div>
+
+<h3>Grep vs Glob</h3>
+<table class="topic-table">
+<tr><th>Tool</th><th>Searches</th><th>Use for</th></tr>
+<tr><td><strong>Grep</strong></td><td>File <strong>contents</strong></td><td>Find function callers, error messages, variable usage</td></tr>
+<tr><td><strong>Glob</strong></td><td>File <strong>paths/names</strong></td><td>Find files by extension, name pattern, location</td></tr>
+</table>
+
+<h3>tool_choice — 3 Modes</h3>
+<table class="topic-table">
+<tr><th>Mode</th><th>Behaviour</th><th>Use when</th></tr>
+<tr><td><code>"auto"</code></td><td>Claude chooses: tool OR text</td><td>Normal flexible responses — text response acceptable</td></tr>
+<tr><td><code>"any"</code></td><td>Claude MUST call a tool (picks which)</td><td>Guaranteed structured output — text response NOT acceptable</td></tr>
+<tr><td><code>{"type":"tool","name":"X"}</code></td><td>Claude MUST call tool X</td><td>Force specific tool — enforce ordering</td></tr>
+</table>
+
+
+    <div class="quiz" id="quiz_6">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A developer productivity agent has 3 tools: search_docs (MCP), Grep (built-in), and lookup_api (MCP). The agent consistently uses Grep instead of search_docs for semantic concept searches. The developer adds few-shot examples showing correct tool selection. Misrouting drops from 25% to 18% but doesn't disappear. What is the correct fix?</div>
+      <button class="quiz-option" data-quiz="quiz_6" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Add more few-shot examples until misrouting reaches 0%</button>
+      <button class="quiz-option" data-quiz="quiz_6" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Rewrite search_docs description to highlight its semantic search capability and explicitly differentiate it from Grep's exact-match behaviour</button>
+      <button class="quiz-option" data-quiz="quiz_6" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Remove Grep from the agent's available tools so it's forced to use search_docs</button>
+      <button class="quiz-option" data-quiz="quiz_6" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Add a system prompt instruction: "always prefer search_docs over Grep"</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_6_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Few-shot examples treat the symptom. Even dropping from 25% to 18% proves it helps but never fully fixes. The description is still weak — root cause unfixed.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_6_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Strengthens the MCP tool description to highlight unique capability. Explicitly differentiates from Grep. Root cause fix — Claude now has enough information to route correctly.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_6_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Removing Grep throws away a useful tool. The fix should be better descriptions, not fewer tools.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_6_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. System prompt instruction is probabilistic. "Always prefer" can create its own unintended conflicts elsewhere.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t6">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    2.2 — Structured Error Responses
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The Correct Error Schema</h3>
+<pre><code>{
+    <span class="string">"isError"</span>: true,
+    <span class="string">"errorCategory"</span>: <span class="string">"transient"</span>,   <span class="comment"># WHY it failed</span>
+    <span class="string">"isRetryable"</span>: true,             <span class="comment"># WHAT TO DO</span>
+    <span class="string">"attemptedQuery"</span>: query,         <span class="comment"># WHAT WAS TRIED</span>
+    <span class="string">"partialResults"</span>: partial,       <span class="comment"># WHAT WAS FOUND</span>
+    <span class="string">"message"</span>: <span class="string">"Orders API timed out"</span>
+}</code></pre>
+
+<h3>The 4 Error Categories</h3>
+<table class="topic-table">
+<tr><th>Category</th><th>Retryable?</th><th>Example</th></tr>
+<tr><td><strong>transient</strong></td><td>Yes</td><td>API timeout, network blip</td></tr>
+<tr><td><strong>validation</strong></td><td>Yes</td><td>Wrong date format, missing field</td></tr>
+<tr><td><strong>business</strong></td><td>No</td><td>Customer not eligible, limit exceeded</td></tr>
+<tr><td><strong>permission</strong></td><td>No</td><td>Access denied, insufficient credentials</td></tr>
+</table>
+
+<h3>The Most Critical Distinction</h3>
+<div class="warning"><strong>Access failure vs valid empty result:</strong> Database down → <code>isError: true</code>. Customer has no orders → <code>isError: false, results: []</code>. Confusing these causes either infinite retry loops (treating empty as error) or telling customers they have no orders when the database was actually down (treating error as empty).</div>
+
+<div class="warning"><strong>Silent Suppression Anti-Pattern:</strong> Catching a timeout and returning <code>{"results": [], "success": true}</code> is the most dangerous pattern. The coordinator thinks the search succeeded and found nothing. In reality, the search never ran. Customer gets told "no orders found" when they actually have 3 orders.</div>
+
+
+    <div class="quiz" id="quiz_7">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A customer support agent calls lookup_order which times out. The tool catches the timeout and returns {"results": [], "success": true}. The coordinator tells the customer their order doesn't exist. What is the root cause and correct fix?</div>
+      <button class="quiz-option" data-quiz="quiz_7" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) The coordinator should retry lookup_order automatically on all empty results</button>
+      <button class="quiz-option" data-quiz="quiz_7" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) The tool is suppressing the timeout as a successful empty result — fix by returning isError: true, errorCategory: "transient", isRetryable: true</button>
+      <button class="quiz-option" data-quiz="quiz_7" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) The coordinator needs better instructions to distinguish timeouts from empty results</button>
+      <button class="quiz-option" data-quiz="quiz_7" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Add a PreToolUse hook to detect timeouts before they reach the coordinator</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_7_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Retrying on ALL empty results is dangerous — valid empty results would be retried unnecessarily, causing infinite loops for customers who genuinely have no orders.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_7_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Silent suppression is the root cause. Fix: return structured error so coordinator knows what happened and can retry or escalate intelligently.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_7_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Coordinator instructions are probabilistic. The bug is in the tool's error handling code, not the coordinator's prompt.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_7_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. PreToolUse runs BEFORE the tool executes — can't detect what happens during tool execution.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t7">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    2.4 — MCP Configuration
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The Two Config Scopes</h3>
+<table class="topic-table">
+<tr><th>File</th><th>Scope</th><th>VCS</th><th>Use for</th></tr>
+<tr><td><code>.mcp.json</code></td><td>Project/Team</td><td>✅ Yes</td><td>Team MCP servers — everyone gets them on clone</td></tr>
+<tr><td><code>~/.claude.json</code></td><td>Personal</td><td>❌ No</td><td>Personal MCP servers — only you</td></tr>
+</table>
+
+<h3>Key Rules</h3>
+<p><strong>Env var expansion:</strong> Always use <code>"env": {"GITHUB_TOKEN": "${GITHUB_TOKEN}"}</code> — never hardcode credentials in .mcp.json.</p>
+<p><strong>MCP Resources vs Tools:</strong> Resources = content Claude reads upfront (DB schemas, API docs). Tools = functions Claude calls during execution. Resources save exploratory tool calls.</p>
+
+<div class="warning"><strong>Exam Trap:</strong> Lead developer configures team MCP servers in <code>~/.claude.json</code>. Everything works on their machine. New developer joins → zero MCP servers. Fix: move to <code>.mcp.json</code> in repo root.</div>
+
+
+    <div class="quiz" id="quiz_8">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A team needs GitHub (team), Jira (team), and a personal Notion server. A new developer must be productive immediately on day one. Which configuration is correct?</div>
+      <button class="quiz-option" data-quiz="quiz_8" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) All three servers in .mcp.json</button>
+      <button class="quiz-option" data-quiz="quiz_8" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) GitHub and Jira in .mcp.json, personal Notion in ~/.claude.json of the individual developer</button>
+      <button class="quiz-option" data-quiz="quiz_8" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) All three in ~/.claude.json of each developer</button>
+      <button class="quiz-option" data-quiz="quiz_8" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) GitHub and Jira in ~/.claude.json, Notion in .mcp.json</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_8_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Personal Notion in .mcp.json means every teammate gets a server they don't need and can't use without the individual's credentials.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_8_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Team servers in .mcp.json = every developer gets them automatically on clone. Personal server in ~/.claude.json = stays personal.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_8_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. GitHub and Jira in ~/.claude.json = every new developer has to manually configure them. Not scalable.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_8_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Completely reversed — team tools should be shared via VCS, personal tools should not.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t8">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    2.x — Tool Distribution & Separation of Concerns
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The Core Rule</h3>
+<p>Give an agent <strong>4-5 tools maximum</strong>, scoped to its role. When Claude has 18+ tools, selection becomes unreliable — it confuses similar tools and calls wrong ones regardless of description quality.</p>
+
+<h3>Fix: Split into Multiple Scoped Agents</h3>
+<pre><code><span class="comment"># WRONG — one agent, 18 tools → unreliable selection</span>
+<span class="comment"># CORRECT — 3 scoped agents, 4-5 tools each</span>
+customer_agent   = [get_customer, verify_identity, update_prefs]
+order_agent      = [lookup_order, process_refund, track_delivery]
+comms_agent      = [send_email, send_sms, escalate_to_human]</code></pre>
+
+<h3>Separation of Concerns</h3>
+<div class="insight"><strong>When an agent MISUSES a tool</strong> (e.g., synthesis agent using web_search to find templates instead of summarising) → the fix is NEVER better instructions. Remove the tool from that agent and route to a dedicated subagent. Tool availability = temptation.</div>
+
+<table class="topic-table">
+<tr><th>Problem</th><th>Root cause</th><th>Correct fix</th></tr>
+<tr><td>Tool <strong>misrouting</strong> (wrong tool from correct set)</td><td>Vague descriptions</td><td>Rewrite tool descriptions</td></tr>
+<tr><td>Tool <strong>misuse</strong> (tool outside agent's intended scope)</td><td>Tool shouldn't be available</td><td>Remove tool + dedicated subagent</td></tr>
+</table>
+
+
+    <div class="quiz" id="quiz_9">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A customer support system has one agent with 22 tools covering customer management, orders, inventory, communications, and compliance. The team notices increasing misrouting errors. A developer suggests improving all 22 tool descriptions. What is the correct fix?</div>
+      <button class="quiz-option" data-quiz="quiz_9" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Improve all 22 tool descriptions and add few-shot examples for correct routing</button>
+      <button class="quiz-option" data-quiz="quiz_9" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Split into 4-5 scoped agents with 4-5 tools each, coordinator routes between them</button>
+      <button class="quiz-option" data-quiz="quiz_9" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Remove the least used tools until only 10 remain</button>
+      <button class="quiz-option" data-quiz="quiz_9" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Add a routing classifier layer that pre-selects the tool before Claude sees them</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_9_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Better descriptions help but don't solve the fundamental problem — 22 tools is too many regardless of description quality. Symptom patch.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_9_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Fixes root cause — too many tools. Each agent gets 4-5 focused tools. Coordinator handles routing. Simplest correct intervention.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_9_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Reducing to 10 is still double optimal. Arbitrary cut also risks removing needed tools.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_9_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Over-engineering — building complexity on top of broken architecture. Simplest correct intervention wins.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t8b">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-gap">Gap</span>
+    Built-in Tool Selection: Read/Write/Edit/Bash/Grep/Glob
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>Token Efficiency Hierarchy</h3>
+<table class="topic-table">
+<tr><th>Tool</th><th>Best for</th><th>Token cost</th></tr>
+<tr><td><strong>Edit</strong></td><td>Surgical modification of existing file</td><td>Low — anchor text only</td></tr>
+<tr><td><strong>Grep</strong></td><td>Find content inside files</td><td>Low — matching lines only</td></tr>
+<tr><td><strong>Glob</strong></td><td>Find files by path/name</td><td>Lowest — paths only</td></tr>
+<tr><td><strong>Read</strong></td><td>Load entire file into context</td><td>High — entire file</td></tr>
+<tr><td><strong>Write</strong></td><td>Create/overwrite file</td><td>High — entire file</td></tr>
+<tr><td><strong>Bash</strong></td><td>Shell operations (fallback)</td><td>Variable</td></tr>
+</table>
+
+<div class="insight"><strong>Edit vs Read+Write:</strong> To append a function to a 3,000-line file, Edit uses only the anchor text (last few lines) + new function. Read+Write loads all 3,000 lines into context then rewrites all 3,000. Edit = surgical and efficient. Read+Write = only when full file restructuring is needed.</div>
+
+<div class="insight"><strong>Grep vs Glob:</strong> "Files that <em>contain</em> X" → Grep (searches contents). "Find *.py files" → Glob (searches paths). Combined: <code>Grep("calculate_tax", "**/*.py")</code> = find Python files containing that function.</div>
+
+
+    <div class="quiz" id="quiz_10">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">You need to append a new utility function to the end of a 3,000-line validators.ts file with the least token overhead. Which approach is optimal?</div>
+      <button class="quiz-option" data-quiz="quiz_10" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Use the Write tool to overwrite the entire file with the new function added</button>
+      <button class="quiz-option" data-quiz="quiz_10" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Use the Edit tool, matching the last few lines as anchor text, replacing them with those lines plus the new function</button>
+      <button class="quiz-option" data-quiz="quiz_10" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Use Read to load the entire file, then Write to save the updated version</button>
+      <button class="quiz-option" data-quiz="quiz_10" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Use Grep to find the end-of-file marker, then Bash to pipe the function in</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_10_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Write overwrites the entire 3,000-line file — maximum token cost and risk of data loss.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_10_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Edit processes only the anchor (last few lines) + new content. 3,000 lines never loaded. Surgical, token-efficient, safe.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_10_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Loads 3,000 lines into context then rewrites all 3,000. Double the token cost for a simple append.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_10_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Over-engineered. Bash piping is error-prone and doesn't leverage Claude Code's native Edit capability.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t8c">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-gap">Gap</span>
+    Tool Batching to Reduce Round Trips
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The Problem</h3>
+<p>Claude frequently calls <code>get_customer</code> and <code>lookup_order</code> in separate sequential turns, even when both are needed upfront. Each turn = one API round trip. 4+ round trips per resolution = slow.</p>
+
+<h3>The Fix</h3>
+<p>Prompt Claude to emit <strong>multiple tool_use blocks in one response</strong>. This leverages Claude's native ability to request multiple tools simultaneously — both execute in parallel, results return together before the next API call.</p>
+
+<pre><code><span class="comment"># One response, two tool calls — parallel execution</span>
+response.content = [
+    {<span class="string">"type"</span>: <span class="string">"tool_use"</span>, <span class="string">"name"</span>: <span class="string">"get_customer"</span>, <span class="string">"input"</span>: {...}},
+    {<span class="string">"type"</span>: <span class="string">"tool_use"</span>, <span class="string">"name"</span>: <span class="string">"lookup_order"</span>, <span class="string">"input"</span>: {...}}
+]
+<span class="comment"># Both execute simultaneously → one round trip instead of two</span></code></pre>
+
+<div class="warning"><strong>Don't build composite tools</strong> like <code>get_customer_with_orders</code>. This reduces flexibility (what if you only need one?), increases maintenance burden, and doesn't address the sequential calling pattern architecturally.</div>
+
+
+    <div class="quiz" id="quiz_11">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">Production metrics show 4+ API round-trips per resolution. Analysis reveals Claude calls get_customer and lookup_order sequentially even when both are needed upfront. What is the most effective way to reduce round-trips?</div>
+      <button class="quiz-option" data-quiz="quiz_11" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Create a composite tool get_customer_with_orders that bundles both lookups</button>
+      <button class="quiz-option" data-quiz="quiz_11" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Prompt Claude to batch related tool requests in a single turn, returning all results together before the next API call</button>
+      <button class="quiz-option" data-quiz="quiz_11" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Implement speculative execution that calls likely-needed tools alongside any requested tool</button>
+      <button class="quiz-option" data-quiz="quiz_11" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Increase max_tokens to give Claude more space to plan ahead</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_11_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Composite tools reduce flexibility and increase maintenance burden — need a new bundled tool for every common combination.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_11_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Leverages Claude's native ability to emit multiple tool_use blocks in one turn. Minimal architectural change, maximum impact.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_11_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Calls tools that weren't requested, wasting resources. Returns data Claude didn't ask for.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_11_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. max_tokens affects output length, not tool-calling strategy.</div></div>
+    </div>
+  </div>
+</div>
+</div><div class="domain-section domain-d3"><div class="domain-header"><h2>Domain 3 — Claude Code Configuration & Workflows</h2><p>Exam Weight: 20%</p></div>
+<div class="topic-card" id="t9">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    3.1 — CLAUDE.md Hierarchy
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The 4 File Locations</h3>
+<table class="topic-table">
+<tr><th>File</th><th>Scope</th><th>VCS</th><th>Use for</th></tr>
+<tr><td><code>~/.claude/CLAUDE.md</code></td><td>Personal</td><td>❌</td><td>Personal preferences only</td></tr>
+<tr><td><code>.claude/CLAUDE.md</code></td><td>Team</td><td>✅</td><td>Team standards — always here</td></tr>
+<tr><td><code>src/api/CLAUDE.md</code></td><td>Directory</td><td>✅</td><td>Subsystem-specific rules</td></tr>
+<tr><td><code>.claude/rules/*.md</code></td><td>Path glob</td><td>✅</td><td>Cross-directory conventions by file type</td></tr>
+</table>
+
+<h3>.claude/rules/ with Glob Frontmatter</h3>
+<pre><code><span class="comment"># .claude/rules/testing.md</span>
+---
+paths: [<span class="string">"**/*.test.tsx"</span>, <span class="string">"**/*.spec.ts"</span>, <span class="string">"**/test_*.py"</span>]
+---
+<span class="comment"># Testing conventions — loaded ONLY when editing test files</span>
+- Use pytest with fixtures, not unittest
+- Mock external services in tests</code></pre>
+
+<h3>@import Syntax</h3>
+<p><code>@./standards/testing.md</code> — no space after @, maximum <strong>5 levels</strong> of nesting depth.</p>
+
+<h3>/memory and /compact</h3>
+<p><code>/memory</code> = edit and debug CLAUDE.md mid-session. <code>/compact</code> = compress context window but <strong>risks losing exact numeric values, dates, and order numbers</strong>.</p>
+
+
+    <div class="quiz" id="quiz_12">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A team has general coding standards (everywhere), API rules (src/api/ only), and test conventions (test files across 30 directories). A developer puts all three in .claude/CLAUDE.md. What is the correct configuration?</div>
+      <button class="quiz-option" data-quiz="quiz_12" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) All three in .claude/CLAUDE.md — simpler to maintain one file</button>
+      <button class="quiz-option" data-quiz="quiz_12" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) General standards in .claude/CLAUDE.md, API rules in src/api/CLAUDE.md, test conventions in .claude/rules/testing.md with glob frontmatter</button>
+      <button class="quiz-option" data-quiz="quiz_12" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) All three in .claude/rules/ with different glob patterns</button>
+      <button class="quiz-option" data-quiz="quiz_12" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) General standards in .claude/CLAUDE.md, both API and test rules in .claude/rules/</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_12_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. API rules load everywhere (even outside src/api/), test rules load even when editing non-test files. Wastes tokens.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_12_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. General = always loaded → .claude/CLAUDE.md. API = directory specific → src/api/CLAUDE.md. Tests = cross-directory by file type → .claude/rules/ with glob.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_12_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. General standards apply everywhere, always. Rules files are for scoped/conditional loading.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_12_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. API rules are directory-specific → belong in directory CLAUDE.md, not rules with glob.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t10">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    3.2 — Commands, Skills & Frontmatter
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>CLAUDE.md vs Skills Decision Rule</h3>
+<p><strong>CLAUDE.md</strong> = always-loaded universal standards ("always use TypeScript strict mode"). <strong>Skills</strong> = on-demand task-specific workflows ("analyse this codebase"). <strong>Slash commands</strong> = simple templated prompts.</p>
+
+<h3>SKILL.md Frontmatter — 3 Options</h3>
+<table class="topic-table">
+<tr><th>Option</th><th>What it does</th><th>Use when</th></tr>
+<tr><td><code>context: fork</code></td><td>Isolated sub-agent for this skill</td><td>Skill generates lots of verbose output</td></tr>
+<tr><td><code>allowed-tools</code></td><td>Restricts which tools skill can use</td><td>Skill should only read, never write</td></tr>
+<tr><td><code>argument-hint</code></td><td>Shows input hint to user</td><td>Skill needs specific input from user</td></tr>
+</table>
+
+<div class="warning"><strong>Exam Trap:</strong> Putting task workflows in CLAUDE.md instead of skills. Task workflows load on EVERY Claude start — wastes tokens when not needed. CLAUDE.md = passive knowledge. Skills = active workflows invoked on demand.</div>
+
+
+    <div class="quiz" id="quiz_13">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A skill that analyses large codebases fills the main context window with verbose exploration output, making the session slow. A developer suggests increasing max_tokens. What is the correct fix?</div>
+      <button class="quiz-option" data-quiz="quiz_13" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Increase max_tokens for the main session</button>
+      <button class="quiz-option" data-quiz="quiz_13" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Add context: fork to the SKILL.md frontmatter — runs skill in isolated sub-agent</button>
+      <button class="quiz-option" data-quiz="quiz_13" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Move the skill workflow into CLAUDE.md</button>
+      <button class="quiz-option" data-quiz="quiz_13" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Split the skill into smaller skills for each directory</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_13_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. More tokens doesn't solve the problem — verbose output still pollutes main context window.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_13_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. context: fork creates isolated sub-agent. All verbose output stays in the fork. Main session stays clean.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_13_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. CLAUDE.md loads on every start — now the workflow always consumes context, even when not needed.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_13_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Smaller skills still send output to main context. Pollution happens in smaller chunks but still pollutes.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t11">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    3.4 — Plan Mode vs Direct Execution
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The Decision Framework</h3>
+<table class="topic-table">
+<tr><th>Scenario</th><th>Mode</th><th>Why</th></tr>
+<tr><td>Microservices restructuring (45+ files)</td><td>Plan</td><td>Complex, many files, downstream consequences</td></tr>
+<tr><td>Library migration across codebase</td><td>Plan</td><td>Multiple valid approaches, wide impact</td></tr>
+<tr><td>Single file bug fix with clear stack trace</td><td>Direct</td><td>Simple, well-understood, no ambiguity</td></tr>
+<tr><td>Adding one validation conditional</td><td>Direct</td><td>Known change, trivial scope</td></tr>
+</table>
+
+<div class="warning"><strong>The Exam Trap (Anti-pattern #15):</strong> "Start with direct execution, switch to plan mode if complexity emerges." This is ONLY valid when complexity is <strong>unknown</strong> upfront. When complexity is <strong>already stated</strong> ("restructure 45 files") — plan first, no exceptions. Starting direct = immediate file changes before understanding full impact.</div>
+
+<div class="insight"><strong>Explore Subagent Pattern:</strong> For heavy exploration phases, use a separate explore agent that reads files and writes findings to a scratchpad. Main agent reads the scratchpad and implements with clean context.</div>
+
+
+    <div class="quiz" id="quiz_14">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A team needs to refactor a payment module touching 28 files with 3 downstream dependencies and two valid approaches. A developer starts typing changes directly. What is the correct approach?</div>
+      <button class="quiz-option" data-quiz="quiz_14" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Start direct — switch to plan if complexity emerges</button>
+      <button class="quiz-option" data-quiz="quiz_14" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Plan mode first — complexity and multiple approaches are already known upfront</button>
+      <button class="quiz-option" data-quiz="quiz_14" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Use explore subagent to read all 28 files, then direct execution immediately</button>
+      <button class="quiz-option" data-quiz="quiz_14" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Start direct on one file to understand complexity, then switch to plan</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_14_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Complexity IS already stated (28 files, 3 dependencies, 2 approaches). Starting direct = file changes before understanding impact.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_14_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Complexity known upfront → plan first, always. Multiple valid approaches → human review needed before any changes.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_14_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Explore reads correctly but skipping human review before implementation is dangerous with 3 downstream dependencies.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_14_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Starting direct on any file before understanding the full scope. Complexity is already known.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t12">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    3.6 — CI/CD Integration
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>The One Flag That Makes or Breaks CI</h3>
+<pre><code><span class="wrong"># WRONG — interactive mode in CI → job hangs forever</span>
+claude "Review this PR"
+
+<span class="correct"># CORRECT — non-interactive mode</span>
+claude -p "Review this PR" --output-format json</code></pre>
+
+<h3>Multi-Pass Architecture</h3>
+<p>Single pass over 14+ files causes <strong>attention dilution</strong> — Claude misses bugs in later files. Fix: Pass 1 = per-file local analysis. Pass 2 = cross-file integration review with all per-file findings combined.</p>
+
+<h3>Independent Review Instance</h3>
+<div class="warning"><strong>Same session self-review = reasoning bias.</strong> The generator knows why it made decisions and subconsciously justifies them. Independent review instance with zero prior context catches what self-review misses.</div>
+
+<h3>Duplicate Comment Prevention</h3>
+<p>Include prior findings in context: "Report ONLY new issues or issues still present. Do not repeat already-resolved issues."</p>
+
+
+    <div class="quiz" id="quiz_15">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A CI pipeline has 3 problems: (1) hangs on every run, (2) duplicate comments on every push, (3) developer who wrote code uses same session to review it. Which fixes address all three?</div>
+      <button class="quiz-option" data-quiz="quiz_15" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Add -p flag, add --max-turns 10, use independent review instance</button>
+      <button class="quiz-option" data-quiz="quiz_15" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Add -p flag, include prior findings in context, use independent review instance with zero prior context</button>
+      <button class="quiz-option" data-quiz="quiz_15" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Add -p flag, clear PR comments before each run, use independent review instance</button>
+      <button class="quiz-option" data-quiz="quiz_15" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Add --output-format json, include prior findings, use same session with fresh prompt</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_15_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. --max-turns limits iterations, doesn't fix hanging (that's -p). Doesn't address duplicate comments.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_15_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. -p fixes hanging. Prior findings fix duplicates. Independent instance fixes self-review bias. All three root causes addressed.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_15_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Clearing comments = visual fix, not root cause. Claude still re-analyses resolved issues.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_15_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. --output-format doesn't fix hanging. Same session still has reasoning bias.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="topic-card" id="t13">
+  <button class="topic-toggle" onclick="toggleTopic(this)">
+    <span class="topic-tag tag-core">Core</span>
+    CLI Cheatsheet — Exam-Relevant Flags & Commands
+    <span class="chevron">▶</span>
+  </button>
+  <div class="topic-body">
+    
+<h3>Core CLI Flags</h3>
+<table class="topic-table">
+<tr><th>Flag</th><th>Purpose</th><th>Exam Relevance</th></tr>
+<tr><td><code>-p</code> / <code>--print</code></td><td>Non-interactive mode</td><td>★★★ Required for CI</td></tr>
+<tr><td><code>--output-format json</code></td><td>Machine-parseable output</td><td>★★★ CI PR comments</td></tr>
+<tr><td><code>--json-schema &lt;file&gt;</code></td><td>Enforce output structure</td><td>★★★ Structured CI output</td></tr>
+<tr><td><code>-r</code> / <code>--resume</code></td><td>Resume named session</td><td>★★ Continue prior work</td></tr>
+<tr><td><code>--permission-mode plan</code></td><td>Read-only plan mode</td><td>★★ Complex tasks</td></tr>
+<tr><td><code>--max-turns N</code></td><td>Limit agent turns</td><td>★★ Safety net only</td></tr>
+<tr><td><code>--dangerously-skip-permissions</code></td><td>Skip permission prompts</td><td>★ Isolated CI containers ONLY</td></tr>
+</table>
+
+<h3>Slash Commands</h3>
+<table class="topic-table">
+<tr><th>Command</th><th>Purpose</th></tr>
+<tr><td><code>/memory</code></td><td>Edit CLAUDE.md, debug what's loaded</td></tr>
+<tr><td><code>/compact [focus]</code></td><td>Compress context — risks losing exact values</td></tr>
+<tr><td><code>/branch</code></td><td>Fork conversation for divergent exploration</td></tr>
+<tr><td><code>/btw &lt;question&gt;</code></td><td>Side question with zero context cost</td></tr>
+<tr><td><code>/context</code></td><td>Visualise context window usage</td></tr>
+</table>
+
+
+    <div class="quiz" id="quiz_16">
+      <div class="quiz-label">Practice Question</div>
+      <div class="quiz-q">A CI pipeline runs claude -p with --max-turns 20. The pipeline still occasionally hangs. What is the most likely cause and fix?</div>
+      <button class="quiz-option" data-quiz="quiz_16" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Increase --max-turns to 50</button>
+      <button class="quiz-option" data-quiz="quiz_16" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) The -p flag is working correctly but a permission prompt is blocking execution — add --dangerously-skip-permissions for the isolated CI container</button>
+      <button class="quiz-option" data-quiz="quiz_16" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Replace --max-turns with --output-format json</button>
+      <button class="quiz-option" data-quiz="quiz_16" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Add /compact to the prompt to prevent context overflow</button>
+      <div class="quiz-explanation wrong-exp" id="quiz_16_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. More turns doesn't fix permission prompt blocking.</div></div>
+      <div class="quiz-explanation correct-exp" id="quiz_16_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. In isolated CI containers, permission prompts can still block. --dangerously-skip-permissions is appropriate ONLY in isolated environments where the container is destroyed after the job.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_16_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. --output-format affects output structure, not execution flow.</div></div>
+      <div class="quiz-explanation wrong-exp" id="quiz_16_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. /compact is a slash command for interactive use, not CI.</div></div>
+    </div>
+  </div>
+</div>
+</div><div class="domain-section domain-d4"><div class="domain-header"><h2>Domain 4 — Prompt Engineering & Structured Output</h2><p>Exam Weight: 20%</p></div><div class="topic-card" id="t14"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-core">Core</span>4.1 — Explicit Criteria Over Vague Instructions<span class="chevron">▶</span></button><div class="topic-body"><h3>The Core Problem</h3><p>Vague instructions like "be conservative when flagging issues" produce inconsistent results. Claude interprets "conservative" differently each time. <strong>Fix:</strong> Explicit categorical criteria with inclusion AND exclusion lists.</p>
+<h3>The False Positive Trust Cascade</h3><div class="warning"><strong>Most tested concept in D4.1:</strong> One category with high false positives → developers ignore ALL categories → even accurate findings get dismissed → entire tool becomes useless. <strong>Counterintuitive fix:</strong> Disable the bad category first → restore trust → fix in isolation → re-enable.</div>
+<div class="insight"><strong>Severity calibration:</strong> Never use vague levels like "high = serious issues." Use concrete code examples: high = SQL injection, hardcoded credentials. medium = missing input validation, unhandled exceptions. low = inconsistent error messages.</div><div class="quiz" id="quiz_17"><div class="quiz-label">Practice Question</div><div class="quiz-q">A CI pipeline reviews PRs for security (95% accurate), deprecated APIs (92% accurate), and code style (55% false positive rate). Developers have stopped reading ALL PR comments. What is the correct immediate fix?</div><button class="quiz-option" data-quiz="quiz_17" data-idx="0" data-correct="2" data-class="wrong-opt" onclick="selectOption(this)">A) Add few-shot examples to improve style detection accuracy</button><button class="quiz-option" data-quiz="quiz_17" data-idx="1" data-correct="2" data-class="wrong-opt" onclick="selectOption(this)">B) Increase the confidence threshold for style issues</button><button class="quiz-option" data-quiz="quiz_17" data-idx="2" data-correct="2" data-class="correct-opt" onclick="selectOption(this)">C) Temporarily disable style detection, restore trust in security and deprecated API findings, then improve style criteria in isolation</button><button class="quiz-option" data-quiz="quiz_17" data-idx="3" data-correct="2" data-class="wrong-opt" onclick="selectOption(this)">D) Remove style detection permanently</button><div class="quiz-explanation wrong-exp" id="quiz_17_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Doesn't address the immediate problem — developers already stopped reading ALL comments. Trust must be restored first.</div></div><div class="quiz-explanation wrong-exp" id="quiz_17_exp_1"><div class="exp-item">❌ <strong>Option B:</strong> Wrong. Partial reduction in false positives won't change developer behaviour — they're already ignoring everything.</div></div><div class="quiz-explanation correct-exp" id="quiz_17_exp_2"><div class="exp-item">✅ <strong>Option C:</strong> Correct. Disable high-FP category → developers trust accurate categories again → fix style in isolation → re-enable when accurate.</div></div><div class="quiz-explanation wrong-exp" id="quiz_17_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Permanent removal throws away a useful category. Goal is fix, not eliminate.</div></div></div></div></div><div class="topic-card" id="t15"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-core">Core</span>4.2 — Few-Shot Prompting<span class="chevron">▶</span></button><div class="topic-body"><h3>The Core Rule</h3><p><strong>Show reasoning, not just answers.</strong> Claude generalises the reasoning pattern to novel inputs — not just the specific examples. Few-shot examples without reasoning = Claude memorises cases. With reasoning = Claude learns the decision pattern.</p>
+<h3>5 Situations and Their Example Types</h3>
+<table class="topic-table"><tr><th>Situation</th><th>Example needed</th></tr>
+<tr><td>Ambiguous classification</td><td>Show reasoning for why one choice wins over alternatives</td></tr>
+<tr><td>Output format inconsistent</td><td>Show exact output shape expected</td></tr>
+<tr><td>Too many false positives</td><td>Show what TO flag AND what NOT to flag</td></tr>
+<tr><td>Different document structures failing</td><td>Show correct extraction for each format variation</td></tr>
+<tr><td>Informal measurements not extracted</td><td>Show mapping from informal to standard units</td></tr></table>
+<div class="insight"><strong>How many examples:</strong> 2-4 targeted examples on ambiguous cases only. Don't add examples for obvious cases — wastes tokens. The exam won't ask you to name the "type" — just recognise the situation and pick the right fix.</div>
+<div class="warning"><strong>Few-shot is NOT correct for:</strong> Tool misrouting (fix descriptions instead), absent data (fix schema), control flow bugs (fix code).</div><div class="quiz" id="quiz_18"><div class="quiz-label">Practice Question</div><div class="quiz-q">A support ticket classifier keeps misclassifying tickets that mention both a bug AND a feature request. What is the correct fix?</div><button class="quiz-option" data-quiz="quiz_18" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Add more training data for the classifier</button><button class="quiz-option" data-quiz="quiz_18" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Add few-shot examples with reasoning showing why one classification wins over the other for mixed tickets</button><button class="quiz-option" data-quiz="quiz_18" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Create separate classifiers for bug detection and feature detection</button><button class="quiz-option" data-quiz="quiz_18" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Add explicit criteria that mixed tickets should always be classified as bugs</button><div class="quiz-explanation wrong-exp" id="quiz_18_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Training data doesn't apply — this is a prompt-based classifier, not a fine-tuned model.</div></div><div class="quiz-explanation correct-exp" id="quiz_18_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Few-shot examples with reasoning for ambiguous scenarios. Show: 'Login broken AND want dark mode' → bug, because broken functionality is more urgent than new features. Claude generalises this priority rule.</div></div><div class="quiz-explanation wrong-exp" id="quiz_18_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Over-engineering — one classifier with good examples handles this.</div></div><div class="quiz-explanation wrong-exp" id="quiz_18_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Not all mixed tickets should be bugs. Some might have a higher-priority feature request. Reasoning-based examples handle nuance better than rigid rules.</div></div></div></div></div><div class="topic-card" id="t16"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-core">Core</span>4.3 — JSON Schemas & Structured Output<span class="chevron">▶</span></button><div class="topic-body"><h3>The Core Problem</h3><p>Required fields that don't exist in the source document → Claude invents them. This is <strong>silent hallucination</strong> — no error, no warning, just fabricated data.</p>
+<h3>The Fix — Nullable Fields</h3><pre><code><span class="comment"># Make fields that may be absent nullable + remove from required</span>
+<span class="string">"vendor_name"</span>: {<span class="string">"type"</span>: [<span class="string">"string"</span>, <span class="string">"null"</span>]}
+<span class="string">"required"</span>: [<span class="string">"category"</span>, <span class="string">"confidence"</span>]  <span class="comment"># vendor_name NOT here</span></code></pre>
+<h3>Self-Correction Pattern</h3><pre><code>{
+    <span class="string">"stated_total"</span>: 500.00,       <span class="comment"># what invoice claims</span>
+    <span class="string">"calculated_total"</span>: 480.00,  <span class="comment"># sum of line items</span>
+    <span class="string">"conflict_detected"</span>: true     <span class="comment"># flags discrepancy → human review</span>
+}</code></pre>
+<h3>"unclear" and "other" Enums</h3><p>Always include escape hatches: <code>"enum": ["bug", "feature", "docs", "unclear", "other"]</code>. "unclear" = signals genuine ambiguity → route to human. "other" + category_detail = captures edge cases.</p>
+<div class="insight"><strong>tool_use guarantees:</strong> ✅ Valid JSON, correct types, required fields, enum values. <strong>Cannot guarantee:</strong> ❌ Semantic correctness (vendor name actually in document, totals matching).</div><div class="quiz" id="quiz_19"><div class="quiz-label">Practice Question</div><div class="quiz-q">An invoice pipeline occasionally returns PO numbers like "PO-UNKNOWN" and "N/A" for invoices without them. The schema has po_number as a required string. What is the fix?</div><button class="quiz-option" data-quiz="quiz_19" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Add few-shot examples showing invoices without PO numbers</button><button class="quiz-option" data-quiz="quiz_19" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Make po_number nullable (type: ["string", "null"]) and remove from required array</button><button class="quiz-option" data-quiz="quiz_19" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Add instruction: "if PO number is absent, write null"</button><button class="quiz-option" data-quiz="quiz_19" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Add "unknown" and "N/A" to an enum for po_number</button><div class="quiz-explanation wrong-exp" id="quiz_19_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Few-shot might reduce hallucination frequency but schema still requires the field — Claude still feels compelled to fill it.</div></div><div class="quiz-explanation correct-exp" id="quiz_19_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Nullable type = Claude can honestly return null. Removed from required = not compelled to fill it. Both changes needed together.</div></div><div class="quiz-explanation wrong-exp" id="quiz_19_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Prompt instruction is probabilistic — Claude might still invent values. Schema-level fix is deterministic.</div></div><div class="quiz-explanation wrong-exp" id="quiz_19_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Adding 'unknown' to enum still forces Claude to put something — just labelled hallucination, not honest null.</div></div></div></div></div><div class="topic-card" id="t17"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-core">Core</span>4.5 — Message Batches API<span class="chevron">▶</span></button><div class="topic-body"><h3>Four Numbers — Instant Recall</h3>
+<table class="topic-table"><tr><th>Item</th><th>Value</th></tr>
+<tr><td>Cost saving</td><td><strong>50%</strong> vs synchronous</td></tr>
+<tr><td>Max processing window</td><td><strong>24 hours</strong></td></tr>
+<tr><td>Guaranteed SLA</td><td><strong>None</strong></td></tr>
+<tr><td>Multi-turn tool support</td><td><strong>No</strong></td></tr></table>
+<h3>Decision Rule</h3><div class="insight"><strong>Sync if:</strong> someone actively waiting, multi-turn tool calls needed, strict deadline under 24hrs with no tolerance. <strong>Batch if:</strong> overnight processing, scheduled jobs, high volume, no one waiting, no tool loops needed.</div>
+<p><strong>custom_id</strong> field matches results to requests (async, different order) and enables resubmitting only failed requests.</p><div class="quiz" id="quiz_20"><div class="quiz-label">Practice Question</div><div class="quiz-q">A company has 3 workflows: (1) pre-merge code check developers wait for, (2) processing 100,000 invoices overnight, (3) research agent using web search across multiple tool calls. Which API choice is correct?</div><button class="quiz-option" data-quiz="quiz_20" data-idx="0" data-correct="0" data-class="correct-opt" onclick="selectOption(this)">A) Sync, Batch, Sync</button><button class="quiz-option" data-quiz="quiz_20" data-idx="1" data-correct="0" data-class="wrong-opt" onclick="selectOption(this)">B) Batch, Batch, Sync</button><button class="quiz-option" data-quiz="quiz_20" data-idx="2" data-correct="0" data-class="wrong-opt" onclick="selectOption(this)">C) Sync, Sync, Batch</button><button class="quiz-option" data-quiz="quiz_20" data-idx="3" data-correct="0" data-class="wrong-opt" onclick="selectOption(this)">D) Sync, Batch, Batch</button><div class="quiz-explanation correct-exp" id="quiz_20_exp_0"><div class="exp-item">✅ <strong>Option A:</strong> Correct. Pre-merge = developer waits → Sync. Overnight invoices = no one waiting, high volume → Batch. Research agent = multi-turn tool loops → Sync (batch can't do tool loops).</div></div><div class="quiz-explanation wrong-exp" id="quiz_20_exp_1"><div class="exp-item">❌ <strong>Option B:</strong> Wrong. Pre-merge check — developer is actively waiting. 24hr batch wait is unacceptable.</div></div><div class="quiz-explanation wrong-exp" id="quiz_20_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Research agent needs multi-turn tool calls — batch cannot support tool loops.</div></div><div class="quiz-explanation wrong-exp" id="quiz_20_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Research agent needs multi-turn tool calls — batch cannot support tool loops.</div></div></div></div></div><div class="topic-card" id="t18"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-core">Core</span>4.6 — Prompt Chaining & Multi-Pass Review<span class="chevron">▶</span></button><div class="topic-body"><h3>Attention Dilution</h3><p>Single pass over 14+ files → Claude misses bugs, gives contradictory findings. Fix: <strong>multi-pass architecture</strong>.</p>
+<p><strong>Pass 1:</strong> Per-file local analysis — one call per file, local issues only. <strong>Pass 2:</strong> Cross-file integration — all per-file findings combined, looking for data flow issues and API contract violations.</p>
+<h3>Pydantic Validation + Retry</h3><p>Retry works for: format errors, arithmetic inconsistencies, type mismatches. <strong>Retry CANNOT fix:</strong> absent data (use nullable fields), genuinely ambiguous data, wrong schema design.</p>
+<h3>Interview Pattern</h3><p>For unfamiliar domains: "Before implementing, ask me ALL clarifying questions upfront about domain constraints, edge cases, and failure modes." Use when multiple valid approaches exist and context determines the best one.</p><div class="quiz" id="quiz_21"><div class="quiz-label">Practice Question</div><div class="quiz-q">An invoice extraction pipeline retries 3 times then fails when processing invoices from a vendor that doesn't include purchase order numbers. What is the correct fix?</div><button class="quiz-option" data-quiz="quiz_21" data-idx="0" data-correct="2" data-class="wrong-opt" onclick="selectOption(this)">A) Increase retry attempts from 3 to 10</button><button class="quiz-option" data-quiz="quiz_21" data-idx="1" data-correct="2" data-class="wrong-opt" onclick="selectOption(this)">B) Add few-shot examples showing invoices without PO numbers</button><button class="quiz-option" data-quiz="quiz_21" data-idx="2" data-correct="2" data-class="correct-opt" onclick="selectOption(this)">C) Make po_number nullable and remove from required — retry cannot fix absent data</button><button class="quiz-option" data-quiz="quiz_21" data-idx="3" data-correct="2" data-class="wrong-opt" onclick="selectOption(this)">D) Add interview pattern to identify missing fields before extraction</button><div class="quiz-explanation wrong-exp" id="quiz_21_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. More retries = more attempts at finding data that doesn't exist. Infinite retries won't create information.</div></div><div class="quiz-explanation wrong-exp" id="quiz_21_exp_1"><div class="exp-item">❌ <strong>Option B:</strong> Wrong. Few-shot examples help format understanding — but data is genuinely absent, not misformatted.</div></div><div class="quiz-explanation correct-exp" id="quiz_21_exp_2"><div class="exp-item">✅ <strong>Option C:</strong> Correct. Absent data = schema design problem, not retry problem. Nullable = honest null. Retry reserved for format/arithmetic errors only.</div></div><div class="quiz-explanation wrong-exp" id="quiz_21_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Interview pattern is for implementation approach, not missing fields in extraction.</div></div></div></div></div><div class="topic-card" id="t18b"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-gap">Gap</span>Multi-Instance Verification Architecture<span class="chevron">▶</span></button><div class="topic-body"><h3>The Pattern</h3><p>High-stakes outputs need a <strong>verification pass</strong> — a second Claude instance evaluates the first's output before it reaches the user.</p>
+<p><strong>Pass 1 = generate.</strong> Claude drafts the response. <strong>Pass 2 = independent verify.</strong> Fresh instance evaluates against policy, accuracy, tone. Outputs confidence + recommendation: send / human_review / regenerate.</p>
+<h3>Why Independent Instance</h3><div class="warning"><strong>Same instance self-review = reasoning bias.</strong> Knows why it made decisions → subconsciously justifies → misses its own mistakes. Independent instance with zero prior context reviews purely on merit.</div>
+<h3>Tiered Routing</h3><p>VIP customers = higher threshold (0.95) for auto-send. Standard = lower threshold (0.75). Enterprise = always human review regardless of score.</p>
+<div class="insight"><strong>Disclaimer vs verification pass:</strong> Disclaimer = reactive (wrong response already sent). Verification pass = proactive (catches issues BEFORE sending). For high-stakes outputs, always verification pass.</div><div class="quiz" id="quiz_22"><div class="quiz-label">Practice Question</div><div class="quiz-q">An enterprise deploys Claude to categorise tickets and draft responses for VIP clients. They're worried about incorrect responses reaching VIPs. Which design is most appropriate?</div><button class="quiz-option" data-quiz="quiz_22" data-idx="0" data-correct="3" data-class="wrong-opt" onclick="selectOption(this)">A) Route all VIP tickets to human queue</button><button class="quiz-option" data-quiz="quiz_22" data-idx="1" data-correct="3" data-class="wrong-opt" onclick="selectOption(this)">B) Add "Drafted by AI" disclaimer to all responses</button><button class="quiz-option" data-quiz="quiz_22" data-idx="2" data-correct="3" data-class="wrong-opt" onclick="selectOption(this)">C) Multi-pass rewrite for politeness and brand voice</button><button class="quiz-option" data-quiz="quiz_22" data-idx="3" data-correct="3" data-class="correct-opt" onclick="selectOption(this)">D) Verification pass that evaluates draft against policy, outputs confidence, routes low-confidence to human agents</button><div class="quiz-explanation wrong-exp" id="quiz_22_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Defeats purpose of automation — human handles everything, no AI value.</div></div><div class="quiz-explanation wrong-exp" id="quiz_22_exp_1"><div class="exp-item">❌ <strong>Option B:</strong> Wrong. Reactive, not proactive. Wrong response already sent to VIP. Disclaimer doesn't prevent damage.</div></div><div class="quiz-explanation wrong-exp" id="quiz_22_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Improves style, not accuracy. Doesn't catch factual errors or policy violations.</div></div><div class="quiz-explanation correct-exp" id="quiz_22_exp_3"><div class="exp-item">✅ <strong>Option D:</strong> Correct. Proactive quality gate. Catches issues BEFORE sending. Routes intelligently based on evaluation.</div></div></div></div></div></div><div class="domain-section domain-d5"><div class="domain-header"><h2>Domain 5 — Context Management & Reliability</h2><p>Exam Weight: 15%</p></div><div class="topic-card" id="t19"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-core">Core</span>5.1 — Context Window Management<span class="chevron">▶</span></button><div class="topic-body"><h3>Case Facts Block</h3><p>Critical data placed at the <strong>TOP</strong> of every prompt, <strong>verbatim</strong>, never summarised. Survives /compact because it's injected fresh each time, outside conversation history.</p>
+<pre><code>prompt = f<span class="string">"""
+CASE FACTS (do not summarise):
+{json.dumps(case_facts, indent=2)}
+
+[summarised conversation here]
+
+USER: {current_message}
+"""</span></code></pre>
+<h3>Lost-in-Middle Effect</h3><p>Claude processes information at start and end most reliably. Information buried in middle of long context is often missed. Fix: critical facts at TOP always.</p>
+<h3>Tool Output Trimming</h3><p>40-field API response → trim to 5 relevant fields before passing to Claude. Saves 87% context space.</p>
+<h3>Scratchpad Files</h3><p>For extended exploration: agent writes findings to scratchpad.md as it explores. Implementation agent reads scratchpad with clean context. Prevents context degradation.</p><div class="quiz" id="quiz_23"><div class="quiz-label">Practice Question</div><div class="quiz-q">A customer support agent starts saying "a significant amount" instead of $8,450.00 after 15+ turns. A developer suggests increasing context window size. What is the correct fix?</div><button class="quiz-option" data-quiz="quiz_23" data-idx="0" data-correct="2" data-class="wrong-opt" onclick="selectOption(this)">A) Increase context window size</button><button class="quiz-option" data-quiz="quiz_23" data-idx="1" data-correct="2" data-class="wrong-opt" onclick="selectOption(this)">B) Use /compact more frequently</button><button class="quiz-option" data-quiz="quiz_23" data-idx="2" data-correct="2" data-class="correct-opt" onclick="selectOption(this)">C) Inject a case_facts block verbatim at TOP of every prompt containing exact values</button><button class="quiz-option" data-quiz="quiz_23" data-idx="3" data-correct="2" data-class="wrong-opt" onclick="selectOption(this)">D) Start a fresh session for every interaction</button><div class="quiz-explanation wrong-exp" id="quiz_23_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Larger window delays the problem but doesn't fix lost-in-middle. Values still get buried regardless of window size.</div></div><div class="quiz-explanation wrong-exp" id="quiz_23_exp_1"><div class="exp-item">❌ <strong>Option B:</strong> Wrong. /compact is what's CAUSING values to become vague summaries. More /compact = more data loss.</div></div><div class="quiz-explanation correct-exp" id="quiz_23_exp_2"><div class="exp-item">✅ <strong>Option C:</strong> Correct. Case facts at TOP = exact values preserved, reliably processed, survives /compact because injected fresh outside conversation history.</div></div><div class="quiz-explanation wrong-exp" id="quiz_23_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Fresh session loses all prior conversation context. Customer must repeat everything.</div></div></div></div></div><div class="topic-card" id="t20"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-core">Core</span>5.2 — Escalation Patterns<span class="chevron">▶</span></button><div class="topic-body"><h3>3 Valid Escalation Triggers</h3>
+<p><strong>1. Customer explicitly requests human</strong> → IMMEDIATE escalation, no offer to resolve first.<br><strong>2. Policy gap</strong> → no clear rule for edge case → escalate, don't guess.<br><strong>3. Cannot make progress</strong> → 3 failed attempts → escalate with full context.</p>
+<h3>2 Unreliable Triggers (Anti-Patterns)</h3>
+<div class="warning"><strong>Sentiment-based escalation:</strong> "Customer seems frustrated" → WRONG. Frustrated customers often want resolution, not transfer. Use explicit categorical criteria.</div>
+<div class="warning"><strong>Self-reported confidence scores:</strong> "I'm 60% confident" → WRONG. Claude's confidence scores are uncalibrated. Not a reliable signal.</div>
+<div class="insight"><strong>Multiple customer matches:</strong> Don't pick by heuristic, don't escalate immediately. Ask for more identifiers (email, order number). Only escalate if customer can't provide them.</div><div class="quiz" id="quiz_24"><div class="quiz-label">Practice Question</div><div class="quiz-q">A customer says: "I don't care what your policy says, I want to talk to your manager right now." The agent responds: "Let me try one more thing." What's wrong?</div><button class="quiz-option" data-quiz="quiz_24" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) The agent should have escalated after detecting high frustration</button><button class="quiz-option" data-quiz="quiz_24" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) The customer explicitly requested human — escalate immediately, no resolution attempt</button><button class="quiz-option" data-quiz="quiz_24" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) The agent should have offered a callback instead</button><button class="quiz-option" data-quiz="quiz_24" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) The agent should check confidence score before deciding to escalate</button><div class="quiz-explanation wrong-exp" id="quiz_24_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Escalation based on frustration detection (sentiment) is unreliable.</div></div><div class="quiz-explanation correct-exp" id="quiz_24_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Explicit human request = immediate escalation. No exceptions. Offering one more resolution attempt after explicit request = disrespectful.</div></div><div class="quiz-explanation wrong-exp" id="quiz_24_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Customer asked for human, not a callback. Immediate escalation, not alternative options.</div></div><div class="quiz-explanation wrong-exp" id="quiz_24_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Confidence scores are uncalibrated — unreliable trigger. Explicit request overrides everything.</div></div></div></div></div><div class="topic-card" id="t21"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-core">Core</span>5.3 — Error Propagation<span class="chevron">▶</span></button><div class="topic-body"><h3>Two Anti-Patterns — Both Equally Wrong</h3>
+<div class="warning"><strong>Silent suppression:</strong> Catching timeout → returning empty success. Coordinator makes wrong decisions on false data.</div>
+<div class="warning"><strong>Full abort:</strong> sys.exit(1) on any error. Throws away ALL successful subagent results because one failed.</div>
+<h3>The Correct Pattern</h3><p><strong>Structured error propagation</strong> with failureType, partialResults, and isRetryable. Coordinator makes intelligent recovery decisions. Gap annotation preserves what succeeded and marks what failed.</p>
+<div class="insight"><strong>Key principle:</strong> Preserve what succeeded, annotate what failed, let the coordinator decide recovery strategy based on structured error context.</div><div class="quiz" id="quiz_25"><div class="quiz-label">Practice Question</div><div class="quiz-q">5 subagents run in parallel. 4 complete successfully. The 5th times out halfway through with 3 articles found. A developer catches the timeout with sys.exit(1). What is the correct fix?</div><button class="quiz-option" data-quiz="quiz_25" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Return {"results": [], "success": true} to prevent abort</button><button class="quiz-option" data-quiz="quiz_25" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Return structured error with isError: true, partialResults containing the 3 articles, allow coordinator to annotate gap and continue</button><button class="quiz-option" data-quiz="quiz_25" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Retry the failed subagent 3 times before aborting</button><button class="quiz-option" data-quiz="quiz_25" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Escalate entire workflow to human review</button><div class="quiz-explanation wrong-exp" id="quiz_25_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Silent suppression — trades one anti-pattern for another. Loses the 3 partial articles.</div></div><div class="quiz-explanation correct-exp" id="quiz_25_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Structured error preserves partial results. 4 successful results kept. Coordinator annotates gap in final report.</div></div><div class="quiz-explanation wrong-exp" id="quiz_25_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Retry might work for transient errors but doesn't fix sys.exit(1). Also loses 3 articles already found if retried.</div></div><div class="quiz-explanation wrong-exp" id="quiz_25_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Over-escalation. 4 subagents completed. Coordinator can handle this intelligently.</div></div></div></div></div><div class="topic-card" id="t21b"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-gap">Gap</span>5.5 — Human Review & Confidence Calibration<span class="chevron">▶</span></button><div class="topic-body"><h3>The Core Problem</h3><p>Claude's raw confidence scores are <strong>uncalibrated</strong>. Raw 0.98 ≠ 98% accurate. After testing on labeled data, raw 0.98 might only be 84% accurate. This is <strong>overconfidence</strong>.</p>
+<h3>Calibration Process</h3><p><strong>Step 1:</strong> Build labeled validation set (correct answers known). <strong>Step 2:</strong> Run model, record raw confidence + actual accuracy. <strong>Step 3:</strong> Map raw scores to empirical accuracy (Expected Calibration Error). <strong>Step 4:</strong> Set routing threshold on CALIBRATED probability, not raw score.</p>
+<h3>Blocking vs Async Human Review</h3>
+<table class="topic-table"><tr><th>Type</th><th>When to use</th><th>Examples</th></tr>
+<tr><td><strong>Blocking</strong></td><td>Irreversible actions, high cost of error</td><td>Payments, account deletion, legal delivery</td></tr>
+<tr><td><strong>Async</strong></td><td>Reversible actions, lower stakes</td><td>Content moderation, draft quality, recommendations</td></tr></table><div class="quiz" id="quiz_26"><div class="quiz-label">Practice Question</div><div class="quiz-q">A medical diagnosis assistant outputs confidence scores averaging 0.92. The team sets auto-send threshold at 0.85. After deployment, 18% of auto-sent diagnoses contain errors. What went wrong?</div><button class="quiz-option" data-quiz="quiz_26" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) The threshold should be set higher at 0.95</button><button class="quiz-option" data-quiz="quiz_26" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Raw confidence scores are uncalibrated — must map to empirical accuracy using a labeled validation set before setting routing thresholds</button><button class="quiz-option" data-quiz="quiz_26" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) The model needs more training data to improve accuracy</button><button class="quiz-option" data-quiz="quiz_26" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) All diagnoses should go through human review regardless</button><div class="quiz-explanation wrong-exp" id="quiz_26_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Higher threshold on uncalibrated scores is still arbitrary. Raw 0.95 might still only be 80% accurate.</div></div><div class="quiz-explanation correct-exp" id="quiz_26_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Raw 0.92 doesn't mean 92% accurate. Calibration reveals true accuracy. Route on calibrated probability, not misleading raw score.</div></div><div class="quiz-explanation wrong-exp" id="quiz_26_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. This is about calibration and routing, not model training.</div></div><div class="quiz-explanation wrong-exp" id="quiz_26_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Defeats purpose of automation. Calibrated routing handles this more efficiently.</div></div></div></div></div><div class="topic-card" id="t22"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-core">Core</span>5.6 — Provenance & Conflicting Sources<span class="chevron">▶</span></button><div class="topic-body"><h3>The Absolute Rule</h3><p>When two sources conflict — <strong>annotate both</strong> with source and date. <strong>Never pick one. Never average them.</strong> Averaging creates an invented number not supported by either source.</p>
+<h3>Temporal Differences ≠ Contradictions</h3><p>Study A (2022): 15% adoption. Study B (2024): 67% adoption. These don't contradict — they show temporal progression. Always check publication dates first.</p>
+<h3>Genuine Conflicts</h3><p>Same time period + same metric + different numbers = genuine conflict. Annotate both AND explain methodology difference.</p>
+<div class="warning"><strong>Attribution loss during summarisation:</strong> Summaries strip source information. Fix: preserve claim-source mappings separately (like case_facts) — never pass through summarisation.</div><div class="quiz" id="quiz_27"><div class="quiz-label">Practice Question</div><div class="quiz-q">Two subagents return conflicting stats: McKinsey (2024) reports 40% gains, Gartner (2023) reports 28% gains. The coordinator averages them to 34%. What is wrong?</div><button class="quiz-option" data-quiz="quiz_27" data-idx="0" data-correct="2" data-class="wrong-opt" onclick="selectOption(this)">A) Pick McKinsey since it's more recent</button><button class="quiz-option" data-quiz="quiz_27" data-idx="1" data-correct="2" data-class="wrong-opt" onclick="selectOption(this)">B) Pick Gartner since it's more conservative</button><button class="quiz-option" data-quiz="quiz_27" data-idx="2" data-correct="2" data-class="correct-opt" onclick="selectOption(this)">C) Averaging creates an invented number not supported by either source — annotate both with source, date, and methodology context</button><button class="quiz-option" data-quiz="quiz_27" data-idx="3" data-correct="2" data-class="wrong-opt" onclick="selectOption(this)">D) Request additional sources to break the tie</button><div class="quiz-explanation wrong-exp" id="quiz_27_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. Recency doesn't mean more accurate. Different methodologies, sample sizes. Discards valid Gartner finding.</div></div><div class="quiz-explanation wrong-exp" id="quiz_27_exp_1"><div class="exp-item">❌ <strong>Option B:</strong> Wrong. Conservative bias is not a selection criterion. Picking either one discards the other.</div></div><div class="quiz-explanation correct-exp" id="quiz_27_exp_2"><div class="exp-item">✅ <strong>Option C:</strong> Correct. 34% is a fabricated number neither source supports. Annotate both honestly. Reader makes informed judgment.</div></div><div class="quiz-explanation wrong-exp" id="quiz_27_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. More sources help context but don't fix the immediate problem of averaging.</div></div></div></div></div></div><div class="domain-section domain-exam"><div class="domain-header"><h2>Exam Day Essentials</h2><p>Exam Weight: —</p></div><div class="topic-card" id="t_antipatterns"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-core">Core</span>22 Anti-Patterns — The Distractor Bank<span class="chevron">▶</span></button><div class="topic-body"><h3>Every wrong exam answer is built from these anti-patterns</h3>
+<table class="topic-table">
+<tr><th>#</th><th>Anti-Pattern</th><th>Correct Fix</th></tr>
+<tr><td>1</td><td>Check text content to detect loop end</td><td>Use stop_reason == "end_turn"</td></tr>
+<tr><td>2</td><td>Iteration cap as primary stop</td><td>stop_reason primary, cap = safety net</td></tr>
+<tr><td>3</td><td>Natural language to detect completion</td><td>Use stop_reason, never parse text</td></tr>
+<tr><td>4</td><td>Prompt instructions for critical ordering</td><td>PreToolUse hook — deterministic</td></tr>
+<tr><td>5</td><td>Subagents communicate directly</td><td>All through coordinator</td></tr>
+<tr><td>6</td><td>Assume subagents inherit context</td><td>Pass ALL context explicitly</td></tr>
+<tr><td>7</td><td>One Task per turn for parallelism</td><td>Multiple Task calls in ONE response</td></tr>
+<tr><td>8</td><td>Resume when tool results stale</td><td>Fresh start + inject summary</td></tr>
+<tr><td>9</td><td>Generic error response</td><td>Structured: isError, errorCategory, isRetryable</td></tr>
+<tr><td>10</td><td>Timeout → empty success</td><td>Return isError: true with partialResults</td></tr>
+<tr><td>11</td><td>Few-shot to fix tool misrouting</td><td>Rewrite tool descriptions</td></tr>
+<tr><td>12</td><td>18+ tools in one agent</td><td>Split to 4-5 tools per scoped agent</td></tr>
+<tr><td>13</td><td>Team standards in ~/.claude</td><td>.claude/CLAUDE.md — project, VCS</td></tr>
+<tr><td>14</td><td>Directory CLAUDE.md for cross-dir rules</td><td>.claude/rules/ with glob frontmatter</td></tr>
+<tr><td>15</td><td>Start direct when complexity stated</td><td>Plan mode first when complexity known</td></tr>
+<tr><td>16</td><td>CI without -p flag</td><td>Always use -p for non-interactive</td></tr>
+<tr><td>17</td><td>Same session self-review</td><td>Independent instance, zero context</td></tr>
+<tr><td>18</td><td>Required fields for absent data</td><td>Nullable + remove from required</td></tr>
+<tr><td>19</td><td>Batch API for real-time needs</td><td>Sync when someone waiting or tool loops</td></tr>
+<tr><td>20</td><td>Retry on absent data</td><td>Return null — retry for format errors only</td></tr>
+<tr><td>21</td><td>Sentiment/confidence escalation</td><td>Explicit categorical criteria</td></tr>
+<tr><td>22</td><td>Pick or average conflicting stats</td><td>Annotate both with source + date</td></tr>
+</table>
+<div class="insight"><strong>Pattern behind all 22:</strong> Rule 1 violations (deterministic over probabilistic): #1-4, #13, #15, #21. Rule 2 violations (root cause over symptom): #11, #12, #14, #17. Rule 3 violations (simplest correct intervention): #7, #8, #19, #20.</div><div class="quiz" id="quiz_28"><div class="quiz-label">Practice Question</div><div class="quiz-q">An agent catches a TimeoutError and returns {"results": [], "success": true}. Three weeks later customers report being told "no products found" during outages. What anti-pattern is this and what's the fix?</div><button class="quiz-option" data-quiz="quiz_28" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Anti-pattern: generic error. Fix: add error message string</button><button class="quiz-option" data-quiz="quiz_28" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Anti-pattern: silent suppression. Fix: return isError: true, errorCategory: "transient", isRetryable: true with the attempted query</button><button class="quiz-option" data-quiz="quiz_28" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Anti-pattern: iteration cap. Fix: increase retry attempts</button><button class="quiz-option" data-quiz="quiz_28" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Anti-pattern: sentiment escalation. Fix: escalate on timeout</button><div class="quiz-explanation wrong-exp" id="quiz_28_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. The error isn't generic — it's being suppressed entirely as a success.</div></div><div class="quiz-explanation correct-exp" id="quiz_28_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. Silent suppression (anti-pattern #10). Coordinator thinks search succeeded. Fix: structured error so coordinator knows what happened.</div></div><div class="quiz-explanation wrong-exp" id="quiz_28_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. Iteration cap is a different anti-pattern about loop termination.</div></div><div class="quiz-explanation wrong-exp" id="quiz_28_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Sentiment escalation is about customer emotion, not timeouts.</div></div></div></div></div><div class="topic-card" id="t_scenarios"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-core">Core</span>6 Official Exam Scenarios<span class="chevron">▶</span></button><div class="topic-body"><h3>4 of these 6 appear on every exam instance</h3>
+<table class="topic-table">
+<tr><th>Scenario</th><th>Domains</th><th>Key Decisions Tested</th></tr>
+<tr><td><strong>S1: Customer Support Agent</strong></td><td>D1, D2, D5</td><td>Escalation triggers, structured errors, PreToolUse for refunds, context preservation</td></tr>
+<tr><td><strong>S2: Code Generation</strong></td><td>D3, D5</td><td>CLAUDE.md hierarchy, plan mode, skills, independent review</td></tr>
+<tr><td><strong>S3: Multi-Agent Research</strong></td><td>D1, D2, D5</td><td>Narrow decomposition, parallel Tasks, provenance, gap annotation</td></tr>
+<tr><td><strong>S4: Developer Productivity</strong></td><td>D2, D3, D1</td><td>Grep vs Glob, MCP config, session management</td></tr>
+<tr><td><strong>S5: CI/CD Pipeline</strong></td><td>D3, D4</td><td>-p flag, multi-pass, independent review, duplicate prevention</td></tr>
+<tr><td><strong>S6: Structured Extraction</strong></td><td>D4, D5</td><td>Nullable fields, self-correction, retry limits, batch API</td></tr>
+</table>
+<div class="insight"><strong>Key insight from test-takers:</strong> "Even unfamiliar scenarios test the same engineering judgment. The underlying principles transfer to any scenario." Don't memorise scenario-specific answers — internalise the 3 universal rules and apply them.</div><div class="quiz" id="quiz_29"><div class="quiz-label">Practice Question</div><div class="quiz-q">A research system returns results only about healthcare when asked about "AI in medical fields broadly." All subagents ran correctly. What is the root cause and which scenario does this match?</div><button class="quiz-option" data-quiz="quiz_29" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) Scenario S1 — subagents need better tool descriptions</button><button class="quiz-option" data-quiz="quiz_29" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) Scenario S3 — coordinator's decomposition is too narrow, fix the coordinator's breakdown</button><button class="quiz-option" data-quiz="quiz_29" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) Scenario S4 — Grep search was too narrow, broaden the search query</button><button class="quiz-option" data-quiz="quiz_29" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Scenario S6 — extraction schema is missing fields for other medical areas</button><div class="quiz-explanation wrong-exp" id="quiz_29_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. S1 is Customer Support. Tool descriptions affect routing, not scope.</div></div><div class="quiz-explanation correct-exp" id="quiz_29_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. S3 (Multi-Agent Research). Narrow decomposition bug — coordinator only decomposed into one subtopic. Fix the coordinator to include diagnostics, drug discovery, patient monitoring, surgical robotics, etc.</div></div><div class="quiz-explanation wrong-exp" id="quiz_29_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. S4 is Developer Productivity. Not a search query problem.</div></div><div class="quiz-explanation wrong-exp" id="quiz_29_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. S6 is Structured Extraction. Not a schema problem.</div></div></div></div></div><div class="topic-card" id="t_reference"><button class="topic-toggle" onclick="toggleTopic(this)"><span class="topic-tag tag-core">Core</span>File Locations & Critical Values<span class="chevron">▶</span></button><div class="topic-body"><h3>All File Locations</h3>
+<table class="topic-table">
+<tr><th>File</th><th>Scope</th><th>VCS</th><th>Use</th></tr>
+<tr><td><code>~/.claude/CLAUDE.md</code></td><td>Personal</td><td>❌</td><td>Personal preferences</td></tr>
+<tr><td><code>.claude/CLAUDE.md</code></td><td>Team</td><td>✅</td><td>Team standards</td></tr>
+<tr><td><code>src/api/CLAUDE.md</code></td><td>Directory</td><td>✅</td><td>Subsystem rules</td></tr>
+<tr><td><code>.claude/rules/*.md</code></td><td>Glob</td><td>✅</td><td>Cross-dir conventions</td></tr>
+<tr><td><code>.mcp.json</code></td><td>Team</td><td>✅</td><td>Team MCP servers</td></tr>
+<tr><td><code>~/.claude.json</code></td><td>Personal</td><td>❌</td><td>Personal MCP</td></tr>
+</table>
+<h3>Critical Values</h3>
+<table class="topic-table">
+<tr><th>Item</th><th>Value</th></tr>
+<tr><td>Pass score</td><td>720 / 1000</td></tr>
+<tr><td>Questions / Duration</td><td>60 MCQ / 120 minutes</td></tr>
+<tr><td>Scenarios on exam</td><td>4 of 6</td></tr>
+<tr><td>Batch API savings</td><td>50%</td></tr>
+<tr><td>Batch max window</td><td>24 hours, no SLA</td></tr>
+<tr><td>Max tools per agent</td><td>4-5</td></tr>
+<tr><td>@import nesting</td><td>5 levels max</td></tr>
+<tr><td>CI flag</td><td>-p / --print</td></tr>
+<tr><td>stop_reason → done</td><td>"end_turn"</td></tr>
+<tr><td>stop_reason → tool</td><td>"tool_use"</td></tr>
+</table>
+<h3>Exam Day Decision Shortcuts</h3>
+<table class="topic-table">
+<tr><th>You see...</th><th>Answer is...</th></tr>
+<tr><td>Financial/compliance/security</td><td>Hooks (PreToolUse or PostToolUse)</td></tr>
+<tr><td>Tool misrouting</td><td>Fix tool descriptions</td></tr>
+<tr><td>Narrow multi-agent results</td><td>Fix coordinator decomposition</td></tr>
+<tr><td>CI pipeline hangs</td><td>Missing -p flag</td></tr>
+<tr><td>Team standards location</td><td>.claude/CLAUDE.md</td></tr>
+<tr><td>Conflicting statistics</td><td>Annotate both, never pick/average</td></tr>
+<tr><td>Explicit human request</td><td>Escalate immediately</td></tr>
+<tr><td>Absent data + retry loop</td><td>Nullable fields instead</td></tr>
+<tr><td>18+ tools</td><td>Split into scoped agents</td></tr>
+<tr><td>Self-review</td><td>Independent instance</td></tr>
+</table><div class="quiz" id="quiz_30"><div class="quiz-label">Practice Question</div><div class="quiz-q">Where should team-wide MCP server configurations be stored and why?</div><button class="quiz-option" data-quiz="quiz_30" data-idx="0" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">A) ~/.claude.json — central location on each developer's machine</button><button class="quiz-option" data-quiz="quiz_30" data-idx="1" data-correct="1" data-class="correct-opt" onclick="selectOption(this)">B) .mcp.json in repo root — committed to VCS, every developer gets them on clone</button><button class="quiz-option" data-quiz="quiz_30" data-idx="2" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">C) .claude/CLAUDE.md — alongside other team standards</button><button class="quiz-option" data-quiz="quiz_30" data-idx="3" data-correct="1" data-class="wrong-opt" onclick="selectOption(this)">D) Environment variables — most secure approach</button><div class="quiz-explanation wrong-exp" id="quiz_30_exp_0"><div class="exp-item">❌ <strong>Option A:</strong> Wrong. ~/.claude.json is personal, not VCS. New developers must manually configure.</div></div><div class="quiz-explanation correct-exp" id="quiz_30_exp_1"><div class="exp-item">✅ <strong>Option B:</strong> Correct. .mcp.json = project scope, committed to VCS. New developer clones → instantly has all MCP servers.</div></div><div class="quiz-explanation wrong-exp" id="quiz_30_exp_2"><div class="exp-item">❌ <strong>Option C:</strong> Wrong. CLAUDE.md is for instructions and standards, not server configuration.</div></div><div class="quiz-explanation wrong-exp" id="quiz_30_exp_3"><div class="exp-item">❌ <strong>Option D:</strong> Wrong. Env vars hold credentials (tokens), not server configurations.</div></div></div></div></div></div>
+<!-- Footer -->
+<div style="text-align:center; padding:40px 24px 60px; color:var(--text-3); font-size:13px;">
+  <p>CCA-F Complete Study Guide · 5 Domains · 31 Practice Questions · Built for exam success</p>
+  <p style="margin-top:6px">Pass score: 720/1000 · 60 MCQ · 120 minutes · 4 of 6 scenarios per exam</p>
+</div>
+
+<script>
+let scoreCorrect = 0;
+let scoreWrong = 0;
+let answered = new Set();
+const totalQuizzes = 31;
+
+function toggleTopic(btn) {
+  btn.classList.toggle('open');
+  const body = btn.nextElementSibling;
+  body.classList.toggle('open');
+}
+
+function selectOption(btn) {
+  const quizId = btn.dataset.quiz;
+  if (answered.has(quizId)) return;
+  answered.add(quizId);
+
+  const correctIdx = parseInt(btn.dataset.correct);
+  const selectedIdx = parseInt(btn.dataset.idx);
+  const isCorrect = selectedIdx === correctIdx;
+
+  // Disable all options in this quiz
+  const allOpts = document.querySelectorAll(`[data-quiz="${quizId}"]`);
+  allOpts.forEach(opt => {
+    opt.classList.add('disabled');
+    if (parseInt(opt.dataset.idx) === correctIdx) {
+      opt.classList.add('selected', 'correct-opt');
+    }
+  });
+
+  // Mark selected
+  btn.classList.add('selected');
+  if (!isCorrect) {
+    btn.classList.add('wrong-opt');
+  }
+
+  // Show explanations
+  for (let i = 0; i < 4; i++) {
+    const exp = document.getElementById(`${quizId}_exp_${i}`);
+    if (exp) exp.classList.add('show');
+  }
+
+  // Update scores
+  if (isCorrect) scoreCorrect++;
+  else scoreWrong++;
+  updateScores();
+}
+
+function updateScores() {
+  document.getElementById('scoreCorrect').textContent = scoreCorrect;
+  document.getElementById('scoreWrong').textContent = scoreWrong;
+  document.getElementById('scoreTotal').textContent = answered.size;
+
+  const pct = totalQuizzes > 0 ? Math.round(answered.size / totalQuizzes * 100) : 0;
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressText').textContent = `${answered.size} of ${totalQuizzes} questions answered`;
+  document.getElementById('progressPct').textContent = pct + '%';
+}
+
+function resetAllQuizzes() {
+  scoreCorrect = 0;
+  scoreWrong = 0;
+  answered.clear();
+
+  document.querySelectorAll('.quiz-option').forEach(opt => {
+    opt.classList.remove('selected', 'correct-opt', 'wrong-opt', 'disabled');
+  });
+  document.querySelectorAll('.quiz-explanation').forEach(exp => {
+    exp.classList.remove('show');
+  });
+  updateScores();
+}
+</script>
+</body>
+</html>

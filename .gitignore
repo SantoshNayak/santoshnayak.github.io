@@ -45,3 +45,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# local AI-tool hook configs (contain machine-specific paths)
+/.codex/
+/.cursor/
+/.gemini/

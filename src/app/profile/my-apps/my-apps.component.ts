@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { OwlOptions } from "ngx-owl-carousel-o";
 
 @Component({
   selector: "app-my-apps",
@@ -7,32 +6,6 @@ import { OwlOptions } from "ngx-owl-carousel-o";
   styleUrls: ["./my-apps.component.scss"],
 })
 export class MyAppsComponent {
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    navSpeed: 700,
-    autoplay: true,
-    navText: ["", ""],
-    responsive: {
-      0: {
-        items: 1,
-      },
-      400: {
-        items: 2,
-      },
-      740: {
-        items: 3,
-      },
-      940: {
-        items: 5,
-      },
-    },
-    nav: true,
-  };
-
   appslist = [
     {
       imgUrl:

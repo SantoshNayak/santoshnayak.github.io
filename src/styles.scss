@@ -1,360 +1,274 @@
-/* You can add global styles to this file, and also import other style files */
 @import 'ngx-toastr/toastr';
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
-// Dark Neon Theme Variables
+// ---------------------------------------------------------------
+// Wavefront: flat silkscreen inks on cool paper.
+// Ultramarine and vermilion are the two inks; ink is blue-black.
+// ---------------------------------------------------------------
 :root {
-  --primary-neon: #00ff88;
-  --secondary-neon: #00ffff;
-  --accent-neon: #ff0040;
-  --dark-bg: #0f0f23;
-  --darker-bg: #1a1a2e;
-  --darkest-bg: #16213e;
-  --card-bg: rgba(0, 0, 0, 0.7);
-  --text-primary: #ffffff;
-  --text-secondary: #cccccc;
-  --text-muted: #888888;
-  --neon-glow: 0 0 20px rgba(0, 255, 136, 0.3);
-  --neon-gradient: linear-gradient(45deg, var(--primary-neon), var(--secondary-neon));
+  --ultra: #1a2bc4;
+  --ultra-soft: #c9d1ff;      // secondary text on ultramarine
+  --vermilion: #ff4b1f;       // fills, rings, rules: never body text on paper
+  --vermilion-ink: #b82d0a;   // vermilion strong enough for text on paper
+  --paper: #eef0f7;
+  --paper-2: #e1e5f1;
+  --ink: #0c1033;
+  --ink-soft: #454a73;
+  --rule: rgba(12, 16, 51, 0.2);
+  --rule-on-dark: rgba(255, 255, 255, 0.28);
+  --focus: var(--ink);
+
+  --font-display: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
+  --font-text: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --section-y: clamp(4rem, 8vw, 7.5rem);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-// Modern Typography Enhancement
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: 0.3px;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: 1.0625rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// Heading typography
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-top: 1.5rem;
+h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote {
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+img, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+// Browser surfaces carry the design too.
+::selection {
+  background: var(--vermilion);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ultra) var(--paper-2);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ultra);
+}
+
+.num {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+// ---------------------------------------------------------------
+// Layout
+// ---------------------------------------------------------------
+.wrap {
+  width: min(100% - 2 * var(--gutter), 1180px);
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.section--alt {
+  background: var(--paper-2);
+}
+
+.section--ultra {
+  background: var(--ultra);
+  color: #fff;
+  --focus: #fff;
+  --rule: var(--rule-on-dark);
+}
+
+.section--vermilion {
+  background: var(--vermilion);
+  color: var(--ink);
+  --rule: rgba(12, 16, 51, 0.35);
+}
+
+// ---------------------------------------------------------------
+// Type
+// ---------------------------------------------------------------
+.section-title {
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 800;
+  font-size: clamp(2.1rem, 4.6vw, 3.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
   margin-bottom: 1rem;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
-
-// Global Dark Theme Override
-body {
-  background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg), var(--darkest-bg)) !important;
-  color: var(--text-primary) !important;
-  min-height: 100vh;
-  /* Removed background animation for better scrolling performance */
+.section-caption {
+  max-width: 46ch;
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+  text-wrap: pretty;
 }
 
-// Override main background
-.main {
-  background: transparent !important;
+.section--ultra .section-caption {
+  color: var(--ultra-soft);
 }
 
-// Section spacing improvements
-.section {
-  padding: 4rem 0;
-  position: relative;
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+.section--vermilion .section-caption {
+  color: var(--ink);
 }
 
-// Improve container padding
-.container {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  
-  @media (max-width: 768px) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+.section-head {
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
 }
 
-// Global subtle animations
-* {
-  transition: all 0.3s ease;
+.prose p + p {
+  margin-top: 1.1em;
 }
 
-// Enhanced buttons with neon theme
-.btn-primary {
-  background: var(--neon-gradient) !important;
-  border: none !important;
-  color: #000 !important;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+.prose {
+  max-width: 68ch;
+  text-wrap: pretty;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--neon-glow) !important;
-  color: #000 !important;
+// ---------------------------------------------------------------
+// Buttons: flat, square, one of two inks
+// ---------------------------------------------------------------
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.4rem;
+  border: 2px solid currentColor;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-display);
+  font-stretch: 100%;
+  font-weight: 700;
+  font-size: 0.84rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
 }
 
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
+.btn--solid {
+  background: var(--vermilion);
+  border-color: var(--vermilion);
+  color: var(--ink);
 }
 
-.btn-primary:hover::before {
-  left: 100%;
+.btn--solid:hover {
+  background: #fff;
+  border-color: #fff;
 }
 
-// Cards with dark theme
-.card {
-  background: var(--card-bg) !important;
-  border: 1px solid rgba(0, 255, 136, 0.2) !important;
-  color: var(--text-primary) !important;
-  transition: all 0.3s ease;
+.btn--line:hover {
+  background: currentColor;
 }
 
-.card:hover {
-  border-color: var(--primary-neon) !important;
-  box-shadow: var(--neon-glow);
-  transform: translateY(-2px);
+.btn--line:hover > span,
+.btn--line:hover > i {
+  color: var(--ultra);
 }
 
-// Text color overrides
-h1, h2, h3, h4, h5, h6 {
-  color: var(--text-primary) !important;
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
-p, span, div {
-  color: var(--text-secondary) !important;
+.text-link {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+  transition: color 0.2s var(--ease-out);
 }
 
-// Navigation enhancements
-.navbar {
-  background: rgba(0, 0, 0, 0.9) !important;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+.text-link:hover {
+  color: var(--vermilion-ink);
 }
 
-.navbar-nav .nav-link {
-  color: var(--text-primary) !important;
-  transition: all 0.3s ease;
-  position: relative;
+.section--ultra .text-link:hover,
+.section--vermilion .text-link:hover {
+  color: inherit;
+  text-decoration-color: var(--vermilion);
 }
 
-.navbar-nav .nav-link:hover {
-  color: var(--primary-neon) !important;
-  text-shadow: 0 0 10px var(--primary-neon);
-}
-
-.navbar-nav .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--neon-gradient);
-  transition: width 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover::after {
-  width: 100%;
-}
-
-// Section backgrounds
-.section {
-  background: transparent !important;
-  position: relative;
-}
-
-// Add subtle floating animations - DISABLED FOR BETTER SCROLLING
-/*
-@keyframes float-gentle {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-}
-
-.card, .btn, .nav-link {
-  animation: float-gentle 6s ease-in-out infinite;
-}
-
-.card { animation-delay: 0s; }
-.btn { animation-delay: 1s; }
-.nav-link { animation-delay: 2s; }
-*/
-
-// Only apply hover animations instead
-.card:hover, .btn:hover {
-  transform: translateY(-2px);
-}
-
-// Glitch effect utility class - Fixed and subtle
-.glitch-text {
-  position: relative;
-  color: var(--primary-neon);
-  font-weight: bold;
-  display: inline-block;
-}
-
-.glitch-text::before,
-.glitch-text::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.6;
-  z-index: -1;
-}
-
-.glitch-text::before {
-  color: var(--accent-neon);
-  animation: glitch-1 2s infinite;
-}
-
-.glitch-text::after {
-  color: var(--secondary-neon);
-  animation: glitch-2 2s infinite;
-}
-
-@keyframes glitch-1 {
-  0%, 90%, 100% { transform: translate(0); }
-  5% { transform: translate(-1px, 0); }
-  10% { transform: translate(1px, 0); }
-  15% { transform: translate(0, -1px); }
-  20% { transform: translate(-1px, 1px); }
-}
-
-@keyframes glitch-2 {
-  0%, 90%, 100% { transform: translate(0); }
-  5% { transform: translate(1px, 0); }
-  10% { transform: translate(-1px, 0); }
-  15% { transform: translate(0, 1px); }
-  20% { transform: translate(1px, -1px); }
-}
-
-// Neon border utility
-.neon-border {
-  border: 1px solid var(--primary-neon) !important;
-  box-shadow: var(--neon-glow);
-}
-
-// Responsive adjustments
-@media (max-width: 768px) {
-  .glitch-text {
-    font-size: 1.5rem;
-  }
-  
-  .card {
-    margin-bottom: 20px;
-  }
-}
-
-.ngx-pagination {
-    margin: 0 auto;
-    text-align: center;
-}
-
-.ngx-pagination li {
-    display: inline-block;
-    font-size: 19px;
-    font-weight: bold;
-}
-
-// Pagination with neon theme
-.ngx-pagination a {
-  color: var(--text-primary) !important;
-  background: var(--card-bg) !important;
-  border: 1px solid rgba(0, 255, 136, 0.2) !important;
-  transition: all 0.3s ease;
-}
-
-.ngx-pagination a:hover,
-.ngx-pagination .current {
-  background: var(--neon-gradient) !important;
-  color: #000 !important;
-  border-color: var(--primary-neon) !important;
-  box-shadow: var(--neon-glow);
-}
-
-/* Premium Scroll Progress Bar */
+// ---------------------------------------------------------------
+// Scroll progress: one hairline of vermilion
+// ---------------------------------------------------------------
 .scroll-progress-bar {
   position: fixed;
   top: 0;
   left: 0;
-  height: 4px;
-  background: var(--neon-gradient);
-  z-index: 9999;
-  box-shadow: 0 0 12px var(--primary-neon);
-  transition: width 0.1s ease-out;
+  z-index: 1100;
+  height: 3px;
+  background: var(--vermilion);
+  pointer-events: none;
 }
 
-/* Custom Sleek Dark Neon Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-  background: #0b0b16;
+// ngx-toastr: match the paper and ink palette
+.toast-container .ngx-toastr {
+  border-radius: 0;
+  box-shadow: 0 6px 24px rgba(12, 16, 51, 0.25);
+  font-family: var(--font-text);
 }
 
-::-webkit-scrollbar-track {
-  background: #0f0f23;
-  border-left: 1px solid rgba(0, 255, 136, 0.05);
+.toast-container .toast-error {
+  background-color: var(--ink);
+  background-image: none;
 }
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 255, 136, 0.3);
-  border-radius: 5px;
-  border: 2px solid #0f0f23;
-  transition: all 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-neon);
-  box-shadow: 0 0 10px var(--primary-neon);
-}
-
-/* Enhancing Card & Glassmorphic Elements Globals */
-.card {
-  background: rgba(15, 15, 30, 0.65) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(0, 255, 136, 0.15) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.card:hover {
-  border-color: rgba(0, 255, 136, 0.45) !important;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 255, 136, 0.2) !important;
-  transform: translateY(-4px) !important;
-}
-
-/* Section Header Modernization */
-.section .title {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 800 !important;
-  letter-spacing: 4px !important;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, var(--primary-neon), var(--secondary-neon));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
-  display: inline-block;
-  width: 100%;
-}

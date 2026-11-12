@@ -1,0 +1,156 @@
+:host {
+  display: block;
+}
+
+.bar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 1000;
+  background: var(--ultra);
+  color: #fff;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+  --focus: #fff;
+}
+
+.bar--solid {
+  background: var(--paper);
+  color: var(--ink);
+  border-bottom-color: var(--rule);
+  --focus: var(--ink);
+}
+
+.bar__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 4rem;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 1.8vw, 1.75rem);
+}
+
+.nav__link {
+  position: relative;
+  padding-block: 0.4rem;
+  font-family: var(--font-display);
+  font-stretch: 100%;
+  font-weight: 600;
+  font-size: 0.84rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+// Active state is line form, not hue: a solid underline.
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease-out);
+}
+
+.nav__link:hover::after,
+.nav__link--active::after {
+  transform: scaleX(1);
+}
+
+.nav__link--ext {
+  padding-inline: 0.9rem;
+  border: 2px solid currentColor;
+}
+
+.nav__link--ext::after {
+  display: none;
+}
+
+.nav__link--ext:hover {
+  background: var(--vermilion);
+  border-color: var(--vermilion);
+  color: var(--ink);
+}
+
+.menu-btn {
+  display: none;
+  padding: 0.55rem 1rem;
+  border: 2px solid currentColor;
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (max-width: 1020px) {
+  .menu-btn {
+    display: inline-block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem var(--gutter) 1.25rem;
+    background: var(--paper);
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav--open {
+    display: flex;
+  }
+
+  .nav__link {
+    padding-block: 0.85rem;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.95rem;
+  }
+
+  .nav__link::after {
+    display: none;
+  }
+
+  .nav__link--active {
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  .nav__link--ext {
+    margin-top: 0.75rem;
+    padding: 0.85rem 1rem;
+    text-align: center;
+  }
+
+  .nav {
+    --focus: var(--ink);
+  }
+}

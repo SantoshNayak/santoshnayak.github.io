@@ -1,133 +1,71 @@
-// Modern Education Section Styling
-
-h4 {
-  color: #00ff88;
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  margin-top: 10px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+:host {
+  display: block;
 }
 
-.cc-education {
-  .card {
-    margin-bottom: 2rem;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-
-    &:hover {
-      transform: translateY(-8px);
-      border-color: #00ff88 !important;
-      box-shadow: 
-        0 20px 40px rgba(0, 255, 136, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    .row {
-      display: flex;
-      align-items: stretch;
-
-      .bg-primary {
-        background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 255, 0.1)) !important;
-        border-right: 3px solid #00ff88;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        min-height: 200px;
-
-        .cc-education-header {
-          text-align: center;
-          
-          p {
-            font-size: 0.9rem;
-            color: #888888;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-          }
-
-          .h5 {
-            color: #00ff88;
-            font-weight: 700;
-            font-size: 1.4rem;
-            margin: 0;
-          }
-        }
-      }
-
-      .col-md-9 {
-        .card-body {
-          padding: 2rem;
-          background: rgba(255, 255, 255, 0.02);
-          backdrop-filter: blur(10px);
-
-          .h5 {
-            color: #ffffff;
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
-          }
-
-          ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 1rem;
-
-            li {
-              color: #cccccc;
-              margin-bottom: 0.8rem;
-              padding-left: 1.5rem;
-              position: relative;
-              line-height: 1.6;
-              transition: all 0.3s ease;
-
-              &::before {
-                content: '→';
-                position: absolute;
-                left: 0;
-                color: #00ff88;
-                font-weight: bold;
-              }
-
-              &:hover {
-                color: #00ff88;
-                padding-left: 2rem;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+.degrees {
+  border-top: 2px solid var(--ink);
 }
 
-.h4.text-center.mb-4.title {
-  background: linear-gradient(135deg, #00ff88, #00ffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.degree {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 3rem);
+  padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
+  border-bottom: 1px solid var(--rule);
+}
+
+.degree__when {
+  padding-top: 0.35rem;
+  font-family: var(--font-display);
   font-weight: 700;
-  font-size: 2rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 3rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
 }
 
-// Responsive adjustments
-@media (max-width: 768px) {
-  .cc-education {
-    .card {
-      .row {
-        flex-direction: column;
+.degree__name {
+  font-family: var(--font-display);
+  font-stretch: 108%;
+  font-weight: 800;
+  font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
 
-        .bg-primary {
-          border-right: none;
-          border-bottom: 3px solid #00ff88;
-        }
-      }
-    }
+.degree__school {
+  margin-top: 0.35rem;
+  font-weight: 700;
+}
+
+.degree__points {
+  max-width: 64ch;
+  margin-top: 1rem;
+}
+
+.degree__points li {
+  position: relative;
+  padding-left: 1.25rem;
+  text-wrap: pretty;
+}
+
+.degree__points li + li {
+  margin-top: 0.5rem;
+}
+
+.degree__points li::before {
+  content: '';
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  width: 0.5rem;
+  height: 2px;
+  background: var(--ink);
+}
+
+@media (max-width: 760px) {
+  .degree {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.4rem;
   }
 }

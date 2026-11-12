@@ -1,50 +1,28 @@
-<header>
-    <div class="profile-page sidebar-collapse">
-      <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
-        <div class="container">
-          <div class="navbar-translate">
-            <a class="navbar-brand" href="#" rel="tooltip">Santosh's CV</a>
-            <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-              aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-bar bar1"></span>
-              <span class="navbar-toggler-bar bar2"></span>
-              <span class="navbar-toggler-bar bar3"></span>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link smooth-scroll" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link smooth-scroll" href="#experience">Experience</a>
-                </li>
+<header class="bar" [class.bar--solid]="solid || open">
+  <div class="wrap bar__in">
+    <a class="brand" href="#top" (click)="close()">Santosh Nayak</a>
 
-                <!-- <li class="nav-item">
-                    <a class="nav-link smooth-scroll" href="#projects">Projects</a>
-                  </li> -->
-              <li class="nav-item">
-                <a class="nav-link smooth-scroll" href="#skill">Skills</a>
-              </li>
-             
-              <li class="nav-item">
-                <a class="nav-link smooth-scroll" href="#education">Education</a>
-              </li>
+    <button
+      class="menu-btn"
+      type="button"
+      aria-controls="primary-nav"
+      [attr.aria-expanded]="open"
+      (click)="toggle()"
+    >
+      {{ open ? 'Close' : 'Menu' }}
+    </button>
 
-              <!-- <li class="nav-item">
-                  <a class="nav-link smooth-scroll" href="#reference">Reference</a>
-                </li> -->
-
-              <li class="nav-item">
-                <a class="nav-link smooth-scroll" href="#contact">Contact</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link smooth-scroll" href="https://paytosantosh-34175.web.app/" target="_blank">Pay</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
+    <nav id="primary-nav" class="nav" [class.nav--open]="open" aria-label="Primary">
+      <a
+        *ngFor="let link of links"
+        class="nav__link"
+        [class.nav__link--active]="active === link.id"
+        [href]="'#' + link.id"
+        [attr.aria-current]="active === link.id ? 'true' : null"
+        (click)="close()"
+      >{{ link.label }}</a>
+      <a class="nav__link" href="https://paytosantosh-34175.web.app/" target="_blank" rel="noopener">Pay Santosh</a>
+      <a class="nav__link nav__link--ext" href="#contact" (click)="close()">Hire Me</a>
+    </nav>
+  </div>
+</header>

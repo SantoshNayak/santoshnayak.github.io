@@ -1,139 +1,58 @@
-<!-- <section class="seminar-talks-section">
-  <div class="container">
-    <h2 class="section-title">Seminar Talks & Presentations</h2>
-    <div class="talks-container">
-      <div class="talks-grid">
-        <div *ngFor="let talk of seminarTalks" class="talk-card">
-          <div class="talk-image">
-            <img [src]="talk.image" [alt]="talk.title">
-          </div>
-          <div class="talk-content">
-            <h3 class="talk-title">{{talk.title}}</h3>
-            <div class="talk-meta">
-              <span class="talk-date">{{talk.date}}</span>
-              <span class="talk-venue">{{talk.venue}}</span>
-            </div>
-            <p class="talk-description">{{talk.description}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>  -->
-<section id="about" class="about section">
+<section class="section section--ultra" id="talks" aria-labelledby="talks-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="section-title" id="talks-title">Public speaking</h2>
+      <p class="section-caption">Sharing experiences to inspire growth.</p>
+    </header>
 
-  <div class="container">
-
-    <div class="row gy-4">
-
-      <div class="col-lg-6 content aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-        <p class="who-we-are">Public Speaking</p>
-        <h3>Sharing Experiences to Inspire Growth</h3>
-        <p class="fst-italic">
-            I recently had the opportunity to speak at **HashedIn Inspire Talk**, where I shared my journey of leveraging curiosity, 
-            experimenting with ideas, and turning them into real-world projects.
+    <article class="talk">
+      <div class="talk__text">
+        <h3 class="talk__title">Sharing Experiences to Inspire Growth</h3>
+        <p class="talk__lede">
+          I recently had the opportunity to speak at <strong>HashedIn Inspire Talk</strong>, where I shared my journey of leveraging curiosity,
+          experimenting with ideas, and turning them into real-world projects.
         </p>
-        <ul>
-            <li><i class="bi bi-check-circle"></i> <span>Spoke about how curiosity and experimentation helped me build impactful products.</span></li>
-            <li><i class="bi bi-check-circle"></i> <span>Shared insights on learning by building—turning ideas into real applications.</span></li>
-            <li><i class="bi bi-check-circle"></i> <span>Engaged with an audience of engineers and tech professionals, inspiring them to explore beyond their daily work.</span></li>
+        <ul class="talk__points">
+          <li>Spoke about how curiosity and experimentation helped me build impactful products.</li>
+          <li>Shared insights on learning by building—turning ideas into real applications.</li>
+          <li>Engaged with an audience of engineers and tech professionals, inspiring them to explore beyond their daily work.</li>
         </ul>
-        <!-- <a href="#" class="read-more"><span>See More</span><i class="bi bi-arrow-right"></i></a> -->
-    </div>
-    
-
-      <div class="col-lg-6 about-images aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-        <div class="row gy-4">
-          <div class="col-lg-6">
-            <img src="../../../assets/images/seminar1.webp" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6">
-            <div class="row gy-4">
-              <div class="col-lg-12">
-                <img src="../../../assets/images/seminar2.webp" class="img-fluid" alt="">
-              </div>
-              <!-- <div class="col-lg-12">
-              </div> -->
-            </div>
-          </div>
-          <div class="col-12 text-center">
-            <img src="../../../assets/images/seminar3.webp" class="img-fluid third-img" alt="">
-
-          </div>
-        </div>
-
       </div>
 
-    </div>
+      <div class="talk__media talk__media--photos">
+        <img class="photo photo--a" src="assets/images/seminar1.webp" alt="Photo from the HashedIn Inspire Talk" loading="lazy" />
+        <img class="photo photo--b" src="assets/images/seminar2.webp" alt="Photo from the HashedIn Inspire Talk" loading="lazy" />
+        <img class="photo photo--c" src="assets/images/seminar3.webp" alt="Photo from the HashedIn Inspire Talk" loading="lazy" />
+      </div>
+    </article>
 
-  </div>
-</section>
-
-<!-- Odia GenAI Presentation Section -->
-<section id="odia-genai" class="odia-genai section">
-  <div class="container">
-    <div class="row gy-4 align-items-center">
-      
-      <!-- Left: Content & Story -->
-      <div class="col-lg-6 content aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-        <div class="genai-badge">
-          <span>🌟 Featured Speaking Engagement</span>
-        </div>
-        <h3 class="section-highlight">Odia GenAI: Bringing Language to AI</h3>
-        <p class="fst-italic mission-statement">
-          Humbled and proud to have represented the Odia GenAI community at KIIT University, 
-          showcasing web and mobile platforms developed for our open-source mission to bring 
+    <article class="talk talk--flip" id="odia-genai">
+      <div class="talk__text">
+        <h3 class="talk__title">Odia GenAI: Bringing Language to AI</h3>
+        <p class="talk__lede">
+          Humbled and proud to have represented the Odia GenAI community at KIIT University,
+          showcasing web and mobile platforms developed for our open-source mission to bring
           Generative AI to the Odia language.
         </p>
-        <ul class="highlights-list">
-          <li><i class="bi bi-check-circle"></i> <span>Presented before diverse audience: AMD, UiT Norway, Microsoft, PwC UK, IITs, Silo AI Finland & more</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>Demonstrated GenAI empowering Odia speakers in education, agriculture & beyond</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>Showcased web and mobile platforms solving real-world problems for Odia-speaking communities</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>Mission: Building for Bharat, building for Odisha 🇮🇳🌾</span></li>
+        <ul class="talk__points">
+          <li>Presented before diverse audience: AMD, UiT Norway, Microsoft, PwC UK, IITs, Silo AI Finland &amp; more</li>
+          <li>Demonstrated GenAI empowering Odia speakers in education, agriculture &amp; beyond</li>
+          <li>Showcased web and mobile platforms solving real-world problems for Odia-speaking communities</li>
+          <li>Mission: Building for Bharat, building for Odisha</li>
         </ul>
-        <p class="vision-text">
-          Technology meets language, culture, and purpose. Contributing to the movement where innovation 
+        <p class="talk__vision">
+          Technology meets language, culture, and purpose. Contributing to the movement where innovation
           serves communities, preserving and empowering regional languages through Generative AI.
         </p>
       </div>
 
-      <!-- Right: Media Gallery -->
-      <div class="col-lg-6 media-gallery aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-        <div class="gallery-container">
-          
-          <!-- Main Video -->
-          <div class="main-video">
-            <div class="video-wrapper">
-              <video controls poster="assets/images/odia-genai-podium.jpg">
-                <source src="assets/videos/odiaGenAI-presentation.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="play-overlay">
-                <i class="bi bi-play-circle"></i>
-              </div>
-            </div>
-            <p class="media-caption">KIIT University Presentation - Odia GenAI Community Showcase</p>
-          </div>
-
-          <!-- Image Gallery -->
-          <!-- <div class="images-row">
-            <div class="gallery-item image-1">
-              <img src="assets/images/odia-genai-podium.jpg" alt="Presentation at KIIT University">
-              <div class="overlay-text">
-                <span>🎤 Live Presentation</span>
-              </div>
-            </div>
-            <div class="gallery-item image-2">
-              <img src="assets/images/odia-genai-team.jpg" alt="Team & Audience">
-              <div class="overlay-text">
-                <span>👥 OdiaGenAI Community Organizers</span>
-              </div>
-            </div>
-          </div> -->
-        </div>
-      </div>
-
-    </div>
-
+      <figure class="talk__media">
+        <video controls preload="none" poster="assets/images/odia-genai-podium.jpg">
+          <source src="assets/videos/odiaGenAI-presentation.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption class="talk__caption">KIIT University Presentation: Odia GenAI Community Showcase</figcaption>
+      </figure>
+    </article>
   </div>
 </section>

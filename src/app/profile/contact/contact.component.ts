@@ -1,7 +1,4 @@
-import { Component, OnInit } from "@angular/core";
-import { ProfileService } from "../profile.service";
-// import { SnotifyService } from 'ng-snotify';
-import { environment } from "../../../environments/environment";
+import { Component } from "@angular/core";
 import { ToastrService } from "ngx-toastr";
 
 @Component({
@@ -9,34 +6,15 @@ import { ToastrService } from "ngx-toastr";
   templateUrl: "./contact.component.html",
   styleUrls: ["./contact.component.scss"],
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
   model: any = {};
+
+  // Ring radii for the static two-source figure (SVG user units).
+  rings = Array.from({ length: 16 }, (_, i) => 14 + i * 22);
+
   constructor(private toastr: ToastrService) {}
 
-  ngOnInit() {}
-  submit() { 
-
+  submit() {
     this.toastr.error('Sorry about that! Please write me at santoshnayak.dev@gmail.com', 'Something went wrong');
-
   }
-
-  // snotifyConfig = environment.snotifyConfig;
-  // model: any = {};
-
-  
-
-  // ngOnInit() {
-  // }
-
-  // contact() {
-  //   this.profile.contactus(this.model).subscribe(data => {
-  //     if (data.status) {
-  //       this.snotify.success(data.message, 'Success', this.snotifyConfig);
-  //     } else {
-  //       this.snotify.warning(data.message, 'Warning', this.snotifyConfig);
-  //     }
-  //   }, err => {
-  //     this.snotify.error('Something went wrong. Try again later.', 'Error', this.snotifyConfig);
-  //   });
-  // }
 }

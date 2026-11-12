@@ -1,0 +1,57 @@
+:host {
+  display: block;
+}
+
+.footer {
+  padding-block: clamp(3rem, 6vw, 4.5rem) 2rem;
+  background: var(--ink);
+  color: var(--paper);
+  --focus: #fff;
+}
+
+.footer__in {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer__heading {
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.footer__note {
+  max-width: 40ch;
+  margin: 0.6rem 0 1.25rem;
+  color: var(--ultra-soft);
+}
+
+.footer__social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer__social a {
+  display: block;
+  padding: 0.35rem;
+  color: var(--paper);
+  transition: color 0.2s var(--ease-out);
+}
+
+.footer__social a:hover {
+  color: var(--vermilion);
+}
+
+.footer__legal {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule-on-dark);
+  font-size: 0.9rem;
+  color: var(--ultra-soft);
+}

@@ -1,23 +1,25 @@
-<h2 class="text-center app-title mb-1">
-    🚀 My Passion Project Apps Loved by 500K+ Users Worldwide
-</h2>
-<p class="text-center font-italic mt-2 mb-4">Crafted with passion, downloaded by thousands, making an impact every day.</p>
-<owl-carousel-o [options]="customOptions" autoplay="true">
-  <ng-template carouselSlide *ngFor="let eachApp of appslist; let i = index">
-    <a [href]="eachApp.appLink" target="_blank">
-      <div class="card app-card">
-        <img [src]="eachApp.imgUrl" class="app-img" [alt]="eachApp.name" />
-        <h4 class="app-name mt-3 mb-2">{{ eachApp.name }}</h4>
-        <p>{{ eachApp.usersCount }} Downloads</p>
-      </div>
-    </a>
-  </ng-template>
-</owl-carousel-o>
-<div class="text-center">
-  <a
-    target="_blank"
-    href="https://play.google.com/store/apps/dev?id=5854645641287632918&hl=en"
-  >
-    <button class="btn btn-primary">Explore all apps</button>
-  </a>
-</div>
+<section class="section section--vermilion" id="apps" aria-labelledby="apps-title">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="section-title" id="apps-title">My passion project apps loved by 500K+ users worldwide</h2>
+      <p class="section-caption">Crafted with passion, downloaded by thousands, making an impact every day.</p>
+    </header>
+
+    <ul class="apps">
+      <li *ngFor="let app of appslist">
+        <a class="app" [href]="app.appLink" target="_blank" rel="noopener">
+          <img class="app__icon" [src]="app.imgUrl" [alt]="''" width="96" height="96" loading="lazy" />
+          <span class="app__name">{{ app.name }}</span>
+          <span class="app__count num">{{ app.usersCount }} Downloads</span>
+        </a>
+      </li>
+    </ul>
+
+    <a
+      class="btn btn--ink"
+      target="_blank"
+      rel="noopener"
+      href="https://play.google.com/store/apps/dev?id=5854645641287632918&hl=en"
+    >Explore all apps</a>
+  </div>
+</section>

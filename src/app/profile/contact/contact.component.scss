@@ -1,0 +1,167 @@
+:host {
+  display: block;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.contact__title {
+  max-width: 14ch;
+  font-family: var(--font-display);
+  font-stretch: 118%;
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5.2vw, 4.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.contact__links {
+  margin-top: clamp(2rem, 4vw, 3.25rem);
+  border-top: 2px solid #fff;
+}
+
+.contact__link {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding-block: 1.1rem;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  transition: color 0.2s var(--ease-out);
+}
+
+// The hover fill bleeds past the wrap; the hairline stays on it.
+.contact__link::before {
+  content: '';
+  position: absolute;
+  inset: 0 -0.75rem;
+  z-index: -1;
+  background: var(--vermilion);
+  opacity: 0;
+  transition: opacity 0.2s var(--ease-out);
+}
+
+.contact__link:hover,
+.contact__link:focus-visible {
+  color: var(--ink);
+}
+
+.contact__link:hover::before,
+.contact__link:focus-visible::before {
+  opacity: 1;
+}
+
+.contact__label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact__value {
+  font-family: var(--font-display);
+  font-stretch: 108%;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2vw, 1.5rem);
+  overflow-wrap: break-word;
+}
+
+// Email is the primary action: it sets the scale.
+.contact__link--lead {
+  padding-block: 1.5rem;
+}
+
+.contact__link--lead .contact__value {
+  font-weight: 800;
+  font-size: clamp(1.1rem, 2vw, 1.7rem);
+  overflow-wrap: normal;
+}
+
+.contact__arrow {
+  transition: transform 0.25s var(--ease-out);
+}
+
+.contact__link:hover .contact__arrow,
+.contact__link:focus-visible .contact__arrow {
+  transform: translateX(4px);
+}
+
+.contact__status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact__mark {
+  width: 0.7rem;
+  height: 0.7rem;
+  background: var(--vermilion);
+}
+
+.contact__rings {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.contact__figcap {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--ultra-soft);
+}
+
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact__fig {
+    max-width: 18rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact__link {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.15rem 1rem;
+  }
+
+  .contact__label {
+    grid-column: 1;
+  }
+
+  .contact__value {
+    grid-column: 1;
+  }
+
+  .contact__arrow {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__arrow {
+    transition: none;
+  }
+
+  .contact__link:hover .contact__arrow,
+  .contact__link:focus-visible .contact__arrow {
+    transform: none;
+  }
+}

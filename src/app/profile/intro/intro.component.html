@@ -1,37 +1,33 @@
-<div class="profile-page">
-    <div class="wrapper">
-        <div class="page-header" filter-color="dark">
-            <div class="page-header-image" style="background-image: url('assets/images/intro_bg.png');">
-            </div>
-            <div class="container d-flex align-items-center justify-content-center hero-container">
-                <div class="hero-card" data-aos="zoom-in" data-aos-duration="1000">
-                    <div class="cc-profile-image">
-                        <a href="#">
-                            <img src="assets/images/SantoshNayak.jpeg" alt="Santosh Nayak Profile Image" class="avatar-glow" />
-                        </a>
-                    </div>
-                    <h1 class="hero-title glitch-text" data-text="SANTOSH NAYAK">SANTOSH NAYAK</h1>
-                    <div class="typing-wrapper mt-3">
-                        <span class="prefix">I'm a </span>
-                        <span class="typed-text">{{ currentRole }}</span>
-                        <span class="cursor">|</span>
-                    </div>
-                    <p class="hero-tagline mt-3">
-                        From Physics to Code | Driven by Curiosity & Engineering Excellence
-                    </p>
-                    <p class="hero-subtagline">
-                        Full-Stack Engineer & Gen AI Builder | Architecting High-Performance Systems
-                    </p>
-                    <div class="hero-actions mt-4">
-                        <a class="btn btn-primary smooth-scroll mr-3" href="#contact">
-                            <i class="fa fa-envelope mr-2"></i>Hire Me
-                        </a>
-                        <a class="btn btn-outline-neon" href="https://www.buymeacoffee.com/santoshnayak" target="_blank">
-                            <i class="fa fa-coffee mr-2"></i>Buy Me Coffee
-                        </a>
-                    </div>
-                </div>
-            </div>
+<section class="hero" aria-label="Introduction">
+  <figure class="hero__scene" #stage>
+    <canvas
+      #scene
+      class="hero__canvas"
+      role="img"
+      aria-label="Two wave sources, Physics and Code, send out rings that interfere. Moving the pointer, or tapping, moves the Code source."
+    ></canvas>
+    <span #physicsLabel class="src src--physics" aria-hidden="true">S<sub>1</sub> Physics</span>
+    <span #codeLabel class="src src--code" aria-hidden="true">S<sub>2</sub> Code</span>
+    <figcaption class="hero__fig">Fig. 1. Two sources, one interference pattern.<span class="hero__steer hero__steer--fine"> Move your pointer to steer Code.</span><span class="hero__steer hero__steer--touch"> Tap to steer Code.</span></figcaption>
+  </figure>
+
+  <div class="hero__bar">
+    <div class="wrap hero__bar-in">
+      <div class="hero__name">
+        <h1 class="hero__title">Santosh Nayak</h1>
+        <p class="hero__role">
+          <span class="hero__prefix">I'm a </span><span class="hero__typed">{{ currentRole }}</span><span class="hero__cursor" aria-hidden="true">|</span>
+        </p>
+      </div>
+
+      <div class="hero__copy">
+        <p class="hero__tagline">From Physics to Code | Driven by Curiosity &amp; Engineering Excellence</p>
+        <p class="hero__sub">Full-Stack Engineer &amp; Gen AI Builder | Architecting High-Performance Systems</p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" href="#contact">Hire Me</a>
+          <a class="btn btn--line" href="https://www.buymeacoffee.com/santoshnayak" target="_blank" rel="noopener"><span>Buy Me Coffee</span></a>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>

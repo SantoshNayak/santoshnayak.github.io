@@ -1,14 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-
-declare var AOS: any;
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-projects",
   templateUrl: "./projects.component.html",
   styleUrls: ["./projects.component.scss"],
 })
-export class ProjectsComponent implements OnInit {
-  config: any;
+export class ProjectsComponent {
   projects = [
     {
       id: 1,
@@ -119,22 +116,12 @@ export class ProjectsComponent implements OnInit {
       videUrl: "",
     }
   ];
-  constructor() {}
 
-  ngOnInit() {
-    this.config = {
-      itemsPerPage: 6,
-      currentPage: 1,
-      totalItems: this.projects.length,
-    };
-  }
-
-  pageChanged(event) {
-    this.config.currentPage = event;
-    setTimeout(() => {
-      if (typeof AOS !== 'undefined') {
-        AOS.refresh();
-      }
-    }, 150);
+  // Fall back to the placeholder when a thumbnail is missing.
+  onImgError(event: Event) {
+    const img = event.target as HTMLImageElement;
+    if (!img.src.endsWith("assets/images/gif.gif")) {
+      img.src = "assets/images/gif.gif";
+    }
   }
 }

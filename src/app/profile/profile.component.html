@@ -1,19 +1,15 @@
-<div class="scroll-progress-bar" [style.width.%]="scrollProgress"></div>
+<div class="scroll-progress-bar" [style.width.%]="scrollProgress" aria-hidden="true"></div>
 <app-header></app-header>
-<div class="page-content">
+<main class="page-content" id="top">
   <app-intro></app-intro>
   <app-about></app-about>
-  <app-my-apps></app-my-apps>
   <app-experience></app-experience>
-  <app-seminar-talks></app-seminar-talks>
-  <app-projects></app-projects>
   <app-skills></app-skills>
+  <app-projects></app-projects>
+  <app-my-apps></app-my-apps>
+  <app-seminar-talks></app-seminar-talks>
   <app-education></app-education>
   <app-certifications></app-certifications>
-
-  <!-- <app-portfolio></app-portfolio> -->
-  <!-- <app-reference></app-reference> -->
   <app-contact></app-contact>
-</div>
+</main>
 <app-footer></app-footer>
-<!-- <ngx-spinner bdColor="rgba(255,255,255,1)" size="medium" color="#033d5b" type="ball-spin-clockwise"></ngx-spinner> -->

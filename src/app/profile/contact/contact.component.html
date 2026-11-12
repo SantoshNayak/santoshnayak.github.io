@@ -1,202 +1,50 @@
-<div class="section" id="contact">
-  <div class="cc-contact-information" style="background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); padding: 60px 0;">
-    <div class="container">
-      <div class="cc-contact">
-        <div class="row justify-content-center">
-          <div class="">
-            <div class="contact-card" data-aos="zoom-in">
-              <!-- Fixed Header -->
-              <div class="text-center mb-4">
-                <h2 class="contact-title">CONTACT PROTOCOL</h2>
-                <div class="neon-divider"></div>
-                <p class="contact-subtitle">Let's build something extraordinary together</p>
-              </div>
+<section class="section section--ultra contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact__grid">
+    <div class="contact__main">
+      <h2 class="contact__title" id="contact-title">Let's build something extraordinary together</h2>
 
-              <!-- Contact Methods Grid -->
-              <div class="row">
-                <!-- Email -->
-                <div class="col-md-6 mb-3">
-                  <a href="mailto:santoshnayak1996@gmail.com" class="contact-method">
-                    <div class="contact-icon">
-                      <i class="fa fa-envelope"></i>
-                    </div>
-                    <div class="contact-text">
-                      <h6>Email</h6>
-                      <small>Direct Communication</small>
-                    </div>
-                  </a>
-                </div>
+      <ul class="contact__links">
+        <li>
+          <a class="contact__link contact__link--lead" href="mailto:santoshnayak1996@gmail.com">
+            <span class="contact__label">Email</span>
+            <span class="contact__value">santoshnayak1996@gmail.com</span>
+            <svg class="contact__arrow" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="contact__link" href="https://www.linkedin.com/in/iamsantoshnayak/" target="_blank" rel="noopener">
+            <span class="contact__label">LinkedIn</span>
+            <span class="contact__value">iamsantoshnayak</span>
+            <svg class="contact__arrow" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="contact__link" href="https://github.com/santoshnayak" target="_blank" rel="noopener">
+            <span class="contact__label">GitHub</span>
+            <span class="contact__value">santoshnayak</span>
+            <svg class="contact__arrow" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/></svg>
+          </a>
+        </li>
+      </ul>
 
-                <!-- LinkedIn -->
-                <div class="col-md-6 mb-3">
-                  <a href="https://www.linkedin.com/in/iamsantoshnayak/" target="_blank" class="contact-method">
-                    <div class="contact-icon">
-                      <i class="fa fa-linkedin"></i>
-                    </div>
-                    <div class="contact-text">
-                      <h6>LinkedIn</h6>
-                      <small>Professional Network</small>
-                    </div>
-                  </a>
-                </div>
-
-                <!-- GitHub -->
-                <div class="col-md-6 mb-3">
-                  <a href="https://github.com/santoshnayak" target="_blank" class="contact-method">
-                    <div class="contact-icon">
-                      <i class="fa fa-github"></i>
-                    </div>
-                    <div class="contact-text">
-                      <h6>GitHub</h6>
-                      <small>Code Repository</small>
-                    </div>
-                  </a>
-                </div>
-
-                <!-- Schedule -->
-                <div class="col-md-6 mb-3">
-                  <a href="#" class="contact-method" onclick="alert('Calendar booking coming soon!')">
-                    <div class="contact-icon">
-                      <i class="fa fa-calendar"></i>
-                    </div>
-                    <div class="contact-text">
-                      <h6>Schedule</h6>
-                      <small>Book Meeting</small>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Status -->
-              <div class="status-bar">
-                <div class="status-dot"></div>
-                <span>AVAILABLE FOR OPPORTUNITIES</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p class="contact__status">
+        <span class="contact__mark" aria-hidden="true"></span>
+        Available for opportunities
+      </p>
     </div>
+
+    <figure class="contact__fig">
+      <svg class="contact__rings" viewBox="0 0 400 400" role="img" aria-label="Two wave sources, in step, drawing a still interference pattern of rings.">
+        <g fill="none" stroke="#eef0f7" stroke-width="1.2">
+          <circle *ngFor="let r of rings" cx="130" cy="200" [attr.r]="r"/>
+        </g>
+        <g fill="none" stroke="#ff4b1f" stroke-width="2.2">
+          <circle *ngFor="let r of rings" cx="270" cy="200" [attr.r]="r"/>
+        </g>
+        <circle cx="130" cy="200" r="6" fill="#eef0f7"/>
+        <circle cx="270" cy="200" r="7" fill="#ff4b1f" stroke="#eef0f7" stroke-width="2"/>
+      </svg>
+      <figcaption class="contact__figcap">Fig. 2. Physics and Code, in step.</figcaption>
+    </figure>
   </div>
-</div>
-
-<style>
-.contact-card {
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid #00ff88;
-  border-radius: 15px;
-  padding: 40px 30px;
-  box-shadow: 0 0 25px rgba(0, 255, 136, 0.2);
-  backdrop-filter: blur(10px);
-  max-width: 100%;
-}
-
-.contact-title {
-  color: #00ff88;
-  font-size: 1.8rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-bottom: 0;
-  text-transform: uppercase;
-}
-
-.contact-subtitle {
-  color: #ffffff;
-  font-size: 1rem;
-  opacity: 0.8;
-  margin-top: 10px;
-  margin-bottom: 0;
-}
-
-.neon-divider {
-  width: 80px;
-  height: 2px;
-  background: linear-gradient(45deg, #00ff88, #00ffff);
-  margin: 15px auto;
-}
-
-.contact-method {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 136, 0.3);
-  border-radius: 10px;
-  padding: 20px;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
-  height: 100%;
-  width: 100%;
-}
-
-.contact-method:hover {
-  border-color: #00ff88;
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
-  transform: translateY(-2px);
-  text-decoration: none;
-  color: inherit;
-}
-
-.contact-icon {
-  font-size: 1.5rem;
-  color: #00ff88;
-  min-width: 40px;
-  text-align: center;
-}
-
-.contact-text h6 {
-  color: #ffffff !important;
-  margin-bottom: 2px;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.contact-text small {
-  color: #cccccc !important;
-  font-size: 0.85rem;
-}
-
-.status-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(0, 255, 136, 0.2);
-  color: #00ff88;
-  font-size: 0.9rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background: #00ff88;
-  border-radius: 50%;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .contact-card {
-    padding: 30px 20px;
-  }
-  
-  .contact-title {
-    font-size: 1.4rem;
-  }
-  
-  .contact-method {
-    padding: 15px;
-  }
-}
-</style>
-      <!-- <ng-snotify class="material"></ng-snotify> -->
+</section>

@@ -1,25 +1,73 @@
-.app-card {
-  h4,
-  p {
-    text-align: center;
-  }
-  .app-name {
-    font-size: 12px;
-  }
-  .app-img {
-    width: 100%;
-    height: 200px;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
+:host {
+  display: block;
 }
 
-.app-title{
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 2rem;
+.apps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.75rem, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2vw, 2rem);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  border-top: 2px solid var(--ink);
+}
 
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  text-decoration: none;
+}
+
+.app__icon {
+  width: 5.5rem;
+  height: 5.5rem;
+  margin-bottom: 0.65rem;
+  border-radius: 22%;
+  object-fit: cover;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.app:hover .app__icon {
+  transform: translateY(-4px);
+}
+
+.app__name {
+  font-family: var(--font-display);
+  font-stretch: 100%;
+  font-weight: 800;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.app:hover .app__name {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+.app__count {
+  font-size: 0.95rem;
+}
+
+.btn--ink {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+  --focus: var(--ink);
+}
+
+.btn--ink:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app__icon {
+    transition: none;
+  }
+
+  .app:hover .app__icon {
+    transform: none;
+  }
 }

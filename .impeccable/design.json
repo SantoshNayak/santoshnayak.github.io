@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T00:00:00Z",
+  "title": "Design System: Santosh Nayak Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ultramarine": { "role": "primary", "displayName": "Ultramarine", "canonical": "#1a2bc4", "tonalRamp": ["#090f4a", "#0e1884", "#1424a6", "#1a2bc4", "#4a58d6", "#7a85e4", "#a9b0f0", "#dde0fa"] },
+      "vermilion": { "role": "secondary", "displayName": "Vermilion", "canonical": "#ff4b1f", "tonalRamp": ["#5c1303", "#8f2108", "#b82d0a", "#e03a12", "#ff4b1f", "#ff7a58", "#ffa690", "#ffd6cc"] },
+      "vermilion-ink": { "role": "secondary", "displayName": "Vermilion Ink", "canonical": "#b82d0a", "tonalRamp": ["#3d0e02", "#661c06", "#8f2408", "#b82d0a", "#d4502f", "#e5836a", "#f0b3a3", "#f9ded6"] },
+      "ultramarine-soft": { "role": "secondary", "displayName": "Ultramarine Mist", "canonical": "#c9d1ff", "tonalRamp": ["#3a4580", "#5562a8", "#7684cc", "#98a5ea", "#c9d1ff", "#d8deff", "#e8ebff", "#f5f6ff"] },
+      "paper": { "role": "neutral", "displayName": "Cool Paper", "canonical": "#eef0f7", "tonalRamp": ["#2c3042", "#4a4f66", "#6e7390", "#9399b3", "#b9bed3", "#d2d6e6", "#eef0f7", "#f8f9fc"] },
+      "paper-2": { "role": "neutral", "displayName": "Cool Paper Deep", "canonical": "#e1e5f1", "tonalRamp": ["#2a2f45", "#474d6b", "#69708f", "#8c93b0", "#b0b7d0", "#cbd0e4", "#e1e5f1", "#f1f3f9"] },
+      "ink": { "role": "neutral", "displayName": "Blue-Black Ink", "canonical": "#0c1033", "tonalRamp": ["#0c1033", "#1b2050", "#2c3270", "#454a73", "#6b709a", "#9399bd", "#bcc0da", "#e2e4f0"] },
+      "ink-soft": { "role": "neutral", "displayName": "Ink Soft", "canonical": "#454a73", "tonalRamp": ["#0c1033", "#232850", "#343a62", "#454a73", "#666b92", "#8a8fb0", "#b3b7cf", "#dcdeea"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero name in the caption bar; wide (125%), heavy (800), uppercase." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles at 112% width, 800 weight." },
+      "title": { "displayName": "Title", "purpose": "Row, role, project and talk titles at 108% width." },
+      "body": { "displayName": "Body", "purpose": "Reading text at normal width, 68ch measure." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav, source labels; uppercase, tracked 0.06em." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "All state transitions (0.2s to 0.3s): button fills, nav underline, hover fills, icon lift." },
+      { "name": "hero-ring-tank", "value": "canvas, time-driven; Code source follows pointer", "purpose": "The single authored motion moment. Frozen under prefers-reduced-motion; steering hint hidden under pointer: coarse." }
+    ],
+    "breakpoints": [
+      { "name": "nav-collapse", "value": "1020px" },
+      { "name": "wide-stack", "value": "900px" },
+      { "name": "hero-stack", "value": "860px" },
+      { "name": "ledger-stack", "value": "760px" },
+      { "name": "narrow", "value": "560px" },
+      { "name": "skills-single", "value": "480px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "Primary action (Hire Me): vermilion fill, ink text, square.",
+      "html": "<a class=\"ds-btn ds-btn-solid\" href=\"#\">Hire Me</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.4rem; border: 2px solid currentColor; border-radius: 0; background: transparent; color: inherit; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 0.84rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background-color 0.2s cubic-bezier(0.22,1,0.36,1), color 0.2s cubic-bezier(0.22,1,0.36,1), border-color 0.2s cubic-bezier(0.22,1,0.36,1); } .ds-btn-solid { background: var(--vermilion, #ff4b1f); border-color: var(--vermilion, #ff4b1f); color: var(--ink, #0c1033); } .ds-btn-solid:hover { background: #fff; border-color: #fff; } .ds-btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action on dark grounds: current-color outline that fills on hover.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\"><span>Buy Me Coffee</span></a>",
+      "css": ".ds-btn-line { display: inline-flex; align-items: center; padding: 0.85rem 1.4rem; border: 2px solid currentColor; border-radius: 0; background: transparent; color: inherit; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 0.84rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background-color 0.2s cubic-bezier(0.22,1,0.36,1); } .ds-btn-line:hover { background: currentColor; } .ds-btn-line:hover > span { color: var(--ultra, #1a2bc4); } .ds-btn-line:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Action on the vermilion ground: ink fill, paper text, inverts on hover.",
+      "html": "<a class=\"ds-btn-ink\" href=\"#\">View all apps</a>",
+      "css": ".ds-btn-ink { display: inline-flex; align-items: center; padding: 0.85rem 1.4rem; border: 2px solid var(--ink, #0c1033); border-radius: 0; background: var(--ink, #0c1033); color: var(--paper, #eef0f7); font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 0.84rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background-color 0.2s cubic-bezier(0.22,1,0.36,1), color 0.2s cubic-bezier(0.22,1,0.36,1); } .ds-btn-ink:hover { background: var(--paper, #eef0f7); color: var(--ink, #0c1033); } .ds-btn-ink:focus-visible { outline: 3px solid var(--ink, #0c1033); outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "Fixed ultramarine bar, uppercase labels, line-form active underline, boxed Hire Me action.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">Santosh Nayak</a><nav class=\"ds-nav-links\"><a class=\"ds-nav-link ds-nav-link-active\" href=\"#\">About</a><a class=\"ds-nav-link\" href=\"#\">Work</a><a class=\"ds-nav-link ds-nav-ext\" href=\"#\">Hire Me</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; min-height: 4rem; padding: 0 2rem; background: var(--ultra, #1a2bc4); color: #fff; font-family: Archivo, system-ui, sans-serif; } .ds-brand { font-weight: 800; font-stretch: 112%; font-size: 1rem; letter-spacing: 0.02em; text-transform: uppercase; color: inherit; text-decoration: none; } .ds-nav-links { display: flex; align-items: center; gap: 1.5rem; } .ds-nav-link { position: relative; padding-block: 0.4rem; font-weight: 600; font-size: 0.84rem; letter-spacing: 0.05em; text-transform: uppercase; color: inherit; text-decoration: none; } .ds-nav-link::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 0.25s cubic-bezier(0.22,1,0.36,1); } .ds-nav-link:hover::after, .ds-nav-link-active::after { transform: scaleX(1); } .ds-nav-ext { padding-inline: 0.9rem; border: 2px solid currentColor; } .ds-nav-ext::after { display: none; } .ds-nav-ext:hover { background: var(--vermilion, #ff4b1f); border-color: var(--vermilion, #ff4b1f); color: var(--ink, #0c1033); } .ds-nav-link:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ledger Row",
+      "kind": "custom",
+      "refersTo": "typography.title",
+      "description": "The shared grammar: 2px ink top rule, 1px rule rows, title left, ruled items right.",
+      "html": "<div class=\"ds-ledger\"><div class=\"ds-row\"><div><h3 class=\"ds-row-title\">Frontend</h3><p class=\"ds-row-intro\">Interfaces people use daily.</p></div><ul class=\"ds-row-items\"><li>Angular</li><li>TypeScript</li><li>RxJS</li><li>SCSS</li></ul></div></div>",
+      "css": ".ds-ledger { border-top: 2px solid var(--ink, #0c1033); color: var(--ink, #0c1033); font-family: Archivo, system-ui, sans-serif; } .ds-row { display: grid; grid-template-columns: 5fr 7fr; gap: 3rem; padding-block: 2rem; border-bottom: 1px solid rgba(12,16,51,0.2); } .ds-row-title { margin: 0; font-weight: 800; font-stretch: 108%; font-size: 1.7rem; line-height: 1.1; letter-spacing: -0.015em; } .ds-row-intro { max-width: 38ch; margin: 0.6rem 0 0; color: var(--ink-soft, #454a73); } .ds-row-items { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 2rem; margin: 0; padding: 0; list-style: none; align-content: start; } .ds-row-items li { padding-block: 0.55rem; border-bottom: 1px solid rgba(12,16,51,0.2); font-weight: 700; } .ds-row-items li:nth-last-child(-n+2) { border-bottom: 0; }"
+    },
+    {
+      "name": "Experience Rail",
+      "kind": "custom",
+      "refersTo": "typography.title",
+      "description": "Single registered rail: hairline with hollow square for past roles, 4px vermilion bar for the current role.",
+      "html": "<div class=\"ds-role ds-role-current\"><div class=\"ds-when\">2023 - Now</div><div class=\"ds-rail\"></div><div><h3 class=\"ds-role-title\">Senior Engineer <span class=\"ds-badge\">Current</span></h3></div></div><div class=\"ds-role\"><div class=\"ds-when\">2020 - 2023</div><div class=\"ds-rail\"></div><div><h3 class=\"ds-role-title\">Engineer</h3></div></div>",
+      "css": ".ds-role { display: grid; grid-template-columns: 9rem 2.5rem 1fr; padding-bottom: 2.5rem; font-family: Archivo, system-ui, sans-serif; color: var(--ink, #0c1033); } .ds-when { padding-top: 0.35rem; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.03em; color: var(--ink-soft, #454a73); } .ds-rail { position: relative; } .ds-rail::before { content: ''; position: absolute; top: 0.55rem; bottom: -2.5rem; left: 50%; width: 1px; background: rgba(12,16,51,0.2); } .ds-rail::after { content: ''; position: absolute; top: 0.4rem; left: 50%; width: 0.8rem; height: 0.8rem; transform: translateX(-50%); border: 2px solid var(--ink, #0c1033); background: var(--paper-2, #e1e5f1); } .ds-role-current .ds-rail::before { width: 4px; margin-left: -2px; background: var(--vermilion, #ff4b1f); } .ds-role-current .ds-rail::after { background: var(--vermilion, #ff4b1f); } .ds-role-title { margin: 0; font-weight: 800; font-stretch: 108%; font-size: 1.9rem; line-height: 1.1; letter-spacing: -0.015em; } .ds-badge { margin-left: 0.5rem; padding: 0.12rem 0.55rem; background: var(--ink, #0c1033); color: var(--paper, #eef0f7); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; vertical-align: 0.1em; }"
+    },
+    {
+      "name": "Hero Caption Bar",
+      "kind": "custom",
+      "refersTo": "caption-bar",
+      "description": "Blue-black poster caption bar under the ring tank: wide heavy name left, taglines and actions right.",
+      "html": "<div class=\"ds-caption\"><h1 class=\"ds-caption-title\">Santosh Nayak</h1><div><p class=\"ds-caption-tag\">From Physics to Code</p><p class=\"ds-caption-sub\">Full-Stack Engineer &amp; Gen AI Builder</p></div></div>",
+      "css": ".ds-caption { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: end; padding: 2.5rem 2rem; background: var(--ink, #0c1033); color: #fff; font-family: Archivo, system-ui, sans-serif; } .ds-caption-title { margin: 0; font-weight: 800; font-stretch: 125%; font-size: 3.5rem; line-height: 0.92; letter-spacing: -0.02em; text-transform: uppercase; } .ds-caption-tag { margin: 0; font-weight: 700; font-size: 1.2rem; line-height: 1.4; } .ds-caption-sub { margin: 0.5rem 0 0; color: var(--ultra-soft, #c9d1ff); }"
+    },
+    {
+      "name": "Contact Link Row",
+      "kind": "custom",
+      "refersTo": "colors.vermilion",
+      "description": "Hairline row on ultramarine that fills vermilion on hover with ink text.",
+      "html": "<div class=\"ds-contact\"><a class=\"ds-contact-link\" href=\"#\"><span class=\"ds-contact-label\">Email</span><span class=\"ds-contact-value\">hello@example.com</span><span>&rarr;</span></a></div>",
+      "css": ".ds-contact { padding: 1rem 2rem; background: var(--ultra, #1a2bc4); color: #fff; border-top: 2px solid #fff; font-family: Archivo, system-ui, sans-serif; } .ds-contact-link { position: relative; isolation: isolate; display: grid; grid-template-columns: 6.5rem 1fr auto; gap: 1rem; align-items: center; padding-block: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.28); color: inherit; text-decoration: none; transition: color 0.2s cubic-bezier(0.22,1,0.36,1); } .ds-contact-link::before { content: ''; position: absolute; inset: 0 -0.75rem; z-index: -1; background: var(--vermilion, #ff4b1f); opacity: 0; transition: opacity 0.2s cubic-bezier(0.22,1,0.36,1); } .ds-contact-link:hover, .ds-contact-link:focus-visible { color: var(--ink, #0c1033); } .ds-contact-link:hover::before, .ds-contact-link:focus-visible::before { opacity: 1; } .ds-contact-label { font-weight: 700; font-size: 0.84rem; letter-spacing: 0.08em; text-transform: uppercase; } .ds-contact-value { font-weight: 800; font-stretch: 108%; font-size: 1.7rem; } .ds-contact-link:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Ripple Tank Poster",
+    "overview": "A mid-century physics-education poster rendered for the web. Two wave sources, Physics and Code, interfere, and what a recruiter hires is the interference between them. Everything is flat silkscreen ink: two spot inks (ultramarine and vermilion) on cool blue-tinted paper, set in blue-black ink. There are no gradients, no glow, and no soft shadows. Overprint is by multiply, never by opacity haze.\n\nThe page reads as a ruled, captioned plate. Sections are ledgers: a 2px ink rule on top, hairlines between rows, one caption line under a heavy wide headline. The interface recedes so the work leads. Density is generous: one idea per screen, large section padding, long measure capped near 68ch.\n\nThe system is recognizable with all content removed by concentric-ring moire on ultramarine.",
+    "keyCharacteristics": [
+      "Two spot inks plus paper and blue-black ink; grounds alternate paper, paper-2, ultramarine, vermilion.",
+      "One typeface (Archivo, variable width and weight): wide and heavy for display, normal width for text.",
+      "Square, flat, hairline-ruled; zero radius everywhere except store app icons.",
+      "One authored motion moment (the hero ring tank); everything else is a state change.",
+      "Poster grammar: caption bars, figure captions, registered rail."
+    ],
+    "rules": [
+      { "name": "The Two Inks Rule", "body": "Ultramarine and vermilion are the only chromatic colors. A third hue is a different poster.", "section": "colors" },
+      { "name": "The No-Vermilion-Text Rule", "body": "On paper, vermilion text fails; use Vermilion Ink or Blue-Black Ink. On vermilion grounds, text is Blue-Black Ink.", "section": "colors" },
+      { "name": "The Flat Ink Rule", "body": "Fills are solid. No gradients, glow, or translucent tints standing in for a color.", "section": "colors" },
+      { "name": "The Wide Heavy Display Rule", "body": "Display and headings are Archivo 800 at stretched width; text is never stretched.", "section": "typography" },
+      { "name": "The One Family Rule", "body": "Archivo throughout. Do not pair a second face.", "section": "typography" },
+      { "name": "The Ledger Rule", "body": "Experience, skills, projects, education, certifications, and apps share one grammar: a 2px ink top rule, 1px rules between rows, no cards, no boxes.", "section": "layout" },
+      { "name": "The Registered Rail Rule", "body": "Experience carries a single rail: past roles are a 1px hairline with a hollow square marker; the current role is a 4px solid vermilion bar with a solid vermilion marker.", "section": "layout" },
+      { "name": "The No-Shadow Rule", "body": "Page surfaces carry no box-shadow. Separation comes from rules and grounds.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do set every text color from Blue-Black Ink, Ink Soft, white, or Ultramarine Mist, matched to the ground.",
+      "Do build new reading sections as ledgers: 2px ink top rule, 1px rule rows, Title-type row heads.",
+      "Do head each section with a Headline-type title and one caption line (max 46ch).",
+      "Do keep buttons square, flat, uppercase label type, in one of three inks (vermilion, line, ink).",
+      "Do alternate grounds (paper, paper-2, ultramarine, vermilion) and let ground change do the separating.",
+      "Do honor prefers-reduced-motion and pointer: coarse for any animated figure; keep motion to state changes otherwise.",
+      "Do use the 3px offset focus ring in the ground's focus color."
+    ],
+    "donts": [
+      "Don't use vermilion (#ff4b1f) as text on paper; use Vermilion Ink (#b82d0a).",
+      "Don't add gradients, glows, or soft shadows to page surfaces.",
+      "Don't introduce a third hue or a second typeface.",
+      "Don't round corners on chrome or wrap content in cards; use rules.",
+      "Don't add scroll-reveal animations; the page has none.",
+      "Don't use the retired neon green/cyan identity or the legacy stylesheets (aos.css, main.css, bootstrap), which index.html no longer loads."
+    ]
+  }
+}

@@ -116,12 +116,4 @@ export class ProjectsComponent {
       videUrl: "",
     }
   ];
-
-  // Fall back to the placeholder when a thumbnail is missing.
-  onImgError(event: Event) {
-    const img = event.target as HTMLImageElement;
-    if (!img.src.endsWith("assets/images/gif.gif")) {
-      img.src = "assets/images/gif.gif";
-    }
-  }
 }
